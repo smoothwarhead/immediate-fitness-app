@@ -1,0 +1,224 @@
+{
+    "classes" : [
+        {
+            "id": "1",
+            "type": "Yoga",
+            "format": "Personal",
+            "level": "Beginners",
+            "description": "Ipsum enim ea reprehenderit excepteur duis ut aliqua in cupidatat quis irure aute aliqua sint. Ipsum aute sit nostrud Lorem incididunt culpa exercitation. Reprehenderit ad in laboris reprehenderit consectetur aute cupidatat exercitation Lorem occaecat fugiat sit irure commodo. Ad aute tempor consequat ex nulla enim magna et. Et qui laboris tempor ex consequat cupidatat. Adipisicing in id mollit eiusmod eiusmod quis. Consectetur do eu eiusmod anim.\r\n",
+            "start_time": "08:00 am",
+            "end_time": "09:00 am",
+            "start_date": "2/25/2022",
+            "frequency": "Daily"                    
+        
+        },
+        {
+            "id": "2",
+            "type": "Pilates",
+            "format": "Group",
+            "level": "Advanced",
+            "description": "Ex in irure ipsum commodo elit ea voluptate reprehenderit commodo do aute id enim. Minim cupidatat sit dolore dolor sunt ex ullamco ipsum et consectetur. Dolore adipisicing deserunt incididunt duis duis non ea ullamco. Sunt culpa sit sint dolor in reprehenderit ad duis occaecat. Deserunt voluptate nisi voluptate cillum non consectetur.\r\n",
+            "start_time": "05:00 pm",
+            "end_time": "06:00 pm",
+            "start_date": "2/16/2022",
+            "frequency": "Every 2 days"                  
+        
+        },
+        {
+            "id": "3",
+            "type": "High Intensity Interval Training",
+            "format": "Personal",
+            "level": "Intermediate",
+            "description": "Exercitation tempor pariatur nostrud nisi adipisicing quis exercitation consequat incididunt. Lorem id consequat qui labore in mollit aliquip tempor qui dolor magna reprehenderit eiusmod est. Ex duis fugiat aliquip aliqua aute. Occaecat est culpa aliqua nostrud elit ipsum nulla eu labore.",
+            "start_time": "09:30 am",
+            "end_time": "10:30 am",
+            "start_date": "2/20/2022",
+            "frequency": "Daily"                    
+        
+        },
+        {
+            "id": "4",
+            "type": "Boxing",
+            "format": "Personal",
+            "level": "Beginners",
+            "description": "Duis consequat amet esse adipisicing. Pariatur ad commodo velit culpa officia laborum sunt aliqua ad non. Elit amet cillum duis cupidatat occaecat minim velit consectetur fugiat duis non. Sint et culpa pariatur ipsum veniam et.\r\n",
+            "start_time": "09:30 am",
+            "end_time": "10:30 am",
+            "start_date": "2/18/2022",
+            "frequency": "Daily"                    
+        
+        },
+        {
+            "id": "5",
+            "type": "High Intensity Interval Training",
+            "format": "Group",
+            "level": "Advanced",
+            "description": "Reprehenderit eu cupidatat ullamco ullamco sunt commodo nulla nostrud irure. Non veniam minim labore culpa sint ea id. Cupidatat est dolor cupidatat anim pariatur nostrud voluptate consequat. Tempor aliquip labore exercitation sint.\r\n",
+            "start_time": "06:00 pm",
+            "end_time": "07:00 pm",
+            "start_date": "2/20/2022",
+            "frequency": "Every 2 days"                    
+        
+        },
+        {
+            "id": "6",
+            "type": "Cardio",
+            "format": "Group",
+            "level": "Beginners",
+            "description": "Duis veniam pariatur nulla excepteur exercitation sit officia sunt irure laborum. Excepteur adipisicing id quis enim eiusmod veniam aliqua mollit eu voluptate. Sit cillum ipsum aliqua magna ex nisi consequat et. Dolore occaecat cupidatat voluptate incididunt aute. Adipisicing qui irure consequat esse duis ea reprehenderit aute consequat qui et. Sint ipsum officia eu sit nisi. Consequat et fugiat sint do deserunt cupidatat magna incididunt.\r\n",
+            "start_time": "06:00 pm",
+            "end_time": "07:00 pm",
+            "start_date": "2/23/2022",
+            "frequency": "Every 2 days"                    
+        
+        },
+        {
+            "id": "7",
+            "type": "Bootcamp",
+            "format": "Group",
+            "level": "Intermediate",
+            "description": "Velit dolore non irure magna minim ex. Cillum fugiat consectetur ad minim et consectetur proident id nisi. Tempor eu duis proident velit commodo velit nostrud veniam consequat non.\r\n",
+            "start_time": "06:00 pm",
+            "end_time": "07:15 pm",
+            "start_date": "2/24/2022",
+            "frequency": "Weekly"                    
+        
+        },
+        {
+            "id": "8",
+            "type": "Yoga",
+            "format": "Group",
+            "level": "Advanced",
+            "description": "Aliqua cupidatat exercitation officia magna mollit ullamco commodo mollit dolore. Adipisicing voluptate in deserunt sit ad magna est elit dolor fugiat reprehenderit nulla. Et aute ea non excepteur minim veniam occaecat.\r\n",
+            "start_time": "06:00 pm",
+            "end_time": "07:15 pm",
+            "start_date": "2/24/2022",
+            "frequency": "Weekly"                    
+        
+        },
+        {
+            "id": "9",
+            "type": "Swimming",
+            "format": "Group",
+            "level": "Intermediate",
+            "description": "Aliqua cupidatat exercitation officia magna mollit ullamco commodo mollit dolore. Adipisicing voluptate in deserunt sit ad magna est elit dolor fugiat reprehenderit nulla. Et aute ea non excepteur minim veniam occaecat.\r\n",
+            "start_time": "04:00 pm",
+            "end_time": "05:00 pm",
+            "start_date": "2/12/2022",
+            "frequency": "Every 2 days"                    
+        
+        },
+        {
+            "id": "10",
+            "type": "Swimming",
+            "format": "Personal",
+            "level": "Beginners",
+            "description": "Sint esse exercitation aute fugiat nisi minim aute nisi magna mollit. Cupidatat tempor dolor deserunt occaecat officia exercitation exercitation cillum nisi tempor est. Sit adipisicing Lorem ullamco ea fugiat non anim magna mollit dolor quis ut exercitation. Nulla dolor incididunt esse eu anim qui aute culpa. Do reprehenderit exercitation Lorem ullamco deserunt Lorem minim pariatur. Do sit velit labore eu sit amet.\r\n",
+            "start_time": "05:30 am",
+            "end_time": "06:30 am",
+            "start_date": "2/10/2022",
+            "frequency": "Daily"                    
+        
+        },
+        {
+            "id": "11",
+            "type": "Water Aerobics",
+            "format": "Group",
+            "level": "Beginners",
+            "description": "Ullamco sit dolor elit culpa ex. Exercitation aliquip minim dolore consectetur nisi aute non et mollit sit amet. Excepteur ipsum et do labore ut adipisicing ad culpa officia dolore ipsum ea.\r\n",
+            "start_time": "05:30 pm",
+            "end_time": "06:30 pm",
+            "start_date": "2/22/2022",
+            "frequency": "Every 2 days"                    
+        
+        },
+        {
+            "id": "12",
+            "type": "Cycling",
+            "format": "Group",
+            "level": "Intermediate",
+            "description": "Amet tempor aute id velit adipisicing reprehenderit cupidatat ipsum labore id veniam eu nostrud. Lorem excepteur nulla eiusmod elit ipsum aliqua culpa aute sint Lorem. Officia aliqua et quis excepteur sit reprehenderit aliquip nisi quis nisi. Labore cillum elit minim incididunt velit duis officia consequat adipisicing commodo ullamco sit deserunt.\r\n",
+            "start_time": "06:00 am",
+            "end_time": "06:45 am",
+            "start_date": "2/20/2022",
+            "frequency": "Daily"                    
+        
+        },
+        {
+            "id": "13",
+            "type": "CrossFit",
+            "format": "Group",
+            "level": "Advanced",
+            "description": "Do quis id ullamco qui. Cillum est adipisicing consequat cupidatat ad exercitation et irure laborum anim nisi aute tempor exercitation. Deserunt eu mollit ullamco nisi ipsum. Consequat non incididunt anim ea laborum eiusmod ex. Laborum consectetur eu elit pariatur sit laboris tempor dolor tempor enim.\r\n",
+            "start_time": "06:00 pm",
+            "end_time": "07:00 pm",
+            "start_date": "2/12/2022",
+            "frequency": "Every 2 days"                    
+        
+        },
+        {
+            "id": "14",
+            "type": "Water Aerobics",
+            "format": "Personal",
+            "level": "Advanced",
+            "description": "Ullamco sit dolor elit culpa ex. Exercitation aliquip minim dolore consectetur nisi aute non et mollit sit amet. Excepteur ipsum et do labore ut adipisicing ad culpa officia dolore ipsum ea.\r\n",
+            "start_time": "05:30 pm",
+            "end_time": "06:30 pm",
+            "start_date": "2/22/2022",
+            "frequency": "Daily"                    
+        
+        },
+        {
+            "id": "15",
+            "type": "Cycling",
+            "format": "Group",
+            "level": "Beginners",
+            "description": "Amet tempor aute id velit adipisicing reprehenderit cupidatat ipsum labore id veniam eu nostrud. Lorem excepteur nulla eiusmod elit ipsum aliqua culpa aute sint Lorem. Officia aliqua et quis excepteur sit reprehenderit aliquip nisi quis nisi. Labore cillum elit minim incididunt velit duis officia consequat adipisicing commodo ullamco sit deserunt.\r\n",
+            "start_time": "06:30 am",
+            "end_time": "07:30 am",
+            "start_date": "2/20/2022",
+            "frequency": "Daily"                    
+        
+        },
+        {
+            "id": "16",
+            "type": "CrossFit",
+            "format": "Group",
+            "level": "Beginners",
+            "description": "Do quis id ullamco qui. Cillum est adipisicing consequat cupidatat ad exercitation et irure laborum anim nisi aute tempor exercitation. Deserunt eu mollit ullamco nisi ipsum. Consequat non incididunt anim ea laborum eiusmod ex. Laborum consectetur eu elit pariatur sit laboris tempor dolor tempor enim.\r\n",
+            "start_time": "04:30 pm",
+            "end_time": "05:30 pm",
+            "start_date": "2/15/2022",
+            "frequency": "Every 2 days"                    
+        
+        },
+        {
+            "id": "17",
+            "type": "CrossFit",
+            "format": "Group",
+            "level": "Beginners",
+            "description": "Do quis id ullamco qui. Cillum est adipisicing consequat cupidatat ad exercitation et irure laborum anim nisi aute tempor exercitation. Deserunt eu mollit ullamco nisi ipsum. Consequat non incididunt anim ea laborum eiusmod ex. Laborum consectetur eu elit pariatur sit laboris tempor dolor tempor enim.\r\n",
+            "start_time": "04:30 pm",
+            "end_time": "05:30 pm",
+            "start_date": "2/17/2022",
+            "frequency": "Weekly"                    
+        
+        },
+        {
+            "id": "18",
+            "type": "Boxing",
+            "format": "Group",
+            "level": "Intermediate",
+            "description": "Duis consequat amet esse adipisicing. Pariatur ad commodo velit culpa officia laborum sunt aliqua ad non. Elit amet cillum duis cupidatat occaecat minim velit consectetur fugiat duis non. Sint et culpa pariatur ipsum veniam et.\r\n",
+            "start_time": "10:30 am",
+            "end_time": "11:30 am",
+            "start_date": "2/18/2022",
+            "frequency": "Daily"                    
+        
+        }
+        
+
+        
+       
+    ]
+}

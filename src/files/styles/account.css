@@ -1,0 +1,575 @@
+.login_page, .signup_page{
+    width: 100%;
+    height: 100vh;
+    font-family: 'Industry';
+    display: grid;
+    grid-template-columns: 5% repeat(3, 1fr) 5%;
+    grid-template-rows: 0% auto;
+   
+}
+
+.account-logo{
+   
+    fill: #0a3f38;
+    font-weight: 600;
+   
+}
+
+.account-content{
+    width: 100%;
+    height: 100%;
+    grid-column: 2/5;
+    grid-row: 2/3;
+}
+
+.form_container{
+    width: 38%;
+    background: #fff;
+    border-radius: 10px;
+    
+}
+
+.login_container{
+    display: grid;
+    grid-template-columns: 5% auto 5%;
+    grid-template-rows: 1fr 2fr 0.2fr 0.5fr 0.2fr 0.3fr 0.1fr 0.5fr 0.3fr;
+    height: 80%;
+    margin: 80px auto 0;
+}
+
+.signup_container{
+    height: 80%;
+    margin: 80px auto 0;
+    display: grid;
+    grid-template-columns: 5% auto 5%;
+    grid-template-rows: 1fr 3fr 0.3fr 0.5fr 0.3fr;
+}
+
+.form_header{
+    background: #789BCD;
+    grid-column: 1/4;
+    grid-row: 1/2;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+  
+    
+}
+
+.form_header .login-p{
+    text-align: center;
+    padding: 30px;
+    font-size: 2.25vw;
+    font-weight: 500;
+    color: #fff;
+    line-height: 42px;
+}
+
+.form_header .register-p{
+    text-align: center;
+    padding: 30px;
+    font-size: 2.25vw;
+    font-weight: 500;
+    color: #fff;
+    line-height: 42px;
+}
+.form{
+
+    grid-column: 2/3;
+    grid-row: 2/3;
+    width: 100%;
+    height: 100%;
+    padding-top: 30px;
+    
+}
+.form_elements_flex{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+.form_elements{
+    margin-bottom: 25px;
+}
+
+.login-label{
+    font-size: 0.875vw;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 5px;
+    line-height: 14px;
+
+}
+
+.register-label{
+    font-size: 0.875vw;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 5px;
+    line-height: 14px;
+
+}
+input, select{
+    width: 100%;
+    height: 50px;
+    padding: 10px 15px;
+    font-size: 1vw;
+    border: 0.5px solid #789BCD;
+    z-index: 2;
+}
+
+.first_element, .last_element{
+    width: 46.5%;
+}
+
+
+input:focus, select:focus, textarea:focus{
+    outline: 0.5px solid #1DAE8C;
+}
+
+input::placeholder{
+    font-size: 0.875em;
+    line-height: 20px;
+}
+
+
+
+.btn{
+    display: block;
+    width: 70%;
+    margin: auto;
+    height: fit-content;
+    font-family: 'Aviano';
+    text-align: center;
+    font-size: 1vw;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+}
+.btn:hover{
+    background: #EBF0FD;
+    color: #1A272A;
+}
+
+
+.login_btn{
+    background: #1A272A;
+    border: none;
+    outline: none; 
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+
+
+.create-btn-container{
+    grid-column: 2/3;
+    grid-row: 8/9;    
+}
+.create-btn-container a{
+    text-decoration: none;
+    
+}
+
+.create_btn{
+    background: #1DAE8C;
+        
+}
+
+
+.register_btn{
+    background: #1DAE8C; 
+    border: none;
+    outline: none;
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+
+
+
+.no_question{
+    width: 100%;
+    grid-column: 2/3;
+    grid-row: 6/7;
+}
+.no_question p{
+    font-size: 1.125vw;
+    text-align: center;
+
+}
+
+
+.form a{
+    text-decoration: none;
+}
+
+.form_elements span{
+    font-size: 0.875em;
+    color: #e10321;
+}
+
+input.error{
+    outline: 0.5px solid #e10321;
+}
+
+.save_profile_btn{
+    position: absolute;
+    top: 170%;
+    right: 40%;
+    
+}
+
+.success-msg{
+    display: block;
+    width: 100%;
+    height: fit-content;
+    margin: 20px 0;
+    padding: 10px;
+    background: #bdcfcd;
+    color: #0a3f38;
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: 500;
+}
+
+.error-msg{
+    display: block;
+    width: 100%;
+    height: fit-content;
+    margin: 20px 0;
+    padding: 10px;
+    background: #e79f9f;
+    color: #690616;
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: 500;
+  }
+
+
+@media (max-width: 1120px) and (min-width: 960px){ 
+
+    .login-label{
+        font-size: 1.25vw;
+    }
+    .register-label{
+        font-size: 1vw;
+
+    }
+
+    input, select{
+        padding: 5px 10px;
+        font-size: 1.5vw;
+    }
+    .btn{
+        font-size: 1.25vw;
+    }
+
+    .no_question p{       
+        font-size: 1.5vw;
+    }
+
+    
+
+} 
+
+
+@media (max-width: 960px) and (min-width: 840px){ 
+
+    .form_container{
+        width: 50%;
+    }
+
+    .form_header .login-p{
+        font-size: 4vw;
+
+    }
+
+    .form_header .register-p{
+        font-size: 3vw;
+
+    }
+    .login-label{
+        font-size: 1.5vw;
+    }
+    .register-label{
+        font-size: 1.125vw;
+
+    }
+
+    input, select{
+        padding: 5px 10px;
+        font-size: 1.75vw;
+    }
+    .btn{
+        font-size: 1.5vw;
+        height: 80%;
+        padding: 15px 20px;
+
+    }
+
+    .no_question p{       
+        font-size: 1.5vw;
+    }
+    
+
+}
+
+@media (max-width: 840px) and (min-width: 768px){ 
+
+    .form_container{
+        width: 50%;
+    }
+
+    .form_header .login-p{
+        font-size: 4vw;
+
+    }
+
+    .form_header .register-p{
+        font-size: 3.25vw;
+
+    }
+    .login-label{
+        font-size: 1.5vw;
+    }
+    .register-label{
+        font-size: 1.25vw;
+
+    }
+
+    input, select{
+        padding: 5px 10px;
+        font-size: 1.75vw;
+    }
+    .btn{
+        font-size: 1.5vw;
+        height: 80%;
+        padding: 15px 20px;
+
+    }
+
+    .no_question p{       
+        font-size: 1.5vw;
+    }
+    
+
+}
+
+
+@media (max-width: 768px) and (min-width: 520px){ 
+
+    .form_container{
+        width: 70%;
+    }
+
+    .form_header .login-p{
+        font-size: 6vw;
+
+    }
+
+    .form_header .register-p{
+        font-size: 4.5vw;
+
+    }
+
+    .login-label{
+        font-size: 2vw;
+    }
+
+    .register-label{
+        font-size: 1.75vw;
+
+    }
+
+    input, select{
+        padding: 0 10px;
+        font-size: 2.5vw;
+    }
+    .btn{
+        font-size: 2vw;
+        height: 80%;
+        padding: 15px 20px;
+
+    }
+
+    .no_question p{       
+        font-size: 2.5vw;
+    }
+    
+    .success-msg{
+        font-size: 2.25vw;       
+    }
+
+    .error-msg{
+        font-size: 2.25vw;       
+    }
+
+}
+
+
+@media (max-width: 520px) and (min-width: 440px){ 
+
+    .form_container{
+        width: 80%;
+    }
+
+    .form_header .login-p{
+        font-size: 6vw;
+
+    }
+    
+    .form_header .register-p{
+        font-size: 5.5vw;
+
+    }
+    .login-label{
+        font-size: 2.5vw;
+    }
+
+    .register-label{
+        font-size: 2vw;
+
+    }
+
+    input, select{
+        height: 40px;
+        padding: 0 10px;
+        font-size: 3vw;
+    }
+    .btn{
+        font-size: 3vw;
+        width: 80%;
+        height: 80%;
+        padding: 15px 20px;
+
+    }
+
+    .no_question p{       
+        font-size: 2.5vw;
+    }
+    
+    .success-msg{
+        font-size: 2.5vw;       
+    }
+
+    .error-msg{
+        font-size: 2.5vw;       
+    }
+
+}
+
+@media (max-width: 440px) and (min-width: 375px){ 
+
+    .form_container{
+        width: 80%;
+    }
+    .form_header .register-p{
+        font-size: 5.75vw;
+
+    }
+
+    .form_header .login-p{
+        font-size: 8vw;
+    }
+    .login-label{
+        font-size: 3vw;
+    }
+
+    .register-label{
+        font-size: 2.25vw;
+
+    }
+
+    input, select{
+        height: 40px;
+        padding: 0 10px;
+        font-size: 3.55vw;
+    }
+    .btn{
+        font-size: 3.25vw;
+        width: 80%;
+        height: 80%;
+        padding: 15px 20px;
+
+    }
+
+    .no_question p{       
+        font-size: 3.5vw;
+    }
+    
+    .success-msg{
+        font-size: 2.5vw;       
+    }
+
+    .error-msg{
+        font-size: 2.5vw;       
+    }
+
+}
+
+@media (max-width: 375px) and (min-width: 280px){ 
+
+    .form_container{
+        width: 100%;
+        background: transparent;
+    }
+
+
+    .form_header .login-p{
+        font-size: 8vw;
+    }
+
+    .form_header .register-p{
+        font-size: 7vw;
+
+    }
+    .form{
+        grid-column: 1/4;
+        
+    }
+    .login-label{
+        font-size: 4vw;
+    }
+
+    .register-label{
+        font-size: 3vw;
+
+    }
+
+    input, select{
+        height: 40px;
+        padding: 0 10px;
+        font-size: 4vw;
+        background: transparent;
+    }
+    .btn{
+        font-size: 4.5vw;
+        width: 100%;
+        height: fit-content;
+        padding: 15px 20px;
+
+    }
+    .login_btn{
+        grid-column: 1/4;
+
+    }
+    .create-btn-container{
+        grid-column: 1/4;            
+    }
+
+    .no_question p{       
+        font-size: 5.75vw;
+    }
+
+    .success-msg{
+        font-size: 2.5vw;       
+    }
+
+    .error-msg{
+        font-size: 2.75vw;       
+    }
+    
+
+}

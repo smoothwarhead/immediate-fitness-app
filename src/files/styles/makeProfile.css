@@ -1,0 +1,703 @@
+.create_profile_page{
+    width: 100%;
+    height: 220vh;
+    display: grid;
+    grid-template-columns: 5% repeat(3, 1fr) 5%;
+    grid-template-rows: 0% auto;
+}
+
+
+/* .create-profile-success-msg{
+    text-align: center;
+} */
+
+
+.create-profile-content{
+    grid-column: 2/5;
+    grid-row: 2/3;
+    width: 100%;
+    height: 100%;
+}
+
+.create-form-profile-container{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 2% 0.3fr 2% 0.2fr 15% 1.5fr 1.2fr 1fr 0.7fr 1.5fr 0.2fr 3% 5%;
+    font-family: 'Industry';
+
+}
+
+
+
+.about_you{
+    width: 100%;
+    height: 100%;
+    grid-column: 1/4;
+    grid-row: 2/3;
+    font-size: 2.25em;
+    font-weight: 700;
+    text-align: center;
+    color: #1A272A;
+   
+}
+
+.profile_picture_text{
+    grid-column: 1/4;
+    grid-row: 4/5;
+    width: 100%;
+    height: 100%;
+    font-size: 1.25em;
+    text-align: center;
+    font-weight: 700;
+    color: #1DAE8C;
+      
+}
+.image_upload_container{
+    grid-column: 2/3;
+    grid-row: 5/6;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  
+}
+
+.check-ages{
+    grid-column: 1/4;
+    grid-row: 6/7;
+    width: 100%;
+    height: 100%;
+  
+}
+
+.check-gender{
+    grid-column: 1/4;
+    grid-row: 7/8;
+    width: 100%;
+    height: 100%;
+ 
+}
+
+.height_inputs{
+    grid-column: 1/4;
+    grid-row: 8/9;
+    width: 100%;
+    height: 100%;
+ 
+}
+
+.check-weight{
+    grid-column: 1/4;
+    grid-row: 9/10;
+    width: 100%;
+    height: 100%;
+ 
+}
+
+.section_container{
+    grid-column: 1/4;
+    grid-row: 10/11;
+    width: 100%;
+    height: 100%;
+ 
+}
+
+.section_about_container{
+    grid-column: 1/4;
+    grid-row: 7/9;
+    width: 60%;
+    height: 100%;
+}
+
+.client-create-button_container{
+    grid-column: 2/3;
+    grid-row: 12/13;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+.image_upload{
+    grid-column: 2/6;
+    grid-row: 1/7;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #789BCD;
+    border-radius: 50%;
+}
+
+.img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.camera_container{
+    width: 90%;
+    height: 80%;
+    grid-column: 5/6;
+    grid-row: 5/7;
+    background: #1A272A 0% 0% no-repeat;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 3;
+
+    
+}
+.camera_icon{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: 1;
+    
+}
+
+.camera{
+    fill: white;
+    margin: 10% 20%;
+    width: 60%;
+    height: 80%;
+}
+
+#input[type="file"]{
+    display: none;
+}
+
+
+.checkbox_container{
+    width: 60%;
+    height: 100%;
+
+}
+.checkbox_row_container{
+    width: 40%;
+    height: fit-content;
+    background: transparent linear-gradient(180deg, #D9DADC 0%, #CBD0D6 100%) 0% 0% no-repeat;
+    padding: 16px 18px;
+}
+
+.section_text{
+    font-size: 1.25em;
+    color: #1A272A;
+    margin-bottom: 10px;
+    font-weight: 500;
+    line-height: 1.75em;
+}
+
+.profile_row_title{
+    font-size: 1.25em;
+    color: #1DAE8C;
+    margin-bottom: 10px;
+    font-weight: 600;
+    line-height: 1.75em;
+}
+.profile_checkbox_row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.profile_checkbox_row_label{
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+.create-profile-input_container{
+    width: 40%;
+    
+}
+.input_row_container{
+    width: 100%;
+}
+
+.profile_input_row{
+    display: flex;
+    width: 100%;
+    height: 50px;
+
+}
+
+.profile_input{
+    width: 60%;
+    height: 100%;
+    background: transparent;
+    
+
+}
+.unit{
+    padding: 10px 5px;
+    font-size: 1.125em;
+}
+
+
+.create-profile-btn{
+    display: inline-block;
+    font-family: Aviano;
+    background: #1DAE8C 0% 0% no-repeat;
+    width: fit-content;
+    height: 40px;
+    color: #fff;
+    text-align: center;
+    padding: 10px 50px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    margin-left: 25%; 
+    border: none;
+
+}
+
+
+/* .save_profile_btn{
+    margin: 10em 0 5em 35em;
+} */
+
+/*
+
+.section_text{
+    margin: 10px 0;
+
+
+textarea{
+    background: transparent;
+    border: 1px solid #789BCD;
+    padding: 20px;
+    font-size: 1em;
+}
+
+.button_container{
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    bottom: -100%;
+    left: 0%;
+    padding: 3em 0 10em 0;
+}
+
+.client-button_container{
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    bottom: -115%;
+    left: 0%;
+    padding: 3em 0 10em 0;
+}   */
+
+
+
+
+
+
+
+/* **************** media queries *************** */
+
+@media (max-width: 1180px) and (min-width: 920px){
+    .image_upload{
+        grid-column: 1/7;
+        width: 85%;
+    }
+
+    .camera_container{
+        width: 100%;
+        height: 70%;
+    }
+}
+
+@media (max-width: 960px) and (min-width: 840px){
+  .section_text{
+    font-size: 2vw;
+  }
+  .section_about_container{
+    width: 80%;
+  }
+}
+
+
+
+@media (max-width: 920px) and (min-width: 840px){
+    .image_upload{
+        grid-column: 1/7;
+        width: 100%;
+    }
+
+    .camera_container{
+        grid-column: 6/7;
+        width: 100%;
+        height: 60%;
+    }
+
+    .create-profile-input_container{
+        width: 60%;
+        
+    }
+
+    .checkbox_row_container{
+        width: 60%;
+        
+    }
+    .create-profile-btn{
+        margin-left: 0;
+    }
+}
+
+
+@media (max-width: 840px) and (min-width: 768px){
+    .image_upload{
+        grid-column: 1/7;
+        width: 100%;
+    }
+
+    .camera_container{
+        grid-column: 6/7;
+        width: 100%;
+        height: 60%;
+    }
+
+    .create-profile-input_container{
+        width: 60%;
+        
+    }
+
+    .checkbox_row_container{
+        width: 60%;
+        
+    }
+
+    .section_text{
+        font-size: 2.25vw;
+      }
+      .section_about_container{
+        width: 80%;
+      }
+    .create-profile-btn{
+        margin-left: 0;
+    }
+}
+
+
+@media (max-width: 768px) and (min-width: 640px){
+    .image_upload{
+        grid-column: 1/7;
+        width: 100%;
+    }
+
+    .camera_container{
+        grid-column: 6/7;
+        width: 100%;
+        height: 60%;
+    }
+
+    .create-profile-input_container{
+        width: 60%;
+        
+    }
+
+    .checkbox_row_container{
+        width: 60%;
+        
+    }
+
+    .section_text{
+        font-size: 2.75vw;
+      }
+      .section_about_container{
+        width: 80%;
+      }
+
+    .client-create-button_container{
+        grid-column: 1/4;
+        grid-row: 12/13;
+        width: 100%;
+        height: 100%;
+       
+    }
+    .create-profile-btn{
+        width: 50%;
+        margin-left: 25%;
+    }
+
+    
+}
+
+@media (max-width: 640px) and (min-width: 520px){
+    .about_you{
+        font-size: 6vw;
+    }
+
+    .profile_picture_text{
+        font-size: 3.5vw;
+    }
+    .image_upload_container{
+        grid-column: 1/4;
+        width: 80%;
+        margin: auto;
+    }
+
+    .image_upload{
+        grid-column: 2/6;
+        width: 100%;
+    }
+
+    .camera_container{
+        grid-column: 5/6;
+        width: 90%;
+        height: 70%;
+    }
+
+    .profile_row_title{
+        font-size: 3.25vw;
+    
+    }
+    .create-profile-input_container{
+        width: 60%;
+        
+    }
+
+    .checkbox_row_container{
+        width: 100%;
+        
+    }
+
+    .section_text{
+        font-size: 2.75vw;
+      }
+      .section_about_container{
+        width: 85%;
+      }
+
+    .create-profile-input_container{
+        width: 80%;
+        
+    }
+
+    .client-create-button_container{
+        grid-column: 1/4;
+        grid-row: 12/13;
+        width: 100%;
+        height: 100%;
+      
+    }
+    .create-profile-btn{
+        width: 50%;
+        margin-left: 25%;
+    }
+
+    
+}
+
+
+@media (max-width: 520px) and (min-width: 440px){
+    .about_you{
+        font-size: 6vw;
+    }
+
+    .profile_picture_text{
+        font-size: 3.75vw;
+    }
+    .image_upload_container{
+        grid-column: 1/4;
+        width: 80%;
+        margin: auto;
+    }
+
+    .image_upload{
+        grid-column: 2/6;
+        width: 100%;
+    }
+
+    .camera_container{
+        grid-column: 5/6;
+        width: 90%;
+        height: 70%;
+    }
+
+    .profile_row_title{
+        font-size: 3.5vw;
+    
+    }
+    .create-profile-input_container{
+        width: 60%;
+        
+    }
+
+    .checkbox_row_container{
+        width: 100%;
+        
+    }
+
+    .section_text{
+        font-size: 3vw;
+      }
+      .section_about_container{
+        width: 90%;
+      }
+
+    .create-profile-input_container{
+        width: 90%;
+        
+    }
+
+    .client-create-button_container{
+        grid-column: 1/4;
+        grid-row: 12/13;
+        width: 100%;
+        height: 100%;
+      
+    }
+    .create-profile-btn{
+        width: 60%;
+        margin-left: 20%;
+    }
+
+    
+}
+
+@media (max-width: 440px) and (min-width: 375px){
+    .about_you{
+        font-size: 7vw;
+    }
+
+    .profile_picture_text{
+        font-size: 4.5vw;
+    }
+    .image_upload_container{
+        grid-column: 1/4;
+        width: 100%;
+        
+    }
+
+    .image_upload{
+        grid-column: 2/6;
+        width: 100%;
+    }
+
+    .camera_container{
+        grid-column: 5/6;
+        width: 90%;
+        height: 70%;
+    }
+
+    .profile_row_title{
+        font-size: 4.5vw;
+    
+    }
+    .create-profile-input_container{
+        width: 60%;
+        
+    }
+    .checkbox_container{
+        width: 80%;
+    }
+
+    .checkbox_row_container{
+        width: 100%;
+        
+    }
+
+    .create-profile-input_container{
+        width: 100%;
+        
+    }
+    .profile_input{
+        width: 75%;
+    }
+    .section_text{
+        font-size: 3.375vw;
+      }
+      .section_about_container{
+        width: 100%;
+      }
+
+    .client-create-button_container{
+        grid-column: 1/4;
+        grid-row: 12/13;
+        width: 100%;
+        height: 100%;
+        
+    }
+    .create-profile-btn{
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    
+}
+
+
+@media (max-width: 375px) and (min-width: 280px){
+    .about_you{
+        font-size: 8vw;
+    }
+
+    .profile_picture_text{
+        font-size: 5vw;
+    }
+    .image_upload_container{
+        grid-column: 1/4;
+        width: 100%;
+        
+    }
+
+    .image_upload{
+        grid-column: 1/7;
+        width: 100%;
+    }
+
+    .camera_container{
+        grid-column: 6/7;
+        width: 90%;
+        height: 60%;
+    }
+
+    .profile_row_title{
+        font-size: 5vw;
+    
+    }
+
+    .create-profile-input_container{
+        width: 70%;
+        
+    }
+    .checkbox_container{
+        width: 100%;
+    }
+
+    .checkbox_row_container{
+        width: 100%;
+        
+    }
+
+    .create-profile-input_container{
+        width: 100%;
+        
+    }
+    .profile_input{
+        width: 100%;
+    }
+
+    .section_text{
+        font-size: 3.375vw;
+      }
+      .section_about_container{
+        width: 100%;
+      }
+
+    .client-create-button_container{
+        grid-column: 1/4;
+        grid-row: 12/13;
+        width: 100%;
+        height: 100%;
+       
+    }
+    .create-profile-btn{
+        width: 100%;
+        margin-left: 0;
+    }
+
+    
+}

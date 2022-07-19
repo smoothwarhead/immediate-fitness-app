@@ -1,0 +1,322 @@
+
+
+.user-menu-page{
+    display: none;
+    position: absolute;    
+    width: 55%;
+    height: 85%;
+    background: #1A272A;
+    z-index: 20;
+    font-family: 'Industry';
+}
+
+.menu-page{
+    display: none;
+    position: absolute;
+    top: 12%;
+    right: 0;
+    width: 55%;
+    height: 90%;
+    background: #1A272A;
+    z-index: 20;
+    font-family: 'Industry';
+
+}
+
+.user-mobile{
+
+    width: 60%;
+    height: 60%;
+    margin: 120px auto;
+    padding: 20px;
+    color: #fff;
+    font-size: 1.375em;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr;
+}
+
+.profile-mobile{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 100%;
+    height: 100%;
+   
+}
+
+.profile-mobile-links{
+    width: 100%;
+    height: fit-content;
+    padding: 20px 20px;
+    text-align: center;
+    margin-top: 10px;
+    transition: all 0.7s ease-in-out;
+}
+
+.profile-mobile-links:hover{
+    background: #1DAE8C;
+    color: #fff;
+}
+
+.profile-mobile a{
+    text-decoration: none;
+    color: #fff;
+
+}
+
+.profile-mobile-logout{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    width: 100%;
+    height: fit-content;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: all 0.7s ease-in-out;
+
+}
+.profile-logout{
+    text-align: center;
+
+}
+.profile-mobile-logout:hover{
+    background: #1DAE8C;
+    color: #fff;
+}
+
+.mobile-logout{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 100%;
+    height: fit-content;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: all 0.7s ease-in-out;
+}
+
+.no-profile-logout{
+    text-align: center;
+    
+}
+
+.mobile-logout:hover{
+    background: #1DAE8C;
+    color: #fff;
+}
+
+.no-user-mobile{
+
+    width: 60%;
+    height: 60%;
+    margin: 120px auto;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+        
+}
+
+.mobile-nav-elements ul li{
+    list-style: none;
+    color: #fff;
+    width: 100%;
+    height: fit-content;
+    padding: 10px 20px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.25em;
+    cursor: pointer;
+    transition: all 0.7s ease-in-out;
+}
+
+.mobile-nav-elements ul li:hover{
+    background: #1DAE8C;
+    color: #fff;
+}
+
+.mobile-nav-elements a{
+    text-decoration: none;
+}
+
+@media (max-width: 1180px) and (min-width: 0px){
+    .user-menu-page{
+        display: block;
+        /* top: 10%;
+        right: 0; */
+    }
+
+    .menu-page{
+        display: block;
+        /* top: 9%;
+        right: 0; */
+    }
+}
+
+
+@media (max-width: 1180px) and (min-width: 960px){
+
+    /* .user-menu-page{
+        top: 15%;
+        
+    }
+    
+    .menu-page{
+   
+        top: 9%;
+        
+    } */
+    
+    .mobile-nav-elements ul li{
+       
+        font-size: 2.75vw;
+        margin-top: 10px;
+ 
+    }
+
+
+}
+
+
+
+@media (max-width: 960px) and (min-width: 769px){
+
+    /* .user-menu-page{
+        top: 10%;
+        width: 80%;
+        
+    }
+    
+    .menu-page{   
+        top: 10%;
+        width: 80%;
+
+        
+    } */
+
+    .no-user-mobile{
+        width: 80%;
+    }
+
+    .mobile-nav-elements ul li{
+       
+        font-size: 4vw;
+ 
+    }
+
+
+}
+
+@media (max-width: 769px) and (min-width: 520px){
+
+    .user-menu-page{
+        width: 80%;
+        
+    }
+    
+    .menu-page{   
+        width: 80%;
+        
+    }
+    
+    .no-user-mobile{
+        width: 80%;
+    }
+
+    .mobile-nav-elements ul li{
+       
+        font-size: 4.5vw;
+ 
+    }
+
+
+}
+
+@media (max-width: 520px) and (min-width: 440px){
+    
+    .user-menu-page{
+        width: 80%;
+
+    }
+    
+    .menu-page{   
+        width: 80%; 
+    }
+    
+    
+    .no-user-mobile{
+        width: 80%;
+    }
+
+    .mobile-nav-elements ul li{
+       
+        font-size: 3.5vw;
+        margin-top: 10px;
+ 
+    }
+
+
+}
+
+@media (max-width: 440px) and (min-width: 376px){
+
+    .user-menu-page{
+        width: 80%;
+  
+    }
+    
+    .menu-page{   
+        width: 100%;
+  
+    }
+
+    .no-user-mobile{
+        width: 80%;
+    }
+
+
+    .mobile-nav-elements ul li{
+       
+        font-size: 4vw;
+        margin-top: 10px;
+ 
+    }
+
+
+}
+
+@media (max-width: 376px) and (min-width: 280px){
+
+    .user-menu-page{
+        width: 80%;
+      
+    }
+    
+    .menu-page{   
+        width: 100%;
+   
+    }
+
+    .user-mobile{
+        width: 100%;
+        
+    }
+
+    .no-user-mobile{
+        width: 100%;
+        border: 1px solid white;
+    }
+
+
+    .mobile-nav-elements ul li{
+       
+        font-size: 4vw;
+        margin-top: 10px;
+ 
+    }
+
+}
+
+
+
+
+
+

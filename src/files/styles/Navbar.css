@@ -1,0 +1,126 @@
+.navbar{
+    width: 100%;
+    height: 100%;
+    background: #E4E4E4 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 5px #1DAE8C;
+}
+.navbar ul {
+    width: 100%;
+    list-style: none;
+}
+.navbar ul a{
+    text-decoration: none;
+}
+
+.navbar ul a li{
+    background: #E4E4E4 0% 0% no-repeat;
+    box-shadow: 0px 3px 6px #00000029;
+    width: 100%;
+    height: 8.31vh;
+    font-size: 0.875em;
+    text-align: center;
+    font-family: 'Aviano';
+    padding: 20px 12px;
+    color: #1A272A;
+    font-weight: 600;
+    line-height: 1.25em;
+}
+
+.navbar ul a li:hover{
+    background: #85E1CB;
+}
+
+
+
+/* media queries */
+
+
+
+@media (max-width: 960px) and (min-width: 768px) {
+    
+    .navbar{
+        width: 90%;
+        margin: auto;
+    }
+
+
+    .navbar ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar ul a li{
+        width: fit-content;
+        height: 100%;
+        padding: 15px 30px;
+    }
+
+}
+
+
+@media (max-width: 768px) and (min-width: 440px) {
+    
+    .navbar{
+        width: 100%;
+        margin: auto;
+    }
+
+
+    .navbar ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar ul a li{
+        width: fit-content;
+        height: 100%;
+        padding: 10px 20px;
+        
+    }
+
+}
+
+@media (max-width: 440px) and (min-width: 0px){
+
+    .navbar{
+        width: 100%;
+        margin: 0;
+    }
+
+
+    .navbar ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar ul a li{
+        width: fit-content;
+        height: 100%;
+        padding: 10px 15px;
+        font-size: 3vw;
+        
+    }
+}
+
+@media (max-width: 375px) and (min-width: 280px){
+
+    .navbar{
+        width: 100%;
+        margin: 0;
+    }
+
+
+    .navbar ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar ul a li{
+        width: fit-content;
+        height: 100%;
+        padding: 10px 12px;
+        font-size: 3vw;
+        
+    }
+}
+

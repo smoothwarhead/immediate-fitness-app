@@ -1,0 +1,89 @@
+.App{
+  width: 100%;
+}
+
+.equipment_input{
+  margin-bottom: 10px;
+  width: 490px;
+  background: transparent;
+  display: block;
+}
+.equipment_input::placeholder{
+  font-family: 'Industry';
+  font-size: 0.875em;
+}
+
+/* 
+.flat_btn{
+  font-family: Aviano;
+  background: #1DAE8C 0% 0% no-repeat;
+  width: fit-content;
+  height: 40px;
+  color: #fff;
+  text-align: center;
+  padding: 10px 50px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+} */
+
+.flat_btn:hover{
+  background: #01362a;
+}
+
+
+.test-btn{
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px 20px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.message-box{
+  width: 60%;
+  height: 10%;
+  color: #01362a;
+  font-size: 1.2em;
+  position: fixed;
+  left: 20%;
+  top: 0%;
+  transform: translate(0%, 0%);
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  font-family: 'Industry';
+}
+
+.message-box.success-message-container{  
+  background: #AFD8CE;
+  color: #0B8266;
+
+}
+
+.message-body{
+  width: 70%;
+  padding: 10px;
+  
+}
+
+.message-close{
+  width: 2%;
+  height: fit-content;
+  cursor: pointer;
+}
+
+.success-message-close-icon{
+  fill: #0B8266;
+  
+}
+.error-message-close-icon{
+  fill: #E10321;
+  font-size: 1vw;
+}
+
+.message-box.error-message-container{
+  background: #F3DBDC;
+  color: #E10321;
+}

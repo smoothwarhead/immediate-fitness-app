@@ -1,0 +1,39 @@
+.pagination-container{
+    width: 325px;
+    height: fit-content;
+    margin: 3em auto;
+    font-family: "Industry";
+    padding: 15px 0;
+}
+
+.pagination-btns{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.pagination-btns a{
+
+    padding: 10px 15px;
+    margin: 0 8px;
+    color: #2B4264;
+    font-size: 20px;
+    font-weight: 400;
+    border: 1px solid #2B4264;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+}
+
+
+.pagination-btns a:hover{
+    background: #2B4264;
+    color: #ffffff;
+    transition: all ease-in-out 0.5s;
+
+}
+
+.pagination-active a{
+    background: #2B4264;
+    color: #ffffff;
+}
+

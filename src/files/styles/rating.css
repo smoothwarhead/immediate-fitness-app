@@ -1,0 +1,94 @@
+.trainer-modal-header{
+    margin-bottom: 40px;
+}
+
+.rating-modal-return{
+    width: fit-content;
+    
+}
+
+
+.rating-modal-body{
+    margin: 20px 0;
+}
+
+.rating-first-question{
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    color: #1DAE8C;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.modal-rating{
+    width: fit-content;
+    margin: auto;
+}
+
+.rating-radio{
+    display: none;
+}
+
+.fa-star{
+    font-size: 2.25em;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+
+}
+
+.modal-rating-remark{
+    width: fit-content;
+    margin: 15px auto;
+    font-weight: 500;
+}
+
+.rating-second-question{
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    color: #789BCD;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.modal-rating-text{
+    display: block;
+}
+.modal-rating-text.in-active{
+    display: none;
+}
+
+.modal-rating-text textarea{
+    width: 100%;
+    border: 1px solid #789BCD;
+}
+
+
+
+.rating-modal-footer{
+    width: 100%;
+}
+
+.modal-rating-btn{
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+    padding: 10px 30px;
+    background: #2B4264;
+    color: #ffffff;
+    margin: 20px auto;
+    border: none;
+    outline: none;
+    transition: all 0.5s ease-in-out;
+}
+
+.modal-rating-btn:hover{
+    background: transparent;
+    color: #2B4264;
+    border: 1px solid #789BCD;
+    cursor: pointer;
+}
+

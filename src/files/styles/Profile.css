@@ -1,0 +1,525 @@
+
+.profile-container{    
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+   
+}
+
+.profile-content{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 25% 8% auto;
+}
+
+.profile-banner{
+    grid-column: 1/6;
+    grid-row: 1/2;
+    width: 100%;
+    height: 100%;
+   
+}
+
+.profile-sub-banner{
+    grid-column: 1/6;
+    grid-row: 2/3;
+    width: 100%;
+    height: 100%;
+ 
+}
+
+
+.option-container{
+    width: 100%;
+    height: 100%;
+    grid-column: 2/5;
+    grid-row: 2/3;
+    font-family: 'Industry';
+    padding: 50px 20px;
+  
+}
+.option-container h3{
+    font-size: 2.25vw;
+    font-weight: 500;
+    text-align: center;
+
+}
+
+.option-container h2{
+    font-size: 1.5vw;
+    font-weight: 100;
+    text-align: center;
+    margin: 40px 0;
+}
+.selections{
+    margin: auto;
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.btn_select{
+    font-size: 1em;
+    font-weight: 500;
+    font-family: 'Aviano';
+    text-transform: uppercase;
+    width: fit-content;
+    height: fit-content;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.selections a{
+    text-decoration: none;
+}
+.yes{
+    background: #1DAE8C;
+    
+}
+.no{
+    background:#E10321;
+}
+
+.profile_info{
+    grid-column: 1/6;
+    grid-row: 3/5;
+    width: 100%;
+    height: 100%;
+    padding: 20px 5%;
+    font-family: 'Industry';
+    
+}
+
+.profile_section{
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.profile_section_title{
+    font-size: 1.5vw;
+    font-weight: 500;
+    margin-bottom: 5px;
+
+}
+
+.profile_section .about_me_para{
+    font-size: 1vw;
+        
+}
+
+.dim_para{
+    font-size: 1em;
+}
+.specs_container{
+    display: flex;
+    width: 60%;
+    flex-wrap: wrap;
+   
+}
+
+.specs{
+    background: #c073f3 0% 0% no-repeat;
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+    color: #ffffff;
+    margin: 0 10px 10px 0;
+    padding: 10px 30px;
+    border-radius: 15px;
+    font-size: 1.125vw;
+    color: #2b0246;
+    font-weight: 500;
+
+}
+
+.offer_container{
+    width: 100%;
+}
+
+.no-offer{
+    font-size: 1vw;
+}
+
+.my_classes{
+    background: transparent linear-gradient(180deg, #789BCD 0%, #CBD0D6 100%) 0% 0% no-repeat;
+    width: 100%;
+    height: 80px;
+    margin-bottom: 5px;
+    font-size: 1.275em;
+    padding: 25px 20px;
+    font-weight: 500;
+}
+
+@media (max-width: 1180px) and (min-width: 1120px){
+    
+    .profile_section_title{
+        font-size: 2.25vw;
+            
+    }
+
+    .profile_section .about_me_para{
+        font-size: 1.5vw;
+            
+    }
+
+    .specs{
+        font-size: 1.5vw;
+        
+    }
+
+    .no-offer{
+        font-size: 1.5vw;
+    }
+
+    .option-container h3{
+        font-size: 3vw;
+        
+    
+    }
+    
+    .option-container h2{
+        font-size: 2vw;
+        
+    }
+
+    .selections{
+        width: 30%;
+        
+    }
+
+    .btn_select{
+        font-size: 1.25vw;
+    }
+
+
+
+}
+
+
+@media (max-width: 1120px) and (min-width: 960px){
+    
+    .profile_section_title{
+        font-size: 2.25vw;
+            
+    }
+
+    .profile_section .about_me_para{
+        font-size: 1.5vw;
+            
+    }
+
+    .specs{
+        font-size: 1.5vw;
+        
+    }
+
+    .no-offer{
+        font-size: 1.5vw;
+    }
+
+    .option-container h3{
+        font-size: 3.5vw;
+        
+    }
+    
+    .option-container h2{
+        font-size: 2.5vw;
+        
+    }
+
+    .selections{
+        width: 35%;
+        
+    }
+
+    .btn_select{
+        font-size: 1.5vw;
+    }
+
+
+}
+
+
+@media (max-width: 960px) and (min-width: 840px){
+    
+    .profile_section_title{
+        font-size: 2.25vw;
+            
+    }
+
+    .profile_section .about_me_para{
+        font-size: 1.75vw;
+            
+    }
+
+    .specs{
+        font-size: 1.75vw;
+        
+    }
+
+    .no-offer{
+        font-size: 1.75vw;
+    }
+    .option-container h3{
+        font-size: 4vw;
+        
+    }
+    
+    .option-container h2{
+        font-size: 2.5vw;
+        
+    }
+
+    .selections{
+        width: 40%;
+        
+    }
+
+    .btn_select{
+        font-size: 2vw;
+    }
+
+
+
+}
+
+@media (max-width: 840px) and (min-width: 768px){
+    
+    .profile_section_title{
+        font-size: 2.25vw;
+            
+    }
+
+    .profile_section .about_me_para{
+        font-size: 1.75vw;
+            
+    }
+
+    .specs{
+        font-size: 1.75vw;
+        
+    }
+
+    .no-offer{
+        font-size: 1.75vw;
+    }
+
+    .option-container h3{
+        font-size: 4vw;
+        
+    }
+    
+    .option-container h2{
+        font-size: 2.5vw;
+        
+    }
+
+    .selections{
+        width: 50%;
+        
+    }
+
+    .btn_select{
+        font-size: 2.5vw;
+    }
+
+
+
+}
+
+@media (max-width: 768px) and (min-width: 520px){
+    
+    .profile_section_title{
+        font-size: 3.5vw;
+            
+    }
+
+    .profile_section .about_me_para{
+        font-size: 2.25vw;            
+    }
+
+    .specs_container{
+        width: 100%;
+    }
+
+    .specs{
+        font-size: 2.75vw;
+        
+    }
+
+    .no-offer{
+        font-size: 2.25vw;
+    }
+
+    .option-container h3{
+        font-size: 5vw;
+        
+    }
+    
+    .option-container h2{
+        font-size: 3.25vw;
+        margin: 30px 0 40px 0;
+        
+    }
+
+    .selections{
+        width: 70%;
+        
+    }
+
+    .btn_select{
+        font-size: 3vw;
+    }
+
+
+
+}
+
+@media (max-width: 520px) and (min-width: 440px){
+    
+    .profile_section_title{
+        font-size: 4vw;
+            
+    }
+
+    .profile_section .about_me_para{
+        font-size: 2.75vw;            
+    }
+
+    .specs_container{
+        width: 100%;
+    }
+
+    .specs{
+        font-size: 3.25vw;
+        
+    }
+
+    .no-offer{
+        font-size: 2.75vw;
+    }
+
+    .option-container h3{
+        font-size: 6vw;
+        
+    }
+    
+    .option-container h2{
+        font-size: 3.5vw;
+        margin: 20px 0 30px 0;
+        
+    }
+
+    .selections{
+        width: 70%;
+        
+    }
+
+    .btn_select{
+        font-size: 3vw;
+    }
+
+
+
+}
+
+@media (max-width: 440px) and (min-width: 375px){
+    
+    .profile_section_title{
+        font-size: 4.5vw;
+            
+    }
+
+    .profile_section .about_me_para{
+        font-size: 3vw;            
+    }
+
+    .specs_container{
+        width: 100%;
+    }
+
+    .specs{
+        font-size: 3.5vw;
+        
+    }
+
+    .no-offer{
+        font-size: 3vw;
+    }
+
+    .option-container h3{
+        font-size: 6vw;
+        
+    }
+    
+    .option-container h2{
+        font-size: 3.5vw;
+        margin: 20px 0 30px 0;
+        
+    }
+
+    .selections{
+        width: 70%;
+        
+    }
+
+    .btn_select{
+        font-size: 3vw;
+    }
+
+
+
+}
+
+@media (max-width: 375px) and (min-width: 280px){
+    
+    .profile_section_title{
+        font-size: 5vw;
+            
+    }
+
+    .profile_section .about_me_para{
+        font-size: 3.5vw;            
+    }
+
+    .specs_container{
+        width: 100%;
+    }
+
+    .specs{
+        font-size: 3.75vw;
+        
+    }
+
+    .no-offer{
+        font-size: 3.5vw;
+    }
+
+    .option-container h3{
+        font-size: 6vw;
+        
+    }
+    
+    .option-container h2{
+        font-size: 4vw;
+        margin: 20px 0 30px 0;
+        
+    }
+
+    .selections{
+        width: 70%;
+        
+    }
+
+    .btn_select{
+        font-size: 3vw;
+    }
+
+
+}

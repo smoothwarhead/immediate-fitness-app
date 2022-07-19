@@ -1,0 +1,114 @@
+.class_all_classes_container{
+    grid-column: 1/6;
+    grid-row: 6/7;
+
+}
+
+
+
+.class_list_title{
+    font-family: 'Aviano';
+    color: #6E6F72;
+    font-size: 20px;
+}
+
+
+/* .left_add_class_btn{    
+    margin: 100px 0 100px 0;
+} */
+
+
+.classes-error-msg{
+    grid-column: 1/6;
+    grid-row: 1/2;
+    text-align: center;
+    font-size: 1.2em;
+    font-family: 'Industry';
+    font-weight: 500;
+}
+
+.data-loading{
+    grid-column: 3/4;
+    grid-row: 4/5;
+    
+}
+
+.create-a-new-class-btn-left{
+    grid-column: 1/3;
+    grid-row: 2/3;
+}
+
+.create-a-new-class-btn-left a{
+    text-decoration: none;
+}
+
+.list-of-all-classes{
+    grid-column: 1/6;
+    grid-row: 4/5;
+      
+}
+
+.client_class_all_classes_container{
+    grid-column: 1/6;
+    grid-row: 5/7;
+}
+
+.no-class{
+    font-size: 1em;
+    text-align: center;
+    font-family: 'Industry';
+}
+
+@media (max-width: 700px) and (min-width: 520px){
+
+    .create-a-new-class-btn-left{
+        grid-column: 1/4;
+        grid-row: 2/3;
+    }
+
+    .no-class{
+        font-size: 2.75vw;
+        
+    }
+
+}
+
+@media (max-width: 520px) and (min-width: 440px){
+
+    .create-a-new-class-btn-left{
+        grid-column: 1/4;
+        grid-row: 2/3;
+    }
+    .no-class{
+        font-size: 4vw;
+        
+    }
+
+}
+
+@media (max-width: 440px) and (min-width: 375px){
+
+    .create-a-new-class-btn-left{
+        grid-column: 1/6;
+        grid-row: 2/3;
+    }
+    .no-class{
+        font-size: 4vw;
+        
+    }
+
+}
+
+
+@media (max-width: 375px) and (min-width: 280px){
+
+    .create-a-new-class-btn-left{
+        grid-column: 1/6;
+        grid-row: 2/3;
+    }
+    .no-class{
+        font-size: 4.5vw;
+        
+    }
+
+}

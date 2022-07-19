@@ -1,0 +1,365 @@
+.background{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-rows: 10% auto;
+
+  }
+
+
+   
+  .background img{
+    grid-column: 1/4;
+    grid-row: 1/3;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+  }
+
+  .user-header{
+    grid-column: 1/4;
+    grid-row: 1/2;
+    width: 100%;
+    height: 100%;
+   
+  }
+
+  .no-user-header{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    width: 100%;
+    height: 100%;
+
+  }
+
+  .close-menu.home-menu-icon, .open-menu.home-menu-icon{
+
+    fill: #F7DD95;
+
+    
+  }
+
+
+ 
+ .content{
+
+    grid-column: 2/3;
+    grid-row: 2/3;
+    width: 100%;
+    height: 100%;
+      
+  }
+
+
+
+  
+  .landing_page_navbar{
+    width: 100%;
+    height: 10vh;
+    margin: 40px auto 0;
+    
+  }
+
+  .no-dashboard-navbar-homepage{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+  }
+
+  .no-dashboard-navbar{
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    
+  }
+
+
+  
+
+  .homepage-logo{
+    width: 100%;
+    fill: #F7DD95;
+    font-weight: 600;
+
+  }
+  .nav-elements{
+    margin-top: 2%;
+    font-family: 'Aviano';
+    color: #F7DD95;
+  
+  }
+
+  .nav-elements.none{
+    display: none;
+  }
+  
+  .nav-elements ul{
+    display: flex;
+    list-style: none;
+  }
+  .nav-elements ul a  {
+    text-decoration: none;
+    color: #F7DD95;
+
+  }
+
+  .nav-elements ul li{
+    margin-left: 25px;
+    font-size: 1em;
+    line-height: 24px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .welcome-msg{
+    font-size: 2em;
+    font-family: 'Industry';
+    color: #fff;
+    margin: 10%;
+    text-align: center;
+
+  }
+
+  .content-btns{
+    float: right;
+    margin-top: 180px;
+
+  }
+
+  .train-btn{
+      font-family: 'Aviano';
+      font-size: 1.5em;
+      line-height: 24px;
+      text-align: center;
+      width: fit-content;
+      height: fit-content;
+      padding: 8px 20px;
+      display: block;
+      border: 1px solid #F7DD95;
+      cursor: pointer;
+  }
+  .trainee{
+      background: #F7DD95;
+  }
+  .trainer{
+      margin-top: 40px;
+      color: #F7DD95;
+  }
+  .content-btns a{
+    text-decoration: none;
+    color: #1a272a;
+  }
+
+  .not_found_container{
+    width: 80%;
+    height: 60vh;
+    padding: 20px;
+    margin: 50px auto;
+  
+  }
+
+  .code_404{
+    font-family: 'Aviano';
+    font-size: 5.1em;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .not_found{
+    font-family: 'Industry';
+    font-size: 2.25em;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .return-btn{
+    width: 25%;
+    height: 50px;
+    margin: auto;
+  }
+
+  .return-btn a{
+    text-decoration: none;
+    
+  }
+
+  .return-btn a:hover{
+    background: #021c3f;
+
+  }
+  
+  .back_home{
+    font-family: 'Industry';
+    color: #ffffff;
+    background: #789BCD;
+    width: fit-content;
+    height: 100%;
+    margin: auto;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.25vw;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+  } 
+
+  .back_home:hover{
+    background: #021c3f;
+
+  }
+
+
+
+
+
+  /* ----------------media queries-------------------------------------- */
+
+  /* media queries 1180px and 960px */
+
+
+  @media (max-width: 1180px) and (min-width: 0px){
+
+
+    .nav-elements{
+      display: none;
+    }
+
+
+    .home-menu-icon{
+
+      margin-top: 0;
+      
+    }
+
+
+  }
+
+  @media (max-width: 1180px) and (min-width: 480px){
+
+    .welcome-msg{
+      font-size: 1.75em;
+
+    }
+
+  }
+
+
+  @media (max-width: 1120px) and (min-width: 840px){
+
+
+    .code_404{
+      font-size: 3.75em;     
+    }
+
+    .not_found{
+      font-size: 1.5em;
+    }
+
+    .return-btn{
+      width: 35%;
+    }
+
+    .back_home{
+      font-size: 2vw;
+    }
+
+
+  }
+
+
+  
+  @media (max-width: 840px) and (min-width: 600px){
+
+
+    .code_404{
+      font-size: 7vw;     
+    }
+
+    .not_found{
+      font-size: 3vw;
+    }
+
+    .return-btn{
+      width: 50%;
+    }
+
+    .back_home{
+      font-size: 2.5vw;
+    }
+
+
+  }
+
+
+  @media (max-width: 600px) and (min-width: 440px){
+
+
+    .code_404{
+      font-size: 7vw;     
+    }
+
+    .not_found{
+      font-size: 3vw;
+    }
+
+    .return-btn{
+      width: 50%;
+    }
+
+    .back_home{
+      font-size: 2.75vw;
+    }
+
+
+  }
+
+  @media (max-width: 440px) and (min-width: 280px){
+
+
+    .code_404{
+      font-size: 7vw;     
+    }
+
+    .not_found{
+      font-size: 4vw;
+    }
+
+    .return-btn{
+      width: 70%;
+      height: 40px;
+    }
+
+    .back_home{
+      font-size: 3.25vw;
+
+    }
+
+
+  }
+
+
+  
+
+
+  @media (max-width: 480px) and (min-width: 0px){
+
+    .welcome-msg{
+      font-size: 5.5vw;
+      margin-top: 20%;
+
+    }
+
+   
+  }
+
+
+
+ 
