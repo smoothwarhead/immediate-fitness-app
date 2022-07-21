@@ -16,6 +16,7 @@ const MobileMenu = ({ isProfile, handleClick }) => {
     const [openMenu, setOpenMenu] = useState(false);
 
     const openAccount= () => {
+        // console.log(openMenu);
         setOpenMenu(!openMenu);
     }
 
@@ -73,11 +74,11 @@ const MobileMenu = ({ isProfile, handleClick }) => {
 
 
             }
-        {openMenu && <MobileSignUpDropdown />}
             
 
         </div>
 
+        {openMenu && <MobileSignUpDropdown openAccount={openAccount} />}
     
     </>
   )

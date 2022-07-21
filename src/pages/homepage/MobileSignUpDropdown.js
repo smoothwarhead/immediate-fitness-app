@@ -1,14 +1,21 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const MobileSignUpDropdown = () => {
+const MobileSignUpDropdown = ({openAccount}) => {
 
     const [click, setClick] = useState(false);
+    // const [openMenu, setOpenMenu] = useState(true);
+
+    // const openAccount= () => {
+    //     setOpenMenu(false);
+    // }
 
   return (
     <>
-        <div className={click ? "mobile-dropdown-page clicked" : "mobile-dropdown-page"}>
+       <div className={click ? "mobile-dropdown-page clicked" : "mobile-dropdown-page"}>
             <div className="mobile-dropdown-content">
+
+                <div className="close-menu-down" onClick={() => openAccount()}>close</div>
                
                 <div className="mobile-signup-items mobile-signup-client">
                     <Link to="/signup-as-a-client" className="signup_client_items" onClick = {()=> setClick(false)}>

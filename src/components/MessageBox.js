@@ -1,4 +1,3 @@
-import React from 'react'
 import CloseMenuIcon from './menu/CloseMenuIcon'
 
 const MessageBox = ({message, closeMessage}) => {
