@@ -52,7 +52,7 @@ const NoUserHeader = ({ handleClick, cName }) => {
 
         </div>
 
-        { openMenu && <MobileMenu openAccount={handleClick} /> }
+        { openMenu && <MobileMenu handleClick={handleClick} /> }
 
     
     </>

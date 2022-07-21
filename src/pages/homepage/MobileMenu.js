@@ -1,15 +1,25 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import UserContext from '../../context/UserContext';
 import useAuth from '../../context/useAuth';
 import '../../files/styles/mobile-menu.css';
 import { Link } from 'react-router-dom';
+import MobileSignUpDropdown from './MobileSignUpDropdown';
 
 
 
-const MobileMenu = ({ isProfile, openAccount }) => {
+const MobileMenu = ({ isProfile, handleClick }) => {
 
     const { user } = useContext(UserContext);
     const { logoutUser } = useAuth();
+
+
+    const [openMenu, setOpenMenu] = useState(false);
+
+    const openAccount= () => {
+        setOpenMenu(!openMenu);
+    }
+
+
    
   return (
     <>
@@ -63,9 +73,11 @@ const MobileMenu = ({ isProfile, openAccount }) => {
 
 
             }
+        {openMenu && <MobileSignUpDropdown />}
             
 
         </div>
+
     
     </>
   )

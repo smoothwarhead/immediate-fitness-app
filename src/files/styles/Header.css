@@ -30,11 +30,12 @@
 
 .mobile-header-elements{
     display: none;
-    width: 40px;
-    height: 40px;
     margin-top: 3%;
     cursor: pointer;
     transition: all 2s ease-in-out;
+    width: 40px;
+    height: 25px;   
+    z-index: 5;
  
 }
 
@@ -44,8 +45,7 @@
 }
 
 
-.header_elements{
-    
+.header_elements{    
     width: 70%;
     height: fit-content;
     display: flex;
@@ -53,6 +53,7 @@
     margin-top: 1%;
     padding: 10px 0 5px 10em;
     font-size: 1.125em;
+
 
 }
 
@@ -126,24 +127,14 @@
 
     .mobile-header-elements{
         display: block;
-        
-
+                       
     }
     
-
-
-
-
   }
 
 
   @media (max-width: 1180px) and (min-width: 1120px){
 
-/* 
-    .logo-container{
-        width: 28%; 
-              
-    }   */
 
     .open-menu{
         width: 100%;
@@ -154,8 +145,7 @@
         width: 55%;
     }
 
-
-
+    
 
 
   }
@@ -163,11 +153,6 @@
   @media (max-width: 1120px) and (min-width: 960px){
 
 
-    /* .logo-container{
-        width: 30%; 
-        margin-top: 1.5%;
-              
-    }   */
 
     .open-menu{
         width: 100%;
@@ -178,9 +163,7 @@
         width: 55%;
     }
 
-
-
-
+    
 
   }
 
@@ -255,7 +238,7 @@
 
     .mobile-header-elements{
         width: 30px;
-        height: 30px;
+        height: 22px;
         margin-top: 5%;
     }
     
@@ -281,7 +264,7 @@
 
     .mobile-header-elements{
         width: 30px;
-        height: 30px;
+        height: 25px;
         margin-top: 6%;
     }
     
@@ -307,7 +290,7 @@
 
     .mobile-header-elements{
         width: 30px;
-        height: 30px;
+        height: 26px;
         margin-top: 7%;
     }
     
@@ -335,7 +318,7 @@
 
     .mobile-header-elements{
         width: 30px;
-        height: 30px;
+        height: 20px;
         margin-top: 9%;
     }
     
@@ -362,8 +345,8 @@
     }
 
     .mobile-header-elements{
-        width: 25px;
-        height: 25px;
+        width: 28px;
+        height: 22px;
         margin-top: 12%;
     }
     

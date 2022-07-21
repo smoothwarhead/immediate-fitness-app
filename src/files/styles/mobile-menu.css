@@ -1,5 +1,4 @@
 
-
 .user-menu-page{
     display: none;
     position: absolute;    
@@ -8,6 +7,7 @@
     background: #1A272A;
     z-index: 20;
     font-family: 'Industry';
+    right: 0;
 }
 
 .menu-page{
@@ -20,7 +20,7 @@
     background: #1A272A;
     z-index: 20;
     font-family: 'Industry';
-
+   
 }
 
 .user-mobile{
@@ -139,9 +139,8 @@
 
 @media (max-width: 1180px) and (min-width: 0px){
     .user-menu-page{
-        display: block;
-        /* top: 10%;
-        right: 0; */
+        display: block;        
+        
     }
 
     .menu-page{
@@ -205,10 +204,36 @@
 
 }
 
-@media (max-width: 769px) and (min-width: 520px){
+@media (max-width: 769px) and (min-width: 600px){
 
     .user-menu-page{
+        width: 65%;
+        
+    }
+    
+    .menu-page{   
         width: 80%;
+        
+    }
+    
+    .no-user-mobile{
+        width: 80%;
+    }
+
+    .mobile-nav-elements ul li{
+       
+        font-size: 4.5vw;
+ 
+    }
+
+
+}
+
+
+@media (max-width: 600px) and (min-width: 520px){
+
+    .user-menu-page{
+        width: 65%;
         
     }
     
@@ -302,7 +327,7 @@
 
     .no-user-mobile{
         width: 100%;
-        border: 1px solid white;
+        
     }
 
 

@@ -24,12 +24,19 @@ const FindAClass = () => {
     const [formats, setFormats] = useState(Formats);
     const [isPending, setIsPending] = useState(true);
     const [allClasses, setAllClasses] = useState([]);
-    const [filteredClasses, setFilteredClasses] = useState([]);
+    const [showAll, setShowAll] = useState(true);
+    const [showBeginners, setShowBeginners] = useState(false);
+    const [showIntermediate, setShowIntermediate] = useState(false);
+    const [showAdvanced, setShowAdvanced] = useState(false);
+    const [showGroup, setShowGroup] = useState(false);
+    const [showPersonal, setShowPersonal] = useState(false);
     const [messageOpen, setMessageOpen] = useState(false);
     const [message, setMessage] = useState({
         body: "",
         type: ""
     });
+
+
    
     
     // const [buttonValue, setButtonValue] = useState('');
@@ -118,6 +125,12 @@ const FindAClass = () => {
 
     const { displayData, pageCount, changePage } = usePagination(allClasses, 6);
 
+    // useEffect(() => {
+       
+    //     setFilteredClasses(displayData);
+        
+    // },[displayData])
+
 
 
     const addClass = async ( element ) => {
@@ -186,24 +199,24 @@ const FindAClass = () => {
     }
 
 
-
-
-
-
     function makeActiveFormats(index, e){
         setFormats({...formats, activeBtn: formats.allFormats[index]});
-        setMakeAll(false);
-
-        const personalClasses = displayData.filter(item => item.format === "Personal");
-        const groupClasses = displayData.filter(item => item.format === "Group");
-
+        setShowAll(false);
 
         if(e.target.textContent === "Personal"){
-            setFilteredClasses(personalClasses);
+            setShowPersonal(true);
+            setShowAdvanced(false);
+            setShowIntermediate(false);
+            setShowBeginners(false);
+            setShowGroup(false);
         }
 
         if(e.target.textContent === "Group"){
-            setFilteredClasses(groupClasses);
+            setShowGroup(true);
+            setShowPersonal(false);
+            setShowAdvanced(false);
+            setShowIntermediate(false);
+            setShowBeginners(false);
         }
 
     }
@@ -227,40 +240,47 @@ const FindAClass = () => {
 
     function makeActiveLevels(index, e){
         setLevels({...levels, activeBtn: levels.allLevels[index]});
-        setMakeAll(false);
-
-
-        const beginnersClasses = displayData.filter(item => item.level === "Beginners");
-        const intermediateClasses = displayData.filter(item => item.level === "Intermediate");
-        const advancedClasses = displayData.filter(item => item.level === "Advanced");
-
-        
+        setShowAll(false);        
 
 
         if(e.target.textContent === "Beginners"){
-            setFilteredClasses(beginnersClasses);
+            setShowBeginners(true);
+            setShowIntermediate(false);
+            setShowAdvanced(false);
+            setShowGroup(false);
+            setShowPersonal(false);
+
         }
+
         if(e.target.textContent === "Intermediate"){
-            setFilteredClasses(intermediateClasses);
+            setShowIntermediate(true);
+            setShowBeginners(false);
+            setShowAdvanced(false);
+            setShowGroup(false);
+            setShowPersonal(false);
+
         }
+
         if(e.target.textContent === "Advanced"){
-            setFilteredClasses(advancedClasses);
+            setShowAdvanced(true);
+            setShowIntermediate(false);
+            setShowBeginners(false);
+            setShowGroup(false);
+            setShowPersonal(false);
         }
 
 
     }
     
 
-    const [makeAll, setMakeAll] = useState(true);
-
     const allClick = () => {
-        setMakeAll(true);
+        setShowAll(true);
         setFormats({...formats, activeBtn: null});
         setLevels({...levels, activeBtn: null});
-        setFilteredClasses(displayData);
-
+        
 
     }
+
 
 
     
@@ -268,6 +288,35 @@ const FindAClass = () => {
         setMessageOpen(false);
     }
 
+
+
+    const getData = (data) => {
+        if(showAll){
+            return data;
+        }
+        if(showBeginners){
+            return data.filter(item => item.level === "Beginners");
+
+        }
+        if(showIntermediate){
+            return data.filter(item => item.level === "Intermediate");
+
+        }
+        if(showAdvanced){
+            return data.filter(item => item.level === "Advanced");
+
+        }
+        if(showPersonal){
+            return data.filter(item => item.format === "Personal");
+
+        }
+        if(showGroup){
+            return data.filter(item => item.format === "Group");
+
+        }
+
+
+    }
 
     
 
@@ -289,7 +338,7 @@ const FindAClass = () => {
                                     <div className="filter_elements_title">All</div>
                                     <div className="filter_elements_btns">
                                         <div 
-                                            className={makeAll ? "filter_elements_btn active" : "filter_elements_btn"} 
+                                            className={showAll ? "filter_elements_btn active" : "filter_elements_btn"} 
                                             onClick={() => allClick()}
                                         >All</div>
 
@@ -353,7 +402,7 @@ const FindAClass = () => {
 
                             <div className="find-all-classes-items">
                                 {
-                                    displayData.map((item, index) => (
+                                    getData(displayData).map((item, index) => (
                                             <FindClass item={item} key={index} addClass={addClass}/>
                                     ))
 
@@ -373,8 +422,8 @@ const FindAClass = () => {
                             
             
 
-                            <Paginate pageCount={pageCount} changePage={changePage} /> 
-
+                           {getData(displayData).length >= 6 && <Paginate pageCount={pageCount} changePage={changePage} /> 
+}
 
                         </div>
 
