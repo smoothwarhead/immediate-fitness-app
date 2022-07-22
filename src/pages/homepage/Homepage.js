@@ -10,7 +10,7 @@ import NoUserHeader from '../../components/NoUserHeader';
 function Homepage() {
 
     const [dropdown, setDropdown] = useState(false);
-    const { loggedIn, user } = useContext(UserContext);
+    const { user } = useContext(UserContext);
     
 
 
