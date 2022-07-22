@@ -1,4 +1,4 @@
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import '../../files/styles/Homepage.css';
 import SignupDropdown from './SignupDropdown';
@@ -32,12 +32,18 @@ function Homepage() {
                     {user && <div className="welcome-msg">Welcome back, {user?.firstName}!</div> }
                                  
                     
+                    {!user && <div className="homepage-intro">
+                        <p className='homepage-intro-text-first'>
+                            Welcome to Immediate Fitness. 
+                        </p>
+                        <p className='homepage-intro-text-second'>
+                            A platform for trainers and clients to connect.
+ 
+                        </p>
 
-                    <div className="content-btns">
-                        { loggedIn ? <div></div> : <Link to="/signup-as-a-trainer"><div className="train-btn trainee">i want to train</div></Link>}
+                        <div className="connect-btn" onClick={handleClick} >Connect now</div>
 
-                        { loggedIn ? <div></div> : <Link to="/signup-as-a-client"><div className="train-btn trainer">i want to be trained</div></Link>}
-                    </div>
+                    </div>}
                 </div>
 
             

@@ -120,7 +120,7 @@ function CreateTrainerProfile() {
         
         try{
 
-            let res = await axios.post('/auth/create-trainer-profile', data,
+            let res = await axios.post('https://immediate-server.herokuapp.com/auth/create-trainer-profile', data,
             {
                 headers: { "Content-Type": "multipart/form-data" },
                 withCredentials: true

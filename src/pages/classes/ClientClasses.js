@@ -21,7 +21,7 @@ const ClientClasses = () => {
     const { classes } = useContext(DataContext);
     
 
-    const { isPending, messageOpen, message, closeMessage } = useFetch('/auth/dashboard/client/classes');
+    const { isPending, messageOpen, message, closeMessage } = useFetch('https://immediate-server.herokuapp.com/auth/dashboard/client/classes');
 
 
 

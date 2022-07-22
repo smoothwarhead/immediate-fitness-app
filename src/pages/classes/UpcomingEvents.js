@@ -7,11 +7,24 @@ import PageLayout from '../../components/PageLayout';
 import useFetch from '../../hooks/useFetch';
 import LoadingData from '../../components/LoadingData';
 import MessageBox from '../../components/MessageBox';
+import UserContext from '../../context/UserContext';
 
 
 const UpcomingEvents = () => {
 
-    const { isPending, messageOpen, message, closeMessage } = useFetch('/auth/dashboard/client/classes');
+    const { user } = useContext(UserContext);
+
+    const getUrl = (role) => {
+        if(role === 3030){
+            return 'https://immediate-server.herokuapp.com/auth/dashboard/trainer/classes'
+        }
+        else{
+            return 'https://immediate-server.herokuapp.com/auth/dashboard/client/classes'
+
+        }
+    }
+
+    const { isPending, messageOpen, message, closeMessage } =  useFetch(getUrl(user.allowedRole));
 
 
     const { classes } = useContext(DataContext);

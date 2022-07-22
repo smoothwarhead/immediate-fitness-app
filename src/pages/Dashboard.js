@@ -15,7 +15,7 @@ const Dashboard = () => {
     const { classes } = useContext(DataContext);
     const {id} = useParams();
 
-    const { isPending, messageOpen, message, closeMessage } = useFetch(`/auth/dashboard/${id.toLowerCase()}`);
+    const { isPending, messageOpen, message, closeMessage } = useFetch(`https://immediate-server.herokuapp.com/auth/dashboard/${id.toLowerCase()}`);
 
     
 

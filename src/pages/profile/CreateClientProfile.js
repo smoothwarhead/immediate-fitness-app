@@ -139,7 +139,7 @@ function CreateClientProfile() {
         try{
 
 
-            let res = await axios.post('/auth/create-client-profile', data,
+            let res = await axios.post('https://immediate-server.herokuapp.com/auth/create-client-profile', data,
                 {
                     headers: { "Content-Type": "multipart/form-data" },
                     withCredentials: true

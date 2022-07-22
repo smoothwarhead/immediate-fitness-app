@@ -1,4 +1,4 @@
-// import Axios from 'axios';
+
 import { useState, useEffect, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Levels, Formats, Types } from "../../files/ClassEntities";
@@ -18,11 +18,6 @@ import UserContext from '../../context/UserContext';
 
 
 
-
-
-
-
-// import { DataContext } from '../../context/DataContext';
 
 
 
@@ -77,7 +72,7 @@ const EditClass = () => {
 
             try {
 
-                let res = await axios.get(`/auth/dashboard/trainer/classes/edit-class/${id}`, {
+                let res = await axios.get(`https://immediate-server.herokuapp.com/auth/dashboard/trainer/classes/edit-class/${id}`, {
                         withCredentials: true
                     });
 

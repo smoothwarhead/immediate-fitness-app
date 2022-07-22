@@ -39,7 +39,7 @@ const ClientProfile = () => {
             try {
                 
 
-                let res = await axios.get('/auth/dashboard/client/profile', {
+                let res = await axios.get('https://immediate-server.herokuapp.com/auth/dashboard/client/profile', {
                     withCredentials: true
                 });
 

@@ -194,7 +194,7 @@ const handleSubmit = async (e) => {
 
     try {
 
-        let res = await axios.post('/auth/dashboard/trainer/create-a-class', JSON.stringify(data),  {
+        let res = await axios.post('https://immediate-server.herokuapp.com/auth/dashboard/trainer/create-a-class', JSON.stringify(data),  {
             headers: {'Content-Type': 'application/json'},
             withCredentials: true
         })

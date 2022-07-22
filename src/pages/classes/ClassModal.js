@@ -49,7 +49,7 @@ const ClassModal = ({closeModal}) => {
             // const emptyClass = []
 
             try {
-                let res = await axios.get(`/auth/dashboard/client/classes/details/${id}`, {
+                let res = await axios.get(`https://immediate-server.herokuapp.com/auth/dashboard/client/classes/details/${id}`, {
                             withCredentials: true
                         });
 

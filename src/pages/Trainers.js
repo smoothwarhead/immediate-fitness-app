@@ -36,7 +36,7 @@ const Trainers = () => {
             try {
                 
 
-                let res = await axios.get('/auth/dashboard/client/trainers', {
+                let res = await axios.get('https://immediate-server.herokuapp.com/auth/dashboard/client/trainers', {
                     withCredentials: true
                 });
 

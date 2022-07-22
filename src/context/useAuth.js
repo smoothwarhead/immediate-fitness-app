@@ -5,7 +5,7 @@ import UserContext from './UserContext';
 import axios from '../api/axios';
 
 
-const loginUrl = '/login';
+const loginUrl = 'https://immediate-server.herokuapp.com/login';
 
 
 
@@ -29,7 +29,7 @@ export default function  useAuth() {
     // set user after register
     const register = async (data) => {
 
-        let res = await axios.post('/register', 
+        let res = await axios.post('https://immediate-server.herokuapp.com/register', 
             JSON.stringify(data),
             {
                 headers: {'Content-Type': 'application/json'},
@@ -205,7 +205,7 @@ export default function  useAuth() {
 
         try {
 
-            let res = await axios.get('/logout', {
+            let res = await axios.get('https://immediate-server.herokuapp.com/logout', {
                 withCredentials: true
             });
     

@@ -37,18 +37,6 @@ const FindAClass = () => {
     });
 
 
-   
-    
-    // const [buttonValue, setButtonValue] = useState('');
-    // const [filters] = useState([
-    //     {value: "All"},
-    //     {value: "Personal"},
-    //     {value: "Group"},
-    //     {value: "Beginners"},
-    //     {value: "Intermediate"},
-    //     {value: "Advanced"}
-
-    // ])
 
 
     const navigate = useNavigate();
@@ -64,7 +52,7 @@ const FindAClass = () => {
             try {
                 
 
-                let res = await axios.get('/auth/dashboard/client/classes/find-a-class', {
+                let res = await axios.get('https://immediate-server.herokuapp.com/auth/dashboard/client/classes/find-a-class', {
                     withCredentials: true
                 });
 
@@ -125,12 +113,7 @@ const FindAClass = () => {
 
     const { displayData, pageCount, changePage } = usePagination(allClasses, 6);
 
-    // useEffect(() => {
-       
-    //     setFilteredClasses(displayData);
-        
-    // },[displayData])
-
+  
 
 
     const addClass = async ( element ) => {
