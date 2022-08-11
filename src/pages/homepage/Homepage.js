@@ -6,6 +6,8 @@ import UserContext from '../../context/UserContext';
 import Header from '../../components/Header';
 import NoUserHeader from '../../components/NoUserHeader';
 import useMediaQuery from '../../hooks/useMediaQuery';
+import MobileSignUpDropdown from './MobileSignUpDropdown';
+
 
 
 

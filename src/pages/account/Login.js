@@ -5,6 +5,8 @@ import NoUserHeader from '../../components/NoUserHeader';
 import SignupDropdown from '../homepage/SignupDropdown';
 import MessageBox from '../../components/MessageBox';
 import useMediaQuery from '../../hooks/useMediaQuery';
+import MobileSignUpDropdown from '../homepage/MobileSignUpDropdown';
+
 
 
 
