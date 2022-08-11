@@ -1,13 +1,15 @@
 
 .user-menu-page{
     display: none;
-    position: absolute;    
+    position: absolute;  
+    transform: translateX(200%);
+    top: 15%;
     width: 55%;
     height: 85%;
     background: #1A272A;
-    z-index: 20;
+    z-index: 5;
     font-family: 'Industry';
-    right: 0;
+    
 }
 
 .menu-page{
@@ -21,6 +23,14 @@
     z-index: 20;
     font-family: 'Industry';
    
+}
+
+.mobile-m-open{
+    animation: m-m-open 1s forwards;
+}
+
+.mobile-m-close{
+    animation: m-m-close 1s forwards;
 }
 
 .user-mobile{
@@ -137,6 +147,85 @@
     text-decoration: none;
 }
 
+
+
+@keyframes m-m-open {
+    100% { transform: translateX(64%);}
+}
+
+@keyframes m-m600-open {
+    100% { transform: translateX(38%);}
+}
+
+@keyframes m-m520-open {
+    100% { transform: translateX(20%);}
+}
+
+@keyframes m-m440-open {
+    100% { transform: translateX(6%);}
+}
+
+@keyframes m-m375-open {
+    100% { transform: translateX(-10%);}
+}
+
+
+@keyframes m-m-close {
+    0% { transform: translateX(65%);}
+    100% { transform: translateX(200%);}
+}
+
+
+
+
+.other-m-dropdown{
+    position: absolute;
+    top: 15%;
+    transform: translateX(200%);
+    width: 55%;
+    height: 85%;
+    z-index: 50;
+    border: 1px solid white;
+}
+
+.mobile-od-open{
+    animation: om-open 1s forwards;
+  }
+
+  .mobile-od-close{
+    animation: om-close 1s forwards;
+  }
+
+  @keyframes om-open {
+    100% { transform: translateX(64%);}
+  }
+
+
+  @keyframes om-close {
+      0% { transform: translateX(90%);}
+      100% { transform: translateX(200%);}
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 1180px) and (min-width: 0px){
     .user-menu-page{
         display: block;        
@@ -215,6 +304,10 @@
         width: 80%;
         
     }
+
+    .mobile-m-open{
+        animation: m-m600-open 1s forwards;
+    }
     
     .no-user-mobile{
         width: 80%;
@@ -241,6 +334,10 @@
         width: 80%;
         
     }
+
+    .mobile-m-open{
+        animation: m-m520-open 1s forwards;
+    }
     
     .no-user-mobile{
         width: 80%;
@@ -264,6 +361,10 @@
     
     .menu-page{   
         width: 80%; 
+    }
+
+    .mobile-m-open{
+        animation: m-m440-open 1s forwards;
     }
     
     
@@ -293,6 +394,10 @@
   
     }
 
+    .mobile-m-open{
+        animation: m-m375-open 1s forwards;
+    }
+
     .no-user-mobile{
         width: 80%;
     }
@@ -318,6 +423,10 @@
     .menu-page{   
         width: 100%;
    
+    }
+
+    .mobile-m-open{
+        animation: m-m375-open 1s forwards;
     }
 
     .user-mobile{

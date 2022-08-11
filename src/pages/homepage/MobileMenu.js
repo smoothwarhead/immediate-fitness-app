@@ -7,24 +7,32 @@ import MobileSignUpDropdown from './MobileSignUpDropdown';
 
 
 
-const MobileMenu = ({ isProfile, handleClick }) => {
+const MobileMenu = ({ isProfile, openMenu }) => {
 
     const { user } = useContext(UserContext);
     const { logoutUser } = useAuth();
 
 
-    const [openMenu, setOpenMenu] = useState(false);
+    const [openSubMenu, setOpenSubMenu] = useState(false);
 
     const openAccount= () => {
-        // console.log(openMenu);
-        setOpenMenu(!openMenu);
+        setOpenSubMenu(!openSubMenu);
     }
 
 
    
   return (
     <>
-        <div className={!user ? "user-menu-page" : "menu-page"}>
+
+        { openSubMenu && 
+            <div className={`other-m-dropdown ${openSubMenu ? "mobile-od-open" : "mobile-od-close"}`}>
+                <MobileSignUpDropdown dropdown={openSubMenu} setDropdown={setOpenSubMenu} />
+            </div>
+        }
+
+
+
+        <div className={!user ? `user-menu-page ${openMenu ? "mobile-m-open" : "mobile-m-close"}` : `menu-page ${openMenu ? "mobile-m-open" : "mobile-m-close"}`}>
             
             { user ? 
 
@@ -78,7 +86,7 @@ const MobileMenu = ({ isProfile, handleClick }) => {
 
         </div>
 
-        {openMenu && <MobileSignUpDropdown openAccount={openAccount} />}
+        
     
     </>
   )

@@ -5,6 +5,8 @@ import SignupDropdown from './SignupDropdown';
 import UserContext from '../../context/UserContext';
 import Header from '../../components/Header';
 import NoUserHeader from '../../components/NoUserHeader';
+import useMediaQuery from '../../hooks/useMediaQuery';
+
 
 
 function Homepage() {
@@ -12,6 +14,7 @@ function Homepage() {
     const [dropdown, setDropdown] = useState(false);
     const { user } = useContext(UserContext);
     
+    const isMax1180 = useMediaQuery('(max-width: 1180px)');
 
 
     const handleClick = () => {
@@ -21,6 +24,18 @@ function Homepage() {
 
     return (
         <>
+
+            {dropdown && <SignupDropdown dropdown={dropdown} handleClick={handleClick}/>}
+
+            {isMax1180 && dropdown &&
+                <div className={`homepage-m-dropdown ${isMax1180 && dropdown ? "mobile-d-open" : "mobile-d-close"}`}>
+                    <MobileSignUpDropdown dropdown={dropdown} setDropdown={setDropdown} />
+                </div>
+            }
+
+
+
+
             <div className="background">
                 <img src="/images/front-page-img.png" alt="front-page" />
                 
@@ -47,7 +62,6 @@ function Homepage() {
                 </div>
 
             
-                {dropdown && <SignupDropdown />}
                 
                 
             </div>

@@ -74,8 +74,42 @@ function App() {
         const currentUser = JSON.parse(loggedInUser);
         const isAuth = JSON.parse(localStorage.getItem("isAuth"));
 
-        setUser(currentUser);
-        setLoggedIn(isAuth);
+
+        if(currentUser.firstName === ""){
+          try {
+
+
+            let res = await setCurrentUser();
+            console.log(res);
+  
+            if(res.status === 200){
+  
+              setUser(res.data.user[0]);
+              setLoggedIn(res.data.logIn);
+  
+              localStorage.setItem("currentUser", JSON.stringify(res.data.user[0]));
+              localStorage.setItem("isAuth", res.data.logIn);
+  
+  
+            }
+            if(res.status === 401){
+                setLoggedIn(false);
+                setUser(null);
+                localStorage.removeItem("currentUser");
+                localStorage.removeItem("isAuth");
+            }
+           
+  
+            
+          } catch (error) {
+            console.log(error);
+            setLoggedIn(false);
+            setUser(null);
+          }
+        }else{
+          setUser(currentUser);
+          setLoggedIn(isAuth);
+        }
       }
       else{
 

@@ -4,6 +4,7 @@ import useAuth from '../../context/useAuth';
 import NoUserHeader from '../../components/NoUserHeader';
 import SignupDropdown from '../homepage/SignupDropdown';
 import MessageBox from '../../components/MessageBox';
+import useMediaQuery from '../../hooks/useMediaQuery';
 
 
 
@@ -16,7 +17,12 @@ const Login = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [errors, setErrors] = useState({});
     const [dropdown, setDropdown] = useState(false);
+
+
+    const isMax1180 = useMediaQuery('(max-width: 1180px)');
+
 
 
 
@@ -25,14 +31,39 @@ const Login = () => {
 
 
 
+    const validate = (values) => {
+        const errors = {};
+
+        if (!values.email){
+            errors.email = 'Email required';
+        }
+        else if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)){
+            errors.email = 'Please enter a valid email';
+        }
+        if(!values.password){
+        errors.password = 'Password is required';
+        }
+        else if(values.password.length < 6){
+            errors.password = 'Password must contain between 6 and 60 characters'
+        }
+
+
+        return errors;
+    }
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         const data = {email, password};
 
-        await login(data);
+        if(email === "" || password === ""){
+            setErrors(validate(data));
 
-        // console.log(data);
+        }
+        else{
+            await login(data);
+
+        }
         
     }
 
@@ -44,6 +75,16 @@ const Login = () => {
     return ( 
 
         <>
+
+            {dropdown && <SignupDropdown dropdown={dropdown} handleClick={handleClick} />}
+
+            {isMax1180 && dropdown &&
+                <div className={`homepage-m-dropdown ${isMax1180 && dropdown ? "mobile-d-open" : "mobile-d-close"}`}>
+                    <MobileSignUpDropdown dropdown={dropdown} setDropdown={setDropdown} />
+                </div>
+            }
+
+
             <NoUserHeader cName="account-logo" />
             <div className="login_page">
                 
@@ -65,7 +106,8 @@ const Login = () => {
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                 />
-                                {/* {errors.email && <span>*{errors.email}</span>} */}
+                                {errors.email && <span className='error-message'>{errors.email}</span>}
+
 
                             </div>
 
@@ -80,7 +122,8 @@ const Login = () => {
                                     onChange={(e) => setPassword(e.target.value)}
 
                                 />
-                                {/* {errors.password && <span>*{errors.password}</span>} */}
+                                {errors.password && <span className='error-message'>{errors.password}</span>}
+
 
                             </div>
 
@@ -108,7 +151,7 @@ const Login = () => {
                     </div>
                 </div>
 
-                {dropdown && <SignupDropdown />}
+
 
             </div>
 

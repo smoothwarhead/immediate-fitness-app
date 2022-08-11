@@ -1,5 +1,5 @@
 .background{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     overflow: hidden;
     display: grid;
@@ -255,6 +255,36 @@
   .back_home:hover{
     background: #021c3f;
 
+  }
+
+
+  .homepage-m-dropdown{
+    position: absolute;
+    top: 14%;
+    transform: translateX(200%);
+    width: 55%;
+    height: 85%;
+    z-index: 50;
+    border: 1px solid white;
+    
+  }
+
+  .mobile-d-open{
+    animation: m-open 1s forwards;
+  }
+
+  .mobile-d-close{
+    animation: m-close 1s forwards;
+  }
+
+  @keyframes m-open {
+    100% { transform: translateX(82%);}
+  }
+
+
+  @keyframes m-close {
+      0% { transform: translateX(82%);}
+      100% { transform: translateX(200%);}
   }
 
 
