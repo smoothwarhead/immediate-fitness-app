@@ -237,7 +237,7 @@
 
 .create-profile-btn{
     display: inline-block;
-    font-family: Aviano;
+    font-family: 'Aviano', 'Cormorant SC', 'serif';
     background: #1DAE8C 0% 0% no-repeat;
     width: fit-content;
     height: 40px;
