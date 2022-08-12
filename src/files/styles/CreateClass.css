@@ -33,7 +33,7 @@
 }
 
 .back_btn{
-    font-family: 'Aviano', 'Cormorant SC', 'serif';
+    font-family: 'Aviano', 'Spectral SC', 'Cormorant SC', 'serif';
     font-size: 1.25em;
     color: #1DAE8C;
     font-weight: 600;
@@ -140,7 +140,7 @@
 
 
 .row_label{
-    font-family: 'Aviano', 'Cormorant SC', 'serif';
+    font-family: 'Aviano', 'Spectral SC', 'Cormorant SC', 'serif';
     color: #6E6F72;
     font-size: 1.25em;
     font-weight: 600;
@@ -248,7 +248,7 @@
 
 .add_class_btn{
     display: inline-block;
-    font-family: 'Aviano', 'Cormorant SC', 'serif';
+    font-family: 'Aviano', 'Spectral SC', 'Cormorant SC', 'serif';
     background: #1DAE8C 0% 0% no-repeat;
     width: fit-content;
     height: 40px;

@@ -98,7 +98,7 @@
 
 
 .hello_name{
-    font-family: 'Aviano', 'Cormorant SC', 'serif';
+    font-family: 'Aviano', 'Spectral SC', 'Cormorant SC', 'serif';
     font-size: 1.5em;
     line-height: 2em;
     color: #1a272a;
@@ -126,7 +126,7 @@
 
 
 .flat_btn{
-    font-family: 'Aviano', 'Cormorant SC', 'serif';
+    font-family: 'Aviano', 'Spectral SC', 'Cormorant SC', 'serif';
     background: #1DAE8C 0% 0% no-repeat;
     width: fit-content;
     height: 40px;
@@ -233,7 +233,7 @@
 
 .filter_elements_title{
     text-align: center;
-    font-family: 'Aviano', 'Cormorant SC', 'serif';
+    font-family: 'Aviano', 'Spectral SC', 'Cormorant SC', 'serif';
     font-size: 1em;
     font-family: 700;
     text-transform: uppercase;

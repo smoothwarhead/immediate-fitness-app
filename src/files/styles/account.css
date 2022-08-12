@@ -140,7 +140,7 @@ input::placeholder{
     width: 70%;
     margin: auto;
     height: fit-content;
-    font-family: 'Aviano';
+    font-family: 'Aviano', 'Spectral SC', 'Cormorant SC', 'serif';
     text-align: center;
     font-size: 1vw;
     padding: 10px 20px;

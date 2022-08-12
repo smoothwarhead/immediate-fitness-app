@@ -131,7 +131,7 @@
   }
   .nav-elements{
     margin-top: 2%;
-    font-family: 'Aviano', 'Cormorant SC', 'serif';
+    font-family: 'Aviano', 'Spectral SC', 'Cormorant SC', 'serif';
     color: #F7DD95;
   
   }
@@ -206,7 +206,7 @@
   }
 
   .code_404{
-    font-family: 'Aviano', 'Cormorant SC', 'serif';
+    font-family: 'Aviano', 'Spectral SC', 'Cormorant SC', 'serif';
     font-size: 5.1em;
     font-weight: 700;
     text-align: center;
