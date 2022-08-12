@@ -96,8 +96,11 @@
     grid-row: 1/2;
     color: #F7DD95;
     font-family: 'Aviano', 'Cormorant SC', 'serif';
+    text-transform: uppercase;
     text-align: right;
     cursor: pointer;
+    font-size: 0.875em;
+
 }
 
 
