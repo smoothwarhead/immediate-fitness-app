@@ -5,8 +5,6 @@ import UserContext from './UserContext';
 import axios from '../api/axios';
 
 
-const loginUrl = 'https://immediate-server.herokuapp.com/login';
-
 
 
 
