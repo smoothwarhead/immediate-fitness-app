@@ -6,6 +6,7 @@ import SignupDropdown from '../homepage/SignupDropdown';
 import MessageBox from '../../components/MessageBox';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import MobileSignUpDropdown from '../homepage/MobileSignUpDropdown';
+import LoadingData from '../../components/LoadingData';
 
 
 
@@ -21,6 +22,7 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState({});
     const [dropdown, setDropdown] = useState(false);
+    
 
 
     const isMax1180 = useMediaQuery('(max-width: 1180px)');
@@ -29,7 +31,7 @@ const Login = () => {
 
 
 
-    const { login, message, messageOpen, closeMessage} = useAuth();
+    const { login, message, messageOpen, closeMessage, isPending, setIsPending } = useAuth();
 
 
 
@@ -63,6 +65,7 @@ const Login = () => {
 
         }
         else{
+            setIsPending(true);
             await login(data);
 
         }
@@ -86,76 +89,82 @@ const Login = () => {
                 </div>
             }
 
+            { isPending && <LoadingData /> }
 
-            <NoUserHeader cName="account-logo" />
-            <div className="login_page">
-                
-                <div className="account-content">
+
+            { !isPending && <NoUserHeader cName="account-logo" />}
+
+
+            { !isPending &&
+                <div className="login_page">
                     
-                   {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
-
-                    <div className="form_container login_container">
-                        <div className="form_header"><p className="login-p">Login</p> </div>
-                        <div className="form">
-
-                            <div className="form_elements">
-                                <label className='login-label'>Enter your email</label>
-                                <input 
-                                    type="text" 
-                                    name="email" 
-                                    className="email" 
-                                    placeholder="Email Address" 
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                />
-                                {errors.email && <span className='error-message'>{errors.email}</span>}
-
-
-                            </div>
-
-                            <div className="form_elements">
-                                <label className='login-label'>Enter a password</label>
-                                <input 
-                                    type="password" 
-                                    name="password" 
-                                    className="password" 
-                                    placeholder="Password"
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-
-                                />
-                                {errors.password && <span className='error-message'>{errors.password}</span>}
-
-
-                            </div>
-
-                        </div>
-
-                        <div 
-                            onClick={handleSubmit}
-                            className="btn login_btn"
-                        >
-                            Login
-                        </div>
-
-                        <div className="no_question"><p>Don't have an account?</p></div>
-                        <div className="create-btn-container">
-                            <div 
-                                className="btn create_btn"
-                                onClick={handleClick}
-                            >
-                                create account
-                            </div>
-
-                        </div>
-
+                    <div className="account-content">
                         
+                    {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
+
+                        <div className="form_container login_container">
+                            <div className="form_header"><p className="login-p">Login</p> </div>
+                            <div className="form">
+
+                                <div className="form_elements">
+                                    <label className='login-label'>Enter your email</label>
+                                    <input 
+                                        type="text" 
+                                        name="email" 
+                                        className="email" 
+                                        placeholder="Email Address" 
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                    />
+                                    {errors.email && <span className='error-message'>{errors.email}</span>}
+
+
+                                </div>
+
+                                <div className="form_elements">
+                                    <label className='login-label'>Enter a password</label>
+                                    <input 
+                                        type="password" 
+                                        name="password" 
+                                        className="password" 
+                                        placeholder="Password"
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+
+                                    />
+                                    {errors.password && <span className='error-message'>{errors.password}</span>}
+
+
+                                </div>
+
+                            </div>
+
+                            <div 
+                                onClick={handleSubmit}
+                                className="btn login_btn"
+                            >
+                                Login
+                            </div>
+
+                            <div className="no_question"><p>Don't have an account?</p></div>
+                            <div className="create-btn-container">
+                                <div 
+                                    className="btn create_btn"
+                                    onClick={handleClick}
+                                >
+                                    create account
+                                </div>
+
+                            </div>
+
+                            
+                        </div>
                     </div>
+
+
+
                 </div>
-
-
-
-            </div>
+            }
 
         </>
 

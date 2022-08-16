@@ -4,6 +4,11 @@ import validations  from '../files/ValidateFile';
 import useAuth from '../context/useAuth';
 import NoUserHeader from "./NoUserHeader";
 import MessageBox from "./MessageBox";
+// import useMediaQuery from "../hooks/useMediaQuery";
+// import SignupDropdown from "../pages/homepage/SignupDropdown";
+// import MobileSignUpDropdown from "../pages/homepage/MobileSignUpDropdown";
+import LoadingData from "./LoadingData";
+
 
 
 
@@ -23,8 +28,14 @@ function Signup({role}) {
     const [errors, setErrors] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
 
+    // const [dropdown, setDropdown] = useState(false);
 
-    const { register, message, messageOpen, closeMessage } = useAuth();
+    // const isMax1180 = useMediaQuery('(max-width: 1180px)');
+
+
+
+
+    const { register, message, messageOpen, closeMessage, isPending, setIsPending } = useAuth();
 
 
     const handleSubmit = (e) => {
@@ -39,6 +50,7 @@ function Signup({role}) {
         if(isSubmitted){
             const allValues = {...data, role: role};
 
+            setIsPending(true);
             register(allValues);
         }
         
@@ -52,14 +64,23 @@ function Signup({role}) {
            setIsSubmitted(true)
         }
     }, [errors, isSubmitted]);
-    
+
+
 
     return ( 
 
         <>
-            <NoUserHeader cName="account-logo" />
 
-            <div className="signup_page">
+                    
+           
+
+            { isPending && <LoadingData /> }
+
+            { !isPending && <NoUserHeader cName="account-logo" />}
+
+
+            {!isPending &&
+                <div className="signup_page">
                 
                 <div className="account-content">
                     
@@ -176,7 +197,8 @@ function Signup({role}) {
 
                     </div>
                 </div>
-            </div>
+                </div>
+            }
         </>
      );
 }

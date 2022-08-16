@@ -18,6 +18,7 @@ export default function  useAuth() {
         body: "",
         type: ""
     });
+    const [isPending, setIsPending] = useState(false);
 
     const closeMessage = () => {
         setMessageOpen(false);
@@ -41,9 +42,11 @@ export default function  useAuth() {
                  
             if(res.status === 201){                
 
+                setIsPending(false);
+
                 let {data: resData} = await setCurrentUser();
 
-                console.log(resData.user);
+                
 
                 if(resData.user.length > 0){
                     
@@ -55,20 +58,24 @@ export default function  useAuth() {
                     localStorage.setItem("isAuth", resData.logIn);
                     setMessageOpen(true);              
                     setMessage({...message, body: res.data.message, type: "success" });
+                    navigate('/auth/options');
 
-                    setTimeout(() => {
-                        navigate('/auth/options');
+                    // setTimeout(() => {
+                    //     navigate('/auth/options');
 
-                    }, 2000)
+                    // }, 2000)
 
                 }else{
 
                     localStorage.setItem("isAuth", resData.logIn);
                     setMessageOpen(true);              
                     setMessage({...message, body: res.data.message, type: "error" });
-                    setTimeout(() => {
-                        navigate('/');
-                    }, 2000);
+                    navigate('/');
+
+                    // setTimeout(() => {
+                    //     navigate('/');
+                    // }, 2000);
+
                 }
 
                
@@ -77,13 +84,16 @@ export default function  useAuth() {
             }
 
             if(res.status === 400){
+                setIsPending(false);
+
                 setMessageOpen(true);              
-                setMessage({...message, body: res.data.message, type: "error" });
+                setMessage({...message, body: "This user already exists !!!", type: "error" });
 
             }
             
         }
         catch(error){
+            setIsPending(false);
 
             if(error.response.status === 400){
                 setMessageOpen(true);
@@ -118,7 +128,7 @@ export default function  useAuth() {
 
         try{
 
-            let res = await axios.post(loginUrl, 
+            let res = await axios.post('https://immediate-server.herokuapp.com/login', 
 
                 JSON.stringify(data),
                 {
@@ -128,10 +138,10 @@ export default function  useAuth() {
 
                  
             if(res.status === 200){                
+                setIsPending(false);
 
                 let { data: resData } = await setCurrentUser();
 
-                console.log(resData.user);
 
                 if(resData.user.length > 0){
                     
@@ -143,10 +153,10 @@ export default function  useAuth() {
                     setMessageOpen(true);              
                     setMessage({...message, body: res.data.message, type: "success" });
                     
-
-                    setTimeout(() => {
-                        navigate(`/auth/dashboard/${resData.user[0].role.toLowerCase()}`);
-                    }, 2000)
+                    navigate(`/auth/dashboard/${resData.user[0].role.toLowerCase()}`);
+                    // setTimeout(() => {
+                    //     navigate(`/auth/dashboard/${resData.user[0].role.toLowerCase()}`);
+                    // }, 2000)
 
                 }else{
 
@@ -163,6 +173,8 @@ export default function  useAuth() {
                
             }
             else{
+                setIsPending(false);
+
                 setMessageOpen(true);
                 setMessage({...message, body: "User does not exist. Please provide the correct email and password", type: "error" });
                 setLoggedIn(res.data.logIn);
@@ -172,6 +184,7 @@ export default function  useAuth() {
             
         }
         catch(error){
+            setIsPending(false);
 
             if(error.response.status === 400){
                 setMessageOpen(true);
@@ -239,6 +252,6 @@ export default function  useAuth() {
 
 
     return {
-        register, logoutUser, login, message, messageOpen, closeMessage
+        register, logoutUser, login, message, messageOpen, closeMessage, isPending, setIsPending
     }
 }
