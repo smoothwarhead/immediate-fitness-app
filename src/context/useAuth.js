@@ -28,7 +28,7 @@ export default function  useAuth() {
     // set user after register
     const register = async (data) => {
 
-        let res = await axios.post('https://immediate-server.herokuapp.com/register', 
+        let res = await axios.post('/register', 
             JSON.stringify(data),
             {
                 headers: {'Content-Type': 'application/json'},
@@ -126,7 +126,7 @@ export default function  useAuth() {
 
         try{
 
-            let res = await axios.post('https://immediate-server.herokuapp.com/login', 
+            let res = await axios.post('/login', 
 
                 JSON.stringify(data),
                 {
@@ -216,7 +216,7 @@ export default function  useAuth() {
 
         try {
 
-            let res = await axios.get('https://immediate-server.herokuapp.com/logout', {
+            let res = await axios.get('/logout', {
                 withCredentials: true
             });
     

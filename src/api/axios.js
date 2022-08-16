@@ -1,6 +1,6 @@
 import Axios from 'axios';
 
-const BASE_URL = "http://localhost:5000"
+const BASE_URL = "https://immediate-server.herokuapp.com"
 
 
 export default Axios.create({
