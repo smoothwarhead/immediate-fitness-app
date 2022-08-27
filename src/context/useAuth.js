@@ -31,7 +31,6 @@ export default function  useAuth() {
         let res = await axios.post('/register', 
             JSON.stringify(data),
             {
-                headers: {'Content-Type': 'application/json'},
                 withCredentials: true
             })
 
@@ -113,6 +112,11 @@ export default function  useAuth() {
             if(error.response.status === 500){
                 setMessageOpen(true);
                 setMessage({...message, body: "Incorrect email or password combination !!!", type: "error" });
+               
+            }
+            if(error.response.status === 503){
+                setMessageOpen(true);
+                setMessage({...message, body: "Inconsistent network !!!", type: "error" });
                
             }
         }
@@ -203,6 +207,11 @@ export default function  useAuth() {
             if(error.response.status === 500){
                 setMessageOpen(true);
                 setMessage({...message, body: "Incorrect email or password combination !!!", type: "error" });
+               
+            }
+            if(error.response.status === 503){
+                setMessageOpen(true);
+                setMessage({...message, body: "Inconsistent network !!!", type: "error" });
                
             }
         }
