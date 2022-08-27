@@ -90,6 +90,9 @@ export default function  useAuth() {
             
         }
         catch(error){
+            console.log(error.response);
+            console.log(error);
+            console.log(error.reponse.status);
             setIsPending(false);
 
             if(error.response.status === 400){
