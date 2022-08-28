@@ -190,6 +190,7 @@ export default function  useAuth() {
         }
         catch(error){
             setIsPending(false);
+            console.log(error.reponse);
 
             if(error.response.status === 400){
                 setMessageOpen(true);

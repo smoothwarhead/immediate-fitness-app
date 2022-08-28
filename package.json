@@ -2,6 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "proxy":"https://immediate-server.herokuapp.com",
   "dependencies": {
     "@syncfusion/ej2-react-buttons": "^19.4.38",
     "@syncfusion/ej2-react-calendars": "^19.4.38",
