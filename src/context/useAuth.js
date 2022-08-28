@@ -87,6 +87,14 @@ export default function  useAuth() {
                 setMessage({...message, body: "This user already exists !!!", type: "error" });
 
             }
+
+            if(res.status === 503){
+                setIsPending(false);
+
+                setMessageOpen(true);              
+                setMessage({...message, body: "There is a network error", type: "error" });
+
+            }
             
         }
         catch(error){
