@@ -15,13 +15,14 @@
 .menu-page{
     display: none;
     position: absolute;
-    top: 12%;
-    right: 0;
+    top: 14%;
+    transform: translateX(200%);
     width: 55%;
     height: 90%;
     background: #1A272A;
     z-index: 20;
     font-family: 'Industry';
+    border: 1px solid white;
    
 }
 
@@ -31,6 +32,15 @@
 
 .mobile-m-close{
     animation: m-m-close 1s forwards;
+}
+
+
+.mobile-h-open{
+    animation: m-h-open 1s forwards;
+}
+
+.mobile-h-close{
+    animation: m-h-close 1s forwards;
 }
 
 .user-mobile{
@@ -175,8 +185,31 @@
     100% { transform: translateX(200%);}
 }
 
+@keyframes m-h-open {
+    100% { transform: translateX(82%);}
+}
+
+@keyframes m-h600-open {
+    100% { transform: translateX(26%);}
+}
+
+@keyframes m-h520-open {
+    100% { transform: translateX(26%);}
+}
+
+@keyframes m-h440-open {
+    100% { transform: translateX(26%);}
+}
+
+@keyframes m-h375-open {
+    100% { transform: translateX(0%);}
+}
 
 
+@keyframes m-h-close {
+    0% { transform: translateX(65%);}
+    100% { transform: translateX(200%);}
+}
 
 .other-m-dropdown{
     position: absolute;
@@ -324,6 +357,11 @@
     .mobile-m-open{
         animation: m-m600-open 1s forwards;
     }
+
+    .mobile-h-open{
+        animation: m-h600-open 1s forwards;
+    }
+    
     
     .no-user-mobile{
         width: 80%;
@@ -362,6 +400,10 @@
     .mobile-m-open{
         animation: m-m520-open 1s forwards;
     }
+
+    .mobile-h-open{
+        animation: m-h520-open 1s forwards;
+    }
     
     .no-user-mobile{
         width: 80%;
@@ -399,6 +441,9 @@
         animation: m-m440-open 1s forwards;
     }
     
+    .mobile-h-open{
+        animation: m-h440-open 1s forwards;
+    }
     
     .no-user-mobile{
         width: 80%;
@@ -438,6 +483,10 @@
         animation: m-m375-open 1s forwards;
     }
 
+    .mobile-h-open{
+        animation: m-h375-open 1s forwards;
+    }
+
     .no-user-mobile{
         width: 80%;
     }
@@ -474,6 +523,10 @@
 
     .mobile-m-open{
         animation: m-m375-open 1s forwards;
+    }
+
+    .mobile-h-open{
+        animation: m-h375-open 1s forwards;
     }
 
     .user-mobile{

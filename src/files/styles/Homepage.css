@@ -173,21 +173,7 @@
 
   }
 
-  .train-btn{
-      font-family: 'Aviano';
-      font-size: 1.5em;
-      line-height: 24px;
-      text-align: center;
-      width: fit-content;
-      height: fit-content;
-      padding: 8px 20px;
-      display: block;
-      border: 1px solid #F7DD95;
-      cursor: pointer;
-  }
-  .trainee{
-      background: #F7DD95;
-  }
+ 
   .trainer{
       margin-top: 40px;
       color: #F7DD95;
@@ -260,7 +246,7 @@
 
   .homepage-m-dropdown{
     position: absolute;
-    top: 14%;
+    top: 15%;
     transform: translateX(200%);
     width: 55%;
     height: 85%;
