@@ -4,15 +4,17 @@ import './index.css';
 import App from './App';
 import { UserProvider } from './context/UserContext';
 import { DataProvider } from './context/DataContext';
+import { DropdownProvider } from './context/DropdownContext';
 
 
 ReactDOM.render(
   <React.StrictMode>
     <UserProvider>
       <DataProvider>
+        <DropdownProvider>
         
           <App />
-       
+        </DropdownProvider>
       </DataProvider>
 
     </UserProvider>

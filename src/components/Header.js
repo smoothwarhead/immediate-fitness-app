@@ -7,6 +7,8 @@ import Logo from "./Logo";
 import OpenMenuIcon from "./menu/OpenMenuIcon";
 import CloseMenuIcon from "./menu/CloseMenuIcon";
 import MobileMenu from "../pages/homepage/MobileMenu";
+import DropdownContext from "../context/DropdownContext";
+
 // import useMediaQuery from "../hooks/useMediaQuery";
 
 
@@ -14,11 +16,15 @@ const Header = ({ isProfile }) => {
 
     const { logoutUser } = useAuth();
     const { user } = useContext(UserContext);
+    const { drop, setDrop } = useContext(DropdownContext);
+
    
     const [openMenu, setOpenMenu] = useState(false);
 
     const handleClick = () => {
         setOpenMenu(!openMenu);
+        setDrop(!drop);
+
     }
 
     // const is1120 = useMediaQuery('(min-width: 1120px)');

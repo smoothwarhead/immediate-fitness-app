@@ -4,7 +4,7 @@
     position: absolute;  
     transform: translateX(200%);
     top: 15%;
-    width: 55%;
+    width: 100%;
     height: 85%;
     background: #1A272A;
     z-index: 5;
@@ -15,15 +15,14 @@
 .menu-page{
     display: none;
     position: absolute;
-    top: 14%;
+    top: 12%;
     transform: translateX(200%);
-    width: 55%;
-    height: 90%;
+    width: 100%;
+    height: 85%;
     background: #1A272A;
     z-index: 20;
     font-family: 'Industry';
-    border: 1px solid white;
-   
+       
 }
 
 .mobile-m-open{
@@ -160,10 +159,10 @@
 
 
 @keyframes m-m-open {
-    100% { transform: translateX(64%);}
+    100% { transform: translateX(0%);}
 }
 
-@keyframes m-m600-open {
+/* @keyframes m-m600-open {
     100% { transform: translateX(38%);}
 }
 
@@ -177,7 +176,7 @@
 
 @keyframes m-m375-open {
     100% { transform: translateX(-10%);}
-}
+} */
 
 
 @keyframes m-m-close {
@@ -186,10 +185,10 @@
 }
 
 @keyframes m-h-open {
-    100% { transform: translateX(82%);}
+    100% { transform: translateX(0%);}
 }
 
-@keyframes m-h600-open {
+/* @keyframes m-h600-open {
     100% { transform: translateX(26%);}
 }
 
@@ -203,7 +202,7 @@
 
 @keyframes m-h375-open {
     100% { transform: translateX(0%);}
-}
+} */
 
 
 @keyframes m-h-close {
@@ -215,7 +214,7 @@
     position: absolute;
     top: 15%;
     transform: translateX(200%);
-    width: 55%;
+    width: 100%;
     height: 85%;
     z-index: 50;
 
@@ -230,10 +229,10 @@
   }
 
   @keyframes om-open {
-    100% { transform: translateX(64%);}
+    100% { transform: translateX(0%);}
   }
 
-  @keyframes om600-open {
+  /* @keyframes om600-open {
     100% { transform: translateX(38%);}
   }
 
@@ -247,7 +246,7 @@
 
   @keyframes om375-open {
     100% { transform: translateX(-10%);}
-  }
+  } */
 
 
   @keyframes om-close {
@@ -344,23 +343,14 @@
 
 @media (max-width: 769px) and (min-width: 600px){
 
-    .user-menu-page{
-        width: 65%;
-        
-    }
-    
-    .menu-page{   
-        width: 80%;
-        
-    }
-
-    .mobile-m-open{
+   
+    /* .mobile-m-open{
         animation: m-m600-open 1s forwards;
     }
 
     .mobile-h-open{
         animation: m-h600-open 1s forwards;
-    }
+    } */
     
     
     .no-user-mobile{
@@ -372,14 +362,14 @@
         font-size: 4.5vw;
  
     }
-
+/* 
     .other-m-dropdown{
         width: 65%;
     }
 
     .mobile-od-open{
         animation: om600-open 1s forwards;
-    }
+    } */
 
 
 }
@@ -387,23 +377,15 @@
 
 @media (max-width: 600px) and (min-width: 520px){
 
-    .user-menu-page{
-        width: 75%;
-        
-    }
-    
-    .menu-page{   
-        width: 80%;
-        
-    }
 
-    .mobile-m-open{
+
+    /* .mobile-m-open{
         animation: m-m520-open 1s forwards;
     }
 
     .mobile-h-open{
         animation: m-h520-open 1s forwards;
-    }
+    } */
     
     .no-user-mobile{
         width: 80%;
@@ -414,36 +396,29 @@
         font-size: 4.5vw;
  
     }
-
+/* 
     .other-m-dropdown{
         width: 75%;
     }
 
     .mobile-od-open{
         animation: om520-open 1s forwards;
-    }
+    } */
 
 
 }
 
 @media (max-width: 520px) and (min-width: 440px){
     
-    .user-menu-page{
-        width: 85%;
+   
 
-    }
-    
-    .menu-page{   
-        width: 80%; 
-    }
-
-    .mobile-m-open{
+    /* .mobile-m-open{
         animation: m-m440-open 1s forwards;
     }
     
     .mobile-h-open{
         animation: m-h440-open 1s forwards;
-    }
+    } */
     
     .no-user-mobile{
         width: 80%;
@@ -456,36 +431,27 @@
  
     }
 
-    .other-m-dropdown{
+    /* .other-m-dropdown{
         width: 85%;
     }
 
     .mobile-od-open{
         animation: om440-open 1s forwards;
-    }
+    } */
 
 
 }
 
 @media (max-width: 440px) and (min-width: 376px){
 
-    .user-menu-page{
-        width: 100%;
-  
-    }
-    
-    .menu-page{   
-        width: 100%;
-  
-    }
-
-    .mobile-m-open{
+   
+    /* .mobile-m-open{
         animation: m-m375-open 1s forwards;
     }
 
     .mobile-h-open{
         animation: m-h375-open 1s forwards;
-    }
+    } */
 
     .no-user-mobile{
         width: 80%;
@@ -499,35 +465,26 @@
  
     }
 
-    .other-m-dropdown{
+    /* .other-m-dropdown{
         width: 100%;
     }
 
     .mobile-od-open{
         animation: om375-open 1s forwards;
-    }
+    } */
 
 }
 
 @media (max-width: 376px) and (min-width: 280px){
 
-    .user-menu-page{
-        width: 100%;
-      
-    }
-    
-    .menu-page{   
-        width: 100%;
    
-    }
-
-    .mobile-m-open{
+    /* .mobile-m-open{
         animation: m-m375-open 1s forwards;
     }
 
     .mobile-h-open{
         animation: m-h375-open 1s forwards;
-    }
+    } */
 
     .user-mobile{
         width: 100%;
@@ -547,13 +504,13 @@
  
     }
 
-    .other-m-dropdown{
+    /* .other-m-dropdown{
         width: 100%;
     }
 
     .mobile-od-open{
         animation: om375-open 1s forwards;
-    }
+    } */
 
 }
 
