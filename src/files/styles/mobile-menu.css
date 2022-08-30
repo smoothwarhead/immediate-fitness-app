@@ -180,7 +180,7 @@
 
 
 @keyframes m-m-close {
-    0% { transform: translateX(65%);}
+    0% { transform: translateX(0%);}
     100% { transform: translateX(200%);}
 }
 
@@ -206,7 +206,7 @@
 
 
 @keyframes m-h-close {
-    0% { transform: translateX(65%);}
+    0% { transform: translateX(0%);}
     100% { transform: translateX(200%);}
 }
 
@@ -250,7 +250,7 @@
 
 
   @keyframes om-close {
-      0% { transform: translateX(90%);}
+      0% { transform: translateX(0%);}
       100% { transform: translateX(200%);}
   }
 

@@ -41,7 +41,7 @@ const MobileMenu = ({ isProfile, openMenu }) => {
 
 
 
-        <div className={!user ? `user-menu-page ${openMenu ? "mobile-m-open" : "mobile-m-close"}` : `menu-page ${openMenu ? "mobile-m-open" : "mobile-m-close"}`}>
+        <div className={!user ? `user-menu-page ${openMenu ? "mobile-m-open" : "mobile-m-close"}` : `menu-page ${openMenu ? "mobile-h-open" : "mobile-h-close"}`}>
             
             { user ? 
 

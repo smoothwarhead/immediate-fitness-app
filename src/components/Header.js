@@ -27,6 +27,12 @@ const Header = ({ isProfile }) => {
 
     }
 
+    const handleLogout = () => {
+        logoutUser();
+        setDrop(false);
+    }
+
+
     // const is1120 = useMediaQuery('(min-width: 1120px)');
 
 
@@ -63,7 +69,7 @@ const Header = ({ isProfile }) => {
                         }
 
                         <div className="header_logout">
-                            <div className="logout" onClick={(e) => logoutUser()}>Logout</div>  
+                            <div className="logout" onClick={handleLogout}>Logout</div>  
 
                         </div>
 
@@ -88,7 +94,7 @@ const Header = ({ isProfile }) => {
             </div>
             
 
-            { openMenu && <MobileMenu isProfile={isProfile} /> }
+            { openMenu && <MobileMenu isProfile={isProfile} handleClick={handleClick} openMenu={openMenu} /> }
             
         
         </>
