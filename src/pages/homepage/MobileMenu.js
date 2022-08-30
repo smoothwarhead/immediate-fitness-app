@@ -5,6 +5,7 @@ import '../../files/styles/mobile-menu.css';
 import { Link } from 'react-router-dom';
 import MobileSignUpDropdown from './MobileSignUpDropdown';
 import DropdownContext from '../../context/DropdownContext';
+import useMediaQuery from '../../hooks/useMediaQuery';
 
 
 
@@ -15,6 +16,8 @@ const MobileMenu = ({ isProfile, openMenu }) => {
     const { setDrop } = useContext(DropdownContext);
 
     const { logoutUser } = useAuth();
+
+    const isMax1180 = useMediaQuery('(max-width: 1180px)');
 
 
     const [openSubMenu, setOpenSubMenu] = useState(false);
@@ -33,7 +36,7 @@ const MobileMenu = ({ isProfile, openMenu }) => {
   return (
     <>
 
-        { openSubMenu && 
+        { openSubMenu && isMax1180 &&
             <div className={`other-m-dropdown ${openSubMenu ? "mobile-od-open" : "mobile-od-close"}`}>
                 <MobileSignUpDropdown dropdown={openSubMenu} setDropdown={setOpenSubMenu} />
             </div>

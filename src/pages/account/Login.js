@@ -96,7 +96,7 @@ const Login = () => {
 
 
             { !isPending &&
-                <div className="login_page">
+                <div className={!dropdown ? "login_page" : "login_page a-drop"}>
                     
                     <div className="account-content">
                         
