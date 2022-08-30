@@ -4,12 +4,16 @@ import useAuth from '../../context/useAuth';
 import '../../files/styles/mobile-menu.css';
 import { Link } from 'react-router-dom';
 import MobileSignUpDropdown from './MobileSignUpDropdown';
+import DropdownContext from '../../context/DropdownContext';
+
 
 
 
 const MobileMenu = ({ isProfile, openMenu }) => {
 
     const { user } = useContext(UserContext);
+    const { setDrop } = useContext(DropdownContext);
+
     const { logoutUser } = useAuth();
 
 
@@ -17,6 +21,11 @@ const MobileMenu = ({ isProfile, openMenu }) => {
 
     const openAccount= () => {
         setOpenSubMenu(!openSubMenu);
+    }
+
+    const handleLogout = () => {
+        logoutUser();
+        setDrop(false);
     }
 
 
@@ -43,14 +52,14 @@ const MobileMenu = ({ isProfile, openMenu }) => {
                         <>
 
                             <div className="profile-mobile">
-                                <Link to={user?.allowedRole === 3030 ? '/auth/dashboard/trainer' : '/auth/dashboard/client'}><div className="profile-mobile-links mobile_home">Home</div></Link> 
-                                <Link to={user?.allowedRole === 3030 ? '/auth/dashboard/trainer/clients' : '/auth/dashboard/client/trainers'}><div className="profile-mobile-links mobile_role">{user.role === 'Trainer' ? 'Clients' : 'Trainers'}</div></Link> 
-                                <Link to={user?.allowedRole === 3030 ? '/auth/dashboard/trainer/classes' : '/auth/dashboard/client/classes'}><div className="profile-mobile-links mobile_classes">Classes</div></Link>
+                                <Link to={user?.allowedRole === 3030 ? '/auth/dashboard/trainer' : '/auth/dashboard/client'} onClick={() => setDrop(false)}><div className="profile-mobile-links mobile_home">Home</div></Link> 
+                                <Link to={user?.allowedRole === 3030 ? '/auth/dashboard/trainer/clients' : '/auth/dashboard/client/trainers'} onClick={() => setDrop(false)}><div className="profile-mobile-links mobile_role">{user.role === 'Trainer' ? 'Clients' : 'Trainers'}</div></Link> 
+                                <Link to={user?.allowedRole === 3030 ? '/auth/dashboard/trainer/classes' : '/auth/dashboard/client/classes'} onClick={() => setDrop(false)}><div className="profile-mobile-links mobile_classes">Classes</div></Link>
 
                             </div>
 
                             <div className="profile-mobile-logout">
-                                <div className="profile-logout" onClick={(e) => logoutUser()}>Logout</div>  
+                                <div className="profile-logout" onClick={handleLogout}>Logout</div>  
 
                             </div>
                         </>
@@ -58,7 +67,7 @@ const MobileMenu = ({ isProfile, openMenu }) => {
                     :
 
                     <div className="mobile-logout">
-                        <div className="no-profile-logout" onClick={(e) => logoutUser()}>Logout</div>  
+                        <div className="no-profile-logout" onClick={handleLogout}>Logout</div>  
 
                     </div>
 
@@ -71,7 +80,7 @@ const MobileMenu = ({ isProfile, openMenu }) => {
                 <div className="no-user-mobile">
                     <div className="mobile-nav-elements">
                         <ul>
-                            <Link to="/login"><li>Login</li></Link>
+                            <Link to="/login" onClick={() => setDrop(false)}><li>Login</li></Link>
                             <li onClick={openAccount}>Create Account</li>
                         </ul>
                 
