@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import useAuth from "../context/useAuth";
 import UserContext from "../context/UserContext";
 import '../files/styles/Header.css';
