@@ -57,7 +57,7 @@ const MobileMenu = ({ isProfile}) => {
 
                 <div 
                     className="menu-mobile-elements"
-                    onClick={() => setOpenMenu(false)}
+                    onClick={handleClick}
                 >
                     <CloseMenuIcon cName="header-close-menu" />
                 </div>

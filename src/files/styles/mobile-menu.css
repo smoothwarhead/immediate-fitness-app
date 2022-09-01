@@ -211,15 +211,10 @@
 }
 
 @keyframes m-h-open {
-    100% { transform: translateX(0%);}
+    100% { transform: translateY(-12%);}
 }
 
 
-
-@keyframes m-h-close {
-    0% { transform: translateX(0%);}
-    100% { transform: translateX(200%);}
-}
 
 .other-m-dropdown{
     position: absolute;
