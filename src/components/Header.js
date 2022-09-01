@@ -16,11 +16,9 @@ const Header = ({ isProfile }) => {
 
     const { logoutUser } = useAuth();
     const { user } = useContext(UserContext);
-    const { drop, setDrop } = useContext(DropdownContext);
+    const { drop, setDrop, openMenu, setOpenMenu } = useContext(DropdownContext);
 
    
-    const [openMenu, setOpenMenu] = useState(false);
-
     const handleClick = () => {
         setOpenMenu(!openMenu);
         setDrop(!drop);
