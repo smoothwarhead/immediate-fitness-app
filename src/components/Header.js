@@ -94,8 +94,7 @@ const Header = ({ isProfile }) => {
             </div>
             
 
-            { openMenu && <MobileMenu isProfile={isProfile} handleClick={handleClick} openMenu={openMenu} /> }
-            
+            { openMenu && <MobileMenu isProfile={isProfile} /> }
         
         </>
 

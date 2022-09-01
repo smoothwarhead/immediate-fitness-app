@@ -7,11 +7,12 @@ export const DropdownProvider = ({ children }) => {
 
     const [drop, setDrop] = useState(false);
     
+    const [openMenu, setOpenMenu] = useState(false);
     
 
 
     return (
-        <DropdownContext.Provider value={{ drop, setDrop }}>
+        <DropdownContext.Provider value={{ drop, setDrop, openMenu, setOpenMenu }}>
             {children}
         </DropdownContext.Provider>
     )

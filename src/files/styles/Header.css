@@ -25,7 +25,8 @@
 .logo-container{
     width: 25%;
     height: 100%;
-    margin-top: 1%;
+    padding-top: 1%;
+
 }
 
 .mobile-header-elements{
@@ -173,7 +174,7 @@
 
     .logo-container{
         width: 40%;  
-        /* margin-top: 4%;         */
+        
     }
 
     .open-menu{
@@ -199,7 +200,7 @@
 
     .logo-container{
         width: 38%;  
-        /* margin-top: 4%;         */
+       
     }
 
     .open-menu{
@@ -225,7 +226,8 @@
 
     .logo-container{
         width: 48%; 
-        margin-top: 3%;        
+        padding-top: 3%;
+       
     }
 
     .open-menu{        
@@ -251,7 +253,8 @@
 
     .logo-container{
         width: 50%; 
-        margin-top: 4%;        
+        padding-top: 4%;
+       
     }
 
     .open-menu{        
@@ -277,7 +280,7 @@
 
     .logo-container{
         width: 50%; 
-        margin-top: 6%;        
+        padding-top: 6%;       
     }
 
     .open-menu{        
@@ -304,7 +307,7 @@
 
     .logo-container{
         width: 55%;  
-        margin-top: 7%;        
+        padding-top: 7%;    
     }
 
     .open-menu{
@@ -332,7 +335,7 @@
 
     .logo-container{
         width: 60%;  
-        margin-top: 10%;        
+        padding-top: 10%;        
     }
 
     .open-menu{

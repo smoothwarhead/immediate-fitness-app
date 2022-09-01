@@ -6,14 +6,17 @@ import { Link } from 'react-router-dom';
 import MobileSignUpDropdown from './MobileSignUpDropdown';
 import DropdownContext from '../../context/DropdownContext';
 import useMediaQuery from '../../hooks/useMediaQuery';
+import CloseMenuIcon from '../../components/menu/CloseMenuIcon';
 
 
 
 
-const MobileMenu = ({ isProfile, openMenu }) => {
+const MobileMenu = ({ isProfile}) => {
 
     const { user } = useContext(UserContext);
     const { setDrop } = useContext(DropdownContext);
+    const { openMenu, setOpenMenu } = useContext(DropdownContext);
+
 
     const { logoutUser } = useAuth();
 
@@ -32,6 +35,11 @@ const MobileMenu = ({ isProfile, openMenu }) => {
     }
 
 
+    const handleClick = () => {
+        setOpenMenu(false);
+        setDrop(false);
+    }
+
    
   return (
     <>
@@ -45,7 +53,18 @@ const MobileMenu = ({ isProfile, openMenu }) => {
 
 
         <div className={!user ? `user-menu-page ${openMenu ? "mobile-m-open" : "mobile-m-close"}` : `menu-page ${openMenu ? "mobile-h-open" : "mobile-h-close"}`}>
-            
+            <div className={user ? "menu-header user-menu-header" : "menu-header no-user-menu-header"}>
+
+                <div 
+                    className="menu-mobile-elements"
+                    onClick={() => setOpenMenu(false)}
+                >
+                    <CloseMenuIcon cName="header-close-menu" />
+                </div>
+
+            </div>
+
+
             { user ? 
 
                 <div className="user-mobile">
@@ -55,9 +74,9 @@ const MobileMenu = ({ isProfile, openMenu }) => {
                         <>
 
                             <div className="profile-mobile">
-                                <Link to={user?.allowedRole === 3030 ? '/auth/dashboard/trainer' : '/auth/dashboard/client'} onClick={() => setDrop(false)}><div className="profile-mobile-links mobile_home">Home</div></Link> 
-                                <Link to={user?.allowedRole === 3030 ? '/auth/dashboard/trainer/clients' : '/auth/dashboard/client/trainers'} onClick={() => setDrop(false)}><div className="profile-mobile-links mobile_role">{user.role === 'Trainer' ? 'Clients' : 'Trainers'}</div></Link> 
-                                <Link to={user?.allowedRole === 3030 ? '/auth/dashboard/trainer/classes' : '/auth/dashboard/client/classes'} onClick={() => setDrop(false)}><div className="profile-mobile-links mobile_classes">Classes</div></Link>
+                                <Link to={user?.allowedRole === 3030 ? '/auth/dashboard/trainer' : '/auth/dashboard/client'} onClick={handleClick}><div className="profile-mobile-links mobile_home">Home</div></Link> 
+                                <Link to={user?.allowedRole === 3030 ? '/auth/dashboard/trainer/clients' : '/auth/dashboard/client/trainers'} onClick={handleClick}><div className="profile-mobile-links mobile_role">{user.role === 'Trainer' ? 'Clients' : 'Trainers'}</div></Link> 
+                                <Link to={user?.allowedRole === 3030 ? '/auth/dashboard/trainer/classes' : '/auth/dashboard/client/classes'} onClick={handleClick}><div className="profile-mobile-links mobile_classes">Classes</div></Link>
 
                             </div>
 
@@ -83,7 +102,7 @@ const MobileMenu = ({ isProfile, openMenu }) => {
                 <div className="no-user-mobile">
                     <div className="mobile-nav-elements">
                         <ul>
-                            <Link to="/login" onClick={() => setDrop(false)}><li>Login</li></Link>
+                            <Link to="/login" onClick={handleClick}><li>Login</li></Link>
                             <li onClick={openAccount}>Create Account</li>
                         </ul>
                 

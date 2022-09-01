@@ -1,14 +1,15 @@
 import Logo from "./Logo";
-import { useState } from "react";
+import { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import CloseMenuIcon from "./menu/CloseMenuIcon";
 import OpenMenuIcon from "./menu/OpenMenuIcon";
 import MobileMenu from "../pages/homepage/MobileMenu";
+import DropdownContext from "../context/DropdownContext";
 
 
 const NoUserHeader = ({ handleClick, cName }) => {
 
-    const [openMenu, setOpenMenu] = useState(false);
+    const {openMenu, setOpenMenu} = useContext(DropdownContext);
 
     const handleOpen = () => {
         setOpenMenu(!openMenu);
@@ -52,7 +53,8 @@ const NoUserHeader = ({ handleClick, cName }) => {
 
         </div>
 
-        { openMenu && <MobileMenu handleClick={handleClick} openMenu={openMenu}/> }
+        { openMenu && <MobileMenu /> }
+
 
     
     </>
