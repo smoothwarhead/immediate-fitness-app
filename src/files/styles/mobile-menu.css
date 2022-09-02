@@ -6,7 +6,7 @@
     left: 0%;
     top: -4vh;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background: #1A272A;
     z-index: 5;
     font-family: 'Industry';
@@ -20,7 +20,7 @@
     left: 0%;
     top: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background: #1A272A;
     z-index: 5;
     font-family: 'Industry';
