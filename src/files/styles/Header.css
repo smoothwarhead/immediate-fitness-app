@@ -1,4 +1,7 @@
 .header_bar{
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 12vh;
     background: transparent linear-gradient(90deg, #1DAE8C 0%, #1A272A 100%) 0% 0% no-repeat padding-box;

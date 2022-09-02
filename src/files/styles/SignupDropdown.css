@@ -10,9 +10,13 @@
 }
 
 .open{
+    position: fixed;
+    top: 0;
     animation: open 1s forwards;
 }
 .account-open{
+    position: fixed;
+    top: 0;
     animation: a-open 1s forwards;
 
 }

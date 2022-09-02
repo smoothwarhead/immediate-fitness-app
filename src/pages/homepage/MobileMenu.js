@@ -32,6 +32,8 @@ const MobileMenu = ({ isProfile}) => {
     const handleLogout = () => {
         logoutUser();
         setDrop(false);
+        setOpenMenu(false);
+
     }
 
 
