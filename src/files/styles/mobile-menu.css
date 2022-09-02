@@ -225,9 +225,10 @@
 .other-m-dropdown{
     position: absolute;
     left: 0%;
+    top: 0;
     transform: translateY(-200%);
     width: 100%;
-    height: 100%;
+    height: 100vh;
     z-index: 50;
 }
 
@@ -242,12 +243,12 @@
   }
 
   @keyframes om-open {
-    100% { transform: translateY(-15%);}
+    100% { transform: translateY(0);}
   }
 
 
   @keyframes om-close {
-    0% { transform: translateY(-15%);}
+    0% { transform: translateY(0);}
     100% { transform: translateY(-200%);}
 }
 
