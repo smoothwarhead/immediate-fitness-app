@@ -43,6 +43,7 @@ function Signup({role}) {
         
         if(isSubmitted){
             const allValues = {...data, role: role};
+            setIsPending(true);
 
             register(allValues);
            
