@@ -4,9 +4,6 @@ import validations  from '../files/ValidateFile';
 import useAuth from '../context/useAuth';
 import NoUserHeader from "./NoUserHeader";
 import MessageBox from "./MessageBox";
-// import useMediaQuery from "../hooks/useMediaQuery";
-// import SignupDropdown from "../pages/homepage/SignupDropdown";
-// import MobileSignUpDropdown from "../pages/homepage/MobileSignUpDropdown";
 import LoadingData from "./LoadingData";
 
 
@@ -28,11 +25,6 @@ function Signup({role}) {
     const [errors, setErrors] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
 
-    // const [dropdown, setDropdown] = useState(false);
-
-    // const isMax1180 = useMediaQuery('(max-width: 1180px)');
-
-
 
 
     const { register, message, messageOpen, closeMessage, isPending, setIsPending } = useAuth();
@@ -41,22 +33,22 @@ function Signup({role}) {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if(errors){                
-            setIsSubmitted(false);
+        if(data.firstName === "" || data.lastName === "" || data.email === "" || data.password === "" || data.city === "" || data.state === ""){
+            setErrors(validations(data));
+             
+        }
+        if(errors){ 
             setErrors(validations(data));
         }
-        setIsSubmitted(true);
-
+        
         if(isSubmitted){
             const allValues = {...data, role: role};
 
-            setIsPending(true);
             register(allValues);
+           
         }
         
-        
 
-        // register(allValues);
     }
 
     useEffect(() => {

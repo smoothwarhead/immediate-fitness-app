@@ -1,13 +1,22 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import DropdownContext from "../../context/DropdownContext";
+
+
+
+
+
+
+
 
 const MobileSignUpDropdown = ({dropdown, setDropdown}) => {
 
-    const [click, setClick] = useState(false);
+    const { setOpenMenu } = useContext(DropdownContext);
+
 
     const handleClick = () => {
-        setClick(!click);
-        setDropdown(!dropdown);
+        setDropdown(false);
+        setOpenMenu(false);
     }
    
 
