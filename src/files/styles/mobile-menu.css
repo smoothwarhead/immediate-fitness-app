@@ -8,7 +8,7 @@
     width: 100%;
     height: 100vh;
     background: #1A272A;
-    z-index: 5;
+    z-index: 20;
     font-family: 'Industry';
     
 }
@@ -22,7 +22,7 @@
     width: 100%;
     height: 100vh;
     background: #1A272A;
-    z-index: 5;
+    z-index: 20;
     font-family: 'Industry';
        
 }
@@ -206,18 +206,18 @@
 
 
 @keyframes m-m-open {
-    100% { transform: translateY(-15%);}
+    100% { transform: translateY(0);}
 }
 
 
 
 @keyframes m-m-close {
-    0% { transform: translateY(-15%);}
+    0% { transform: translateY(0);}
     100% { transform: translateY(-200%);}
 }
 
 @keyframes m-h-open {
-    100% { transform: translateY(-12%);}
+    100% { transform: translateY(0);}
 }
 
 
