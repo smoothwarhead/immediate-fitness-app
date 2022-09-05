@@ -8,6 +8,12 @@
    
 }
 
+.profile-container.empty{
+    position: fixed; 
+    top: 13vh;
+    left: 0;
+}
+
 .profile-content{
     width: 100%;
     height: 100%;
@@ -41,7 +47,9 @@
     display: grid;
     grid-template-columns: 5% repeat(3, 1fr) 5%;
     grid-template-rows: 0% auto;
-    border: 1px solid green;
+    position: fixed; 
+    top: 0;
+    left: 0
    
 }
 

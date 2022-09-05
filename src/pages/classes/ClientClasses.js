@@ -39,7 +39,7 @@ const ClientClasses = () => {
 
                 <DashboardLayout>
                     
-                    <div className={ location.pathname === checkLocation ?  "class_content_container" : "content_container" }>
+                    <div className={ location.pathname === checkLocation ?  ( classes.length === 0 ? "class_content_container empty-data" : "class_content_container") : "content_container" }>
 
                         {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
 

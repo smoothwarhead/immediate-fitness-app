@@ -122,7 +122,7 @@ const TrainerProfile = () => {
             {isPending ? <div></div> :
 
                 <PageLayout isProfile={isProfile}>
-                    <div className="profile-container">
+                    <div className={profile.length !== 0 ? "profile-container" : "profile-container empty"}>
                     {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
 
                    

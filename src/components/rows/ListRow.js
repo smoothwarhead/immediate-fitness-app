@@ -57,7 +57,7 @@ const ListRow = ({ title, items, rowNumber }) => {
                 
                 <div className={isMax700 ? "row_content inactive" : "row_content" }>
                     
-                    {items.length === 0 ? <p>No class to display at this time</p> :                                     
+                    {items.length === 0 ? <p className='no-class-p'>No class to display at this time</p> :                                     
                         
                         (makeSplit).map((item, index) => (
                             
@@ -73,7 +73,7 @@ const ListRow = ({ title, items, rowNumber }) => {
                 <div className={isMax700 ? "class-row-content active" : "class-row-content"}>
                         
                         <div className="class-row-content-classes">
-                            {items.length === 0 ? <p>No available class on this day</p> :                                     
+                            {items.length === 0 ? <p className='no-class-p'>No available class on this day</p> :                                     
                                 
                                 displayData.map((item, index) => (
 

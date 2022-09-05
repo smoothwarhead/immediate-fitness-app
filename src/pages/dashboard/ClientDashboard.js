@@ -26,7 +26,7 @@ export default function ClientDashboard({classes, isPending, messageOpen, messag
 
                     { classes &&                 
 
-                        <div className="content_container">
+                        <div className={classes.length === 0 ? "content_container empty-data" : "content_container"}>
 
                             {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
 

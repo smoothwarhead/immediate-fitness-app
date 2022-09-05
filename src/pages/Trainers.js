@@ -102,7 +102,7 @@ const Trainers = () => {
             {isPending ? <div></div> :
                 <DashboardLayout>
 
-                    <div className="entity_content_container">
+                    <div className={trainers.length === 0 ? "entity_content_container empty-data" : "entity_content_container"}>
 
                         {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
 
