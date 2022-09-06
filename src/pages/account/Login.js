@@ -7,6 +7,7 @@ import MessageBox from '../../components/MessageBox';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import MobileSignUpDropdown from '../homepage/MobileSignUpDropdown';
 import LoadingData from '../../components/LoadingData';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -27,6 +28,7 @@ const Login = () => {
 
     const isMax1180 = useMediaQuery('(max-width: 1180px)');
 
+    const navigate = useNavigate();
 
 
 
@@ -99,8 +101,11 @@ const Login = () => {
                 <div className="login_page">
                     
                     <div className="account-content">
+                        <div className="account-back-btn-container">
+                            <div className="back_btn account-back-btn" onClick={() => navigate(-1)}>Back</div>
+                        </div>
                         
-                    {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
+                        {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
 
                         <div className="form_container login_container">
                             <div className="form_header"><p className="login-p">Login</p> </div>

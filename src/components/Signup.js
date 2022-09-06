@@ -6,6 +6,7 @@ import NoUserHeader from "./NoUserHeader";
 import MessageBox from "./MessageBox";
 import LoadingData from "./LoadingData";
 
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -25,6 +26,7 @@ function Signup({role}) {
     const [errors, setErrors] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
 
+    const navigate = useNavigate();
 
 
     const { register, message, messageOpen, closeMessage, isPending, setIsPending } = useAuth();
@@ -75,6 +77,9 @@ function Signup({role}) {
             {!isPending &&
                 <div className="signup_page">
                 
+                    <div className="account-back-btn-container">
+                        <div className="back_btn account-back-btn" onClick={() => navigate(-1)}>Back</div>
+                    </div>
                     <div className="account-content">
                         
                         {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
