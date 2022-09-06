@@ -73,7 +73,7 @@ const EventSlider = ({items}) => {
             <div className="event-row">
                 <div className="event-row-title">
                     <div className="event-title-left">{items.length === 0 ? <p>{ new Date().toLocaleDateString('en-us', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' })}</p> : <p>{formatDate(items[0].start_date)}</p>}</div>
-                    <div className="event-title-right"><p>{`${items.length} classes`}</p></div>
+                    <div className="event-title-right"><p>{`${items.length} ${items.length === 1 ? "class" : "classes"}`}</p></div>
                     
                 </div>        
             
