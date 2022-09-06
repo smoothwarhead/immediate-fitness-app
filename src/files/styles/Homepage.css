@@ -103,9 +103,13 @@
     position: fixed;
     top: 4vh;
     left: 0;
-    
+    z-index: 50;
   }
 
+  .not-homepage{
+    background: #E4E4E4;
+  }
+  
   .no-dashboard-navbar-homepage{
     width: 80%;
     margin: auto;
