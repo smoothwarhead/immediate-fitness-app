@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { useLocation } from "react-router-dom";
+import useAuth from "../context/useAuth";
 // import DropdownContext from "../context/DropdownContext";
 import UserContext from "../context/UserContext"
 // import useMediaQuery from "../hooks/useMediaQuery";
