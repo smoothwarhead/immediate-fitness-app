@@ -33,7 +33,7 @@
 }
 
 .account-back-btn{
-    padding-top: 10%;
+    padding-top: 20%;
 }
 
 .form_container{
@@ -48,7 +48,7 @@
     grid-template-columns: 5% auto 5%;
     grid-template-rows: 1fr 2fr 0.2fr 0.5fr 0.2fr 0.3fr 0.1fr 0.5fr 0.3fr;
     height: 80%;
-    margin: 0 auto 0;
+    margin: 35% auto 0;
     
 }
 

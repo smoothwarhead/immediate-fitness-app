@@ -100,10 +100,12 @@ const Login = () => {
             { !isPending &&
                 <div className="login_page">
                     
+                    <div className="account-back-btn-container">
+                        <div className="back_btn account-back-btn" onClick={() => navigate(-1)}>Back</div>
+                    </div>
+                    
                     <div className="account-content">
-                        <div className="account-back-btn-container">
-                            <div className="back_btn account-back-btn" onClick={() => navigate(-1)}>Back</div>
-                        </div>
+                        
                         
                         {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
 
