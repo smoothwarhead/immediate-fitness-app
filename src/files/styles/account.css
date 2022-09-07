@@ -1,11 +1,10 @@
 .login_page, .signup_page{
     width: 100%;
-    max-height: 100vh;
-    min-height: 80vh;
+    height: 100%;
     font-family: 'Industry';
     display: grid;
     grid-template-columns: 5% repeat(3, 1fr) 5%;
-    grid-template-rows: 10% auto;
+    grid-template-rows: 0.1fr auto;
     position: absolute;
     top: 10vh;
     left: 0;
@@ -38,7 +37,7 @@
 }
 
 .account-back-btn{
-    padding-top: 20%;
+    padding-top: 5%;
 }
 
 .form_container{
@@ -53,13 +52,13 @@
     grid-template-columns: 5% auto 5%;
     grid-template-rows: 1fr 2fr 0.2fr 0.5fr 0.2fr 0.3fr 0.1fr 0.5fr 0.3fr;
     height: 80%;
-    margin: 35% auto 0;
+    margin: 5% auto 0;
     
 }
 
 .signup_container{
     height: 80%;
-    margin: 12vh auto 0;
+    margin: 5% auto 0;
     display: grid;
     grid-template-columns: 5% auto 5%;
     grid-template-rows: 1fr 3fr 0.3fr 0.5fr 0.3fr;
@@ -268,6 +267,18 @@ input.error{
   }
 
 
+@media (max-width: 1120px) and (min-width: 600px){ 
+
+    .login_container{
+        margin-top: 10%;
+    }
+
+} 
+
+
+
+
+
 @media (max-width: 1120px) and (min-width: 960px){ 
 
     .login-label{
@@ -293,6 +304,7 @@ input.error{
     
 
 } 
+
 
 
 @media (max-width: 960px) and (min-width: 840px){ 
@@ -428,6 +440,14 @@ input.error{
 
 }
 
+@media (max-width: 600px) and (min-width: 375px){ 
+
+    .login_container{
+        margin-top: 20%;
+    }
+
+} 
+
 
 @media (max-width: 520px) and (min-width: 440px){ 
 
@@ -528,6 +548,16 @@ input.error{
     }
 
 }
+
+
+@media (max-width: 375px) and (min-width: 0px){ 
+
+    .login_container{
+        margin-top: 25%;
+    }
+
+} 
+
 
 @media (max-width: 375px) and (min-width: 280px){ 
 
