@@ -309,109 +309,116 @@ const FindAClass = () => {
 
             {isPending ? <div></div> :
                 <DashboardLayout>
-                    <div className="find-class-content-container">
 
-                        {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
+                    { allClasses.length === 0 ?
+                        <div className='no-class'>There is no class to register to at this time.</div>
+                        :
+
+                        <div className="find-class-content-container">
+
+                            {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
                         
                         
-                        <div className="filters_container">
+                            <div className="filters_container">
 
-                            <div className="filters">
-                                <div className="filter_elements all_section">
-                                    <div className="filter_elements_title">All</div>
-                                    <div className="filter_elements_btns">
-                                        <div 
-                                            className={showAll ? "filter_elements_btn active" : "filter_elements_btn"} 
-                                            onClick={() => allClick()}
-                                        >All</div>
+                                <div className="filters">
+                                    <div className="filter_elements all_section">
+                                        <div className="filter_elements_title">All</div>
+                                        <div className="filter_elements_btns">
+                                            <div 
+                                                className={showAll ? "filter_elements_btn active" : "filter_elements_btn"} 
+                                                onClick={() => allClick()}
+                                            >All</div>
 
+                                        </div>
                                     </div>
-                                </div>
 
-                                
-                                <div className="filter_elements level_section">
-                                    <div className="filter_elements_title">Levels</div>
-                                    <div className="filter_elements_btns">
+                                    
+                                    <div className="filter_elements level_section">
+                                        <div className="filter_elements_title">Levels</div>
+                                        <div className="filter_elements_btns">
 
-                                            {levels.allLevels.map((item, index) => (
+                                                {levels.allLevels.map((item, index) => (
+                                                    <div 
+                                                        className={showActiveLevels(index)}
+                                                        name={item.name}
+                                                        onClick={(e) => {makeActiveLevels(index, e)}}
+                                                        key={index}
+                                                    >
+                                                        {item.name}
+                                                    </div>
+                                                    
+                                                ))}
+                        
+                                        </div>
+                                    </div>
+
+                                    <div className="filter_elements format_section">
+                                        <div className="filter_elements_title">Formats</div>
+                                        <div className="filter_elements_btns">
+                                            {formats.allFormats.map((item, index)=>(
                                                 <div 
-                                                    className={showActiveLevels(index)}
-                                                    name={item.name}
-                                                    onClick={(e) => {makeActiveLevels(index, e)}}
+                                                    className={showActiveFormats(index)}
+                                                    name={item.name} 
+                                                    onClick={(e) => {makeActiveFormats(index, e)}}
                                                     key={index}
                                                 >
                                                     {item.name}
                                                 </div>
-                                                
                                             ))}
-                    
+
+                        
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div className="filter_elements format_section">
-                                    <div className="filter_elements_title">Formats</div>
-                                    <div className="filter_elements_btns">
-                                        {formats.allFormats.map((item, index)=>(
-                                            <div 
-                                                className={showActiveFormats(index)}
-                                                name={item.name} 
-                                                onClick={(e) => {makeActiveFormats(index, e)}}
-                                                key={index}
-                                            >
-                                                {item.name}
-                                            </div>
-                                        ))}
-
-                    
-                                    </div>
-                                </div>
-
-                                
-
-                            </div>
-
-
-                        </div>
-
-
-                        <div className="search_container">
-                            <input type="text" className="input_search" placeholder='Type here to search'/>
-                        </div>
-
-                        <div className="find_all_classes_container">
-
-                            {/* <div className="test-btn" onClick={() => handleTestSuccess()}>Success</div>
-                            <div className="test-btn" onClick={() => handleTestError()}>Error</div> */}
-
-                            <div className="find-all-classes-items">
-                                {
-                                    getData(displayData).map((item, index) => (
-                                            <FindClass item={item} key={index} addClass={addClass}/>
-                                    ))
-
-                                    //  displayData.length === 0 ? 
                                     
-                                    //  displayData.map((item, index) => (
-                                    //      <FindClass item={item} key={index} addClass={addClass}/>
-                                    //  ))
-        
-                                    //  :  
-        
-                                    //  filteredClasses.map((item, index) => (
-                                    //      <FindClass item={item} key={index} addClass={addClass}/>
-                                    //  ))
-                                }
-                            </div>
-                            
-            
 
-                           {getData(displayData).length >= 6 && <Paginate pageCount={pageCount} changePage={changePage} /> 
-}
+                                </div>
+
+
+                            </div>
+
+
+                            <div className="search_container">
+                                <input type="text" className="input_search" placeholder='Type here to search'/>
+                            </div>
+
+                            <div className="find_all_classes_container">
+
+                                {/* <div className="test-btn" onClick={() => handleTestSuccess()}>Success</div>
+                                <div className="test-btn" onClick={() => handleTestError()}>Error</div> */}
+
+                                <div className="find-all-classes-items">
+                                    {
+                                        getData(displayData).map((item, index) => (
+                                                <FindClass item={item} key={index} addClass={addClass}/>
+                                        ))
+
+                                        //  displayData.length === 0 ? 
+                                        
+                                        //  displayData.map((item, index) => (
+                                        //      <FindClass item={item} key={index} addClass={addClass}/>
+                                        //  ))
+            
+                                        //  :  
+            
+                                        //  filteredClasses.map((item, index) => (
+                                        //      <FindClass item={item} key={index} addClass={addClass}/>
+                                        //  ))
+                                    }
+                                </div>
+                                
+                
+
+                            {getData(displayData).length >= 6 && <Paginate pageCount={pageCount} changePage={changePage} /> 
+    }
+
+                            </div>
+
 
                         </div>
-
-
-                    </div>
+                    }
+                    
                     
 
                 </DashboardLayout>

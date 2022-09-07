@@ -42,7 +42,7 @@ export default function TrainerDashboard({classes, isPending, messageOpen, messa
                             </div>
 
                             <div className="content-items">
-                                {classes.length === 0 ? "You are yet to create a class" : 
+                                {classes.length === 0 ? <div className="no-class">You are yet to create a class.</div> : 
                                 
                                     <ClassDashboard classes={classes}/>
                                 }

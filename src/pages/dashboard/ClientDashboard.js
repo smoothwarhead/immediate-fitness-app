@@ -33,7 +33,7 @@ export default function ClientDashboard({classes, isPending, messageOpen, messag
                             <h2 className="hello_name">{`Hello, ${user?.firstName}!`}</h2>
 
                             <div className="content-items">
-                                {classes.length === 0 ? "You are yet to create a class" : 
+                                {classes.length === 0 ? <div className="no-class">You are not registered to any class at this time.</div> : 
                                 
                                     <ClassDashboard classes={classes}/>
                                 }
