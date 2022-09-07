@@ -20,7 +20,7 @@ const NoUserHeader = ({ handleClick, cName }) => {
 
   return (
     <>
-        <div className={location.pathname === "/" ? "landing_page_navbar" : "landing_page_navbar not-homepage"}>
+        <div className={location.pathname === "/" ? "landing_page_navbar is-homepage" : "landing_page_navbar not-homepage"}>
             <div className={location.pathname === "/" ? "no-dashboard-navbar-homepage" : "no-dashboard-navbar"}>
                 <div className="logo-container">
                     <Link to="/">
