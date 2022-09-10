@@ -13,6 +13,7 @@ import NoUserHeader from '../../components/NoUserHeader';
 import axios from '../../api/axios';
 import UserContext from '../../context/UserContext';
 import MessageBox from '../../components/MessageBox';
+import useAuth from '../../context/useAuth';
 
 
 
@@ -45,6 +46,7 @@ function CreateClientProfile() {
     const navigate = useNavigate();
 
     const { user, setLoggedIn } = useContext(UserContext);
+    const { setIsPending } = useAuth();
 
 
 
@@ -122,26 +124,24 @@ function CreateClientProfile() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+       
         const height = `${formData.foot}'${formData.inches}`;
 
        
-        const data = new FormData();
+        const data = { file: profilePicture, height, age: formData.age, gender: formData.gender, weight: formData.weight, fitness_goals: JSON.stringify(formData.items) };
 
-        data.append('file', file.file);
-        data.append('age', formData.age );
-        data.append('gender', formData.gender);
-        data.append('height', height);
-        data.append('weight', formData.weight);
-        data.append('fitness_goals', JSON.stringify(formData.items));
+        
 
 
 
         try{
 
+            setIsPending(true);
+
 
             let res = await axios.post('https://immediate-server.herokuapp.com/auth/create-client-profile', data,
                 {
-                    headers: { "Content-Type": "multipart/form-data" },
+                    headers: {'Content-Type': 'application/json'},
                     withCredentials: true
                 })
 
@@ -149,12 +149,14 @@ function CreateClientProfile() {
                 if(res.status === 201){
                     setMessageOpen(true);
                     setMessage({...message, body: res.data.message, type: "success" });
+                    setIsPending(false);
                     
-                    setTimeout(() => {
-                        navigate(`/auth/dashboard/${user.role.toLowerCase()}`);
-                    }, 2000);
+                    navigate(`/auth/dashboard/${user.role.toLowerCase()}`);
+                    
                    
                 }else{
+                    setIsPending(false);
+
                     setMessageOpen(true);
                     setMessage({...message, body: "Your profile could not be created at this time", type: "error" });
 
@@ -162,8 +164,8 @@ function CreateClientProfile() {
 
 
         }catch(error){
-            console.log(error);
-           
+            setIsPending(true);
+
             if(error.response.status === 401){
                 
                 setLoggedIn(false);
@@ -172,6 +174,7 @@ function CreateClientProfile() {
                 
             }
             if(error.response.status === 404){
+                setIsPending(false);
                 
                 setMessageOpen(true);
                 setMessage({...message, body: "Your profile could not be created at this time", type: "error" });
@@ -179,6 +182,7 @@ function CreateClientProfile() {
                 
             }
             if(error.response.status === 500){
+                setIsPending(false);
                 
                 setMessageOpen(true);
                 setMessage({...message, body: "Your profile could not be created at this time", type: "error" });

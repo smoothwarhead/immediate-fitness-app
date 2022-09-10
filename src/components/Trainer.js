@@ -4,6 +4,8 @@ import { ImLocation2 } from 'react-icons/im';
 import { GoPrimitiveDot } from 'react-icons/go';
 // import OfferedClassModal from './modals/OfferedClassModal';
 import { useNavigate } from 'react-router-dom';
+import {Image} from 'cloudinary-react';
+
 
 
 const Trainer = ({item}) => {
@@ -86,9 +88,10 @@ const Trainer = ({item}) => {
 
             <div className="card">
                 <div className="card_image">
-                    <img src={`/uploads/${item.profileImage}`} alt={`${item.profileImage}_image`} className="trainer_img"/>
+                    <Image cloudName="greenietec" publicId={`${item.profileImage}`} />
 
                 </div>
+                
                 <div className="card_info">
                     <div className="card_info_empty"></div>
                     <div className="card_info_container">

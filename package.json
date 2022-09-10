@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy":"https://immediate-server.herokuapp.com",
+  "proxy": "https://immediate-server.herokuapp.com",
   "dependencies": {
     "@syncfusion/ej2-react-buttons": "^19.4.38",
     "@syncfusion/ej2-react-calendars": "^19.4.38",
@@ -10,6 +10,7 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.24.0",
+    "cloudinary-react": "^1.8.1",
     "react": "^17.0.2",
     "react-datepicker": "^4.6.0",
     "react-dom": "^17.0.2",
@@ -25,7 +26,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  
   "eslintConfig": {
     "extends": [
       "react-app",

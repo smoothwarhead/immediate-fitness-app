@@ -60,7 +60,7 @@ const Profile = ({ profile, listItem, classes }) => {
                         <div className="profile_section">
                             <div className="profile_section_title">Weight</div>
                             <p className="about_me_para">
-                                {profile.weight}
+                                {`${profile.weight} lbs`}
                             </p>
                         </div>
                         

@@ -1,5 +1,6 @@
 import { ImLocation2 } from "react-icons/im";
 import '../../files/styles/ProfileBanner.css';
+import {Image} from 'cloudinary-react';
 
 
 const ProfileBanner = ({ profile }) => {
@@ -7,7 +8,7 @@ const ProfileBanner = ({ profile }) => {
         <div className="banner">
             <div className="banner_elements">
                 <div className="profile_pic">
-                    <img src={`/uploads/${profile.profileImage}`} alt={`${profile.profileImage}_image`} className="profile_img"/>
+                    <Image cloudName="greenietec" publicId={`${profile.profileImage}`} />
 
                 </div>
                 <div className="profile_name"><p>{`${profile.firstName} ${profile.lastName}`}</p></div>

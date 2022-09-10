@@ -1,15 +1,18 @@
 import { ImLocation2 } from 'react-icons/im';
 import { GoPrimitiveDot } from 'react-icons/go';
 import '../../files/styles/Client.css';
+import {Image} from 'cloudinary-react';
+
 
 const Client = ({ item }) => {
 
     return ( 
         <div className="card">
             <div className="card_image">
-                <img src={`/uploads/${item.image}`} alt={`${item.image}_image`} className="client_img"/>
+                <Image cloudName="greenietec" publicId={`${item.profileImage}`} />
 
             </div>
+            
             <div className="card_info">
 
                 <div className="card_info_empty"></div>

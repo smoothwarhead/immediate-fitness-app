@@ -12,6 +12,7 @@ import UserContext from '../../context/UserContext';
 import NoUserHeader from '../../components/NoUserHeader';
 import axios from '../../api/axios';
 import MessageBox from '../../components/MessageBox';
+import useAuth from '../../context/useAuth';
 
 
 
@@ -109,38 +110,35 @@ function CreateTrainerProfile() {
         e.preventDefault();
         
        
-        const data = new FormData();
-
-        data.append('file', file.file);
-        data.append('aboutMe', formData.aboutMe );
-        data.append('gender', formData.gender);
-        data.append('yearOfExp', formData.yearOfExp);
-        data.append('areaOfSpec', JSON.stringify(formData.items));
+        const data = { file: profilePicture, aboutMe: formData.aboutMe,  gender: formData.gender, yearOfExp: formData.yearOfExp, areaOfSpec: JSON.stringify(formData.items) };
 
         
         try{
 
             let res = await axios.post('https://immediate-server.herokuapp.com/auth/create-trainer-profile', data,
             {
-                headers: { "Content-Type": "multipart/form-data" },
+                headers: {'Content-Type': 'application/json'},
                 withCredentials: true
             })
 
 
             if(res.status === 201){
                 setMessageOpen(true);
-                    setMessage({...message, body: res.data.message, type: "success" });
-                setTimeout(() => {
-                   navigate(`/auth/dashboard/${user.role.toLowerCase()}`);
-                }, 2000);
+                setMessage({...message, body: res.data.message, type: "success" });
+                setIsPending(false);
+                
+                navigate(`/auth/dashboard/${user.role.toLowerCase()}`);
                 
             }else{
+                setIsPending(false);
+
                 setMessageOpen(true);
                 setMessage({...message, body: "Your profile could not be created at this time", type: "error" });
             }  
 
         }catch(error){
-            console.log(error);
+            setIsPending(true);
+
             if(error.response.status === 401){
                 
                 setLoggedIn(false);
@@ -149,6 +147,7 @@ function CreateTrainerProfile() {
                 
             }
             if(error.response.status === 404){
+                setIsPending(false);
                 
                 setMessageOpen(true);
                 setMessage({...message, body: "Your profile could not be created at this time", type: "error" });
@@ -156,6 +155,7 @@ function CreateTrainerProfile() {
                 
             }
             if(error.response.status === 500){
+                setIsPending(false);
                 
                 setMessageOpen(true);
                 setMessage({...message, body: "Your profile could not be created at this time", type: "error" });
