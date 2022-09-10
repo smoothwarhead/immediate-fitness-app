@@ -129,10 +129,7 @@ function CreateClientProfile() {
         const height = `${formData.foot}'${formData.inches}`;
 
        
-        const data = { file: profilePicture, height, age: formData.age, gender: formData.gender, weight: formData.weight, fitness_goals: JSON.stringify(formData.items) };
-
-        
-
+        const data = { file:JSON.stringify(profilePicture), height, age: formData.age, gender: formData.gender, weight: formData.weight, fitness_goals: JSON.stringify(formData.items) };
 
 
         try{
@@ -155,7 +152,16 @@ function CreateClientProfile() {
                     navigate(`/auth/dashboard/${user.role.toLowerCase()}`);
                     
                    
-                }else{
+                }
+
+                if(res.error.status === 500){
+                    setIsPending(false);
+
+                    setMessageOpen(true);
+                    setMessage({...message, body: "Your profile could not be created at this time", type: "error" });
+                }
+                
+                else{
                     setIsPending(false);
 
                     setMessageOpen(true);
