@@ -46,7 +46,7 @@ function CreateClientProfile() {
     const navigate = useNavigate();
 
     const { user, setLoggedIn } = useContext(UserContext);
-    const { setIsPending } = useAuth();
+    const { isPending, setIsPending } = useAuth();
 
 
 
@@ -204,8 +204,14 @@ function CreateClientProfile() {
     return ( 
 
         <>
-            <NoUserHeader cName="account-logo" />
-            <div className="create_profile_page">
+        
+            { isPending && <LoadingData /> }
+
+            { !isPending && <NoUserHeader cName="account-logo"/>}
+
+
+            { !isPending &&
+                <div className="create_profile_page">
                
 
 
@@ -293,7 +299,8 @@ function CreateClientProfile() {
                 
                 
                 
-            </div>
+                </div>
+            }
         </>
      );
 }
