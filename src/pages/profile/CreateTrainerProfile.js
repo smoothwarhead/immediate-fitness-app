@@ -42,6 +42,8 @@ function CreateTrainerProfile() {
     });
 
     const navigate = useNavigate();
+    const { setIsPending } = useAuth();
+
 
 
 
