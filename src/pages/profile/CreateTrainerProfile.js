@@ -13,6 +13,7 @@ import NoUserHeader from '../../components/NoUserHeader';
 import axios from '../../api/axios';
 import MessageBox from '../../components/MessageBox';
 import useAuth from '../../context/useAuth';
+import LoadingData from '../../components/LoadingData';
 
 
 
@@ -42,7 +43,7 @@ function CreateTrainerProfile() {
     });
 
     const navigate = useNavigate();
-    const { setIsPending } = useAuth();
+    const { isPending, setIsPending } = useAuth();
 
 
 
@@ -177,8 +178,12 @@ function CreateTrainerProfile() {
     return ( 
 
         <>
-            <NoUserHeader cName="account-logo"/>
-            <div className="create_profile_page">
+            { isPending && <LoadingData /> }
+
+            { !isPending && <NoUserHeader cName="account-logo"/>}
+            
+            { !isPending &&
+                <div className="create_profile_page">
                 <div className="create-profile-content">
 
                     {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
@@ -268,7 +273,8 @@ function CreateTrainerProfile() {
 
                     
                 </div>
-            </div>
+                </div>
+            }
         </>
      );
 }
