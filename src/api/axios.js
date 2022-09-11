@@ -9,8 +9,4 @@ export default Axios.create({
     withCredentials: true
 });
 
-export const axiosPrivate =  Axios.create({
-    baseURL: BASE_URL,
-    headers: { 'Content-Type': 'application/json' }, 
-    withCredentials: true
-});
+export const axiosPrivate =  Axios.create();

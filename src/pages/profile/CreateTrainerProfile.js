@@ -10,7 +10,7 @@ import '../../files/styles/AddItems.css';
 import { useNavigate } from 'react-router-dom';
 import UserContext from '../../context/UserContext';
 import NoUserHeader from '../../components/NoUserHeader';
-import axios from '../../api/axios';
+import axios, { axiosPrivate } from '../../api/axios';
 import MessageBox from '../../components/MessageBox';
 import useAuth from '../../context/useAuth';
 import LoadingData from '../../components/LoadingData';
@@ -111,33 +111,59 @@ function CreateTrainerProfile() {
 
     const handleSubmit = async(e) => {
         e.preventDefault();
+
+        const fileData = new FormData();
+
+        fileData.append('file', file.file);
+        fileData.append("upload_preset", "immediate");
+
         
        
-        const data = { file: profilePicture, aboutMe: formData.aboutMe,  gender: formData.gender, yearOfExp: formData.yearOfExp, areaOfSpec: JSON.stringify(formData.items) };
 
+       
         
         try{
 
-            let res = await axios.post('https://immediate-server.herokuapp.com/auth/create-trainer-profile', data,
-            {
-                headers: {'Content-Type': 'application/json'},
-                withCredentials: true
-            })
+
+            setIsPending(true);
+
+            let uploadedResponse = await axiosPrivate.post('https://api.cloudinary.com/v1_1/greenietec/image/upload', fileData, {
+                headers: {'Content-Type': 'multipart/form-data'}
+            });
+
+            if(uploadedResponse.status === 200){
+                const data = { fileName: uploadedResponse.data.url, fileId: uploadedResponse.data.public_id, aboutMe: formData.aboutMe,  gender: formData.gender, yearOfExp: formData.yearOfExp, areaOfSpec: JSON.stringify(formData.items) };
+
+                let res = await axios.post('/auth/create-trainer-profile', data,
+                    {
+                        headers: {'Content-Type': 'application/json'},
+                        withCredentials: true
+                    })
 
 
-            if(res.status === 201){
-                setMessageOpen(true);
-                setMessage({...message, body: res.data.message, type: "success" });
-                setIsPending(false);
-                
-                navigate(`/auth/dashboard/${user.role.toLowerCase()}`);
-                
+                if(res.status === 201){
+                    setMessageOpen(true);
+                    setMessage({...message, body: res.data.message, type: "success" });
+                    setIsPending(false);
+                    
+                    navigate(`/auth/dashboard/${user.role.toLowerCase()}`);
+                    
+                    
+                }else{
+                    setIsPending(false);
+    
+                    setMessageOpen(true);
+                    setMessage({...message, body: "Your profile could not be created at this time", type: "error" });
+                }  
+
+
+
             }else{
-                setIsPending(false);
-
                 setMessageOpen(true);
                 setMessage({...message, body: "Your profile could not be created at this time", type: "error" });
-            }  
+            }
+
+            
 
         }catch(error){
             setIsPending(true);

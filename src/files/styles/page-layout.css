@@ -1,6 +1,7 @@
 .page-layout{
     width: 100%;
     height: 150vh;
+    margin-top: 1.8vh;
     display: grid;
     grid-template-columns: 5% auto 5%;
     grid-template-rows: 6.7% 0% auto;
