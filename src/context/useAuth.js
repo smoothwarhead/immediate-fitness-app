@@ -166,9 +166,10 @@ export default function  useAuth() {
             }
             else{
                 
-                setMessageOpen(true);
-                setMessage({...message, body: "User does not exist. Please provide the correct email and password", type: "error" });
-                setLoggedIn(res.data.logIn);
+                setIsPending(false);
+                // setMessageOpen(true);
+                // setMessage({...message, body: "User does not exist. Please provide the correct email and password", type: "error" });
+                // setLoggedIn(res.data.logIn);
 
 
             }
@@ -177,34 +178,32 @@ export default function  useAuth() {
         catch(error){
             
             if(error.response.status === 400){
-                console.log("400");
+                setIsPending(false);
                 setMessageOpen(true);
                 setMessage({...message, body: "Incorrect email or password combination !!!", type: "error" });
 
             }
             if(error.response.status === 401){
+                setIsPending(false);
                 setLoggedIn(false);
                 localStorage.removeItem("currentUser");
                 localStorage.setItem("isAuth", false);
                 
             }
             if(error.response.status === 404){
-                console.log("404");
-
+                setIsPending(false);
                 setMessageOpen(true);
                 setMessage({...message, body: "User does not exist. Please provide the correct email and password", type: "error" });
                 
             }
             if(error.response.status === 500){
-                console.log("500");
-
+                setIsPending(false);
                 setMessageOpen(true);
                 setMessage({...message, body: "Incorrect email or password combination !!!", type: "error" });
                
             }
             if(error.response.status === 503){
-                console.log("503");
-
+                setIsPending(false);
                 setMessageOpen(true);
                 setMessage({...message, body: "Inconsistent network !!!", type: "error" });
                
