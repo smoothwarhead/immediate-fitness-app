@@ -177,6 +177,7 @@ export default function  useAuth() {
         catch(error){
             
             if(error.response.status === 400){
+                console.log("400");
                 setMessageOpen(true);
                 setMessage({...message, body: "Incorrect email or password combination !!!", type: "error" });
 
@@ -188,16 +189,22 @@ export default function  useAuth() {
                 
             }
             if(error.response.status === 404){
+                console.log("404");
+
                 setMessageOpen(true);
                 setMessage({...message, body: "User does not exist. Please provide the correct email and password", type: "error" });
                 
             }
             if(error.response.status === 500){
+                console.log("500");
+
                 setMessageOpen(true);
                 setMessage({...message, body: "Incorrect email or password combination !!!", type: "error" });
                
             }
             if(error.response.status === 503){
+                console.log("503");
+
                 setMessageOpen(true);
                 setMessage({...message, body: "Inconsistent network !!!", type: "error" });
                
@@ -231,6 +238,18 @@ export default function  useAuth() {
                 localStorage.removeItem("isAuth");
 
                 // setLoggedIn(res.data.logIn);
+                navigate('/');
+                
+            }
+
+            if(res.status === 304){
+
+                setUser(null);
+                setLoggedIn(false);
+
+                localStorage.removeItem("currentUser");
+                localStorage.removeItem("isAuth");
+
                 navigate('/');
                 
             }

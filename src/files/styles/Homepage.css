@@ -464,6 +464,11 @@
       font-size: 0.75em;
     }
 
+    .hm-login-btn{
+      padding: 5px 30px;
+      font-size: 0.75em;
+    }
+
     .code_404{
       font-size: 7vw;     
     }
