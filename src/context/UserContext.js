@@ -17,6 +17,15 @@ export const UserProvider = ({ children }) => {
 
         const isAuth = JSON.parse(localStorage.getItem("isAuth"));
 
+        if(!currentUser && !isAuth){
+            localStorage.removeItem("currentUser");
+            localStorage.removeItem("isAuth");
+            localStorage.clear();
+
+            setUser(null);
+            setLoggedIn(false);
+        }
+
         setUser(currentUser);
         setLoggedIn(isAuth);
 

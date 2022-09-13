@@ -58,9 +58,7 @@ function App() {
 
 }, [setLoggedIn, setUser]);
 
-  console.log(user, loggedIn);
-
-
+ 
 
   useEffect(() => {
 
@@ -80,8 +78,7 @@ function App() {
 
 
             let res = await setCurrentUser();
-            console.log(res);
-  
+           
             if(res.status === 200){
   
               setUser(res.data.user[0]);
@@ -102,7 +99,7 @@ function App() {
   
             
           } catch (error) {
-            console.log(error);
+            
             setLoggedIn(false);
             setUser(null);
           }
@@ -119,8 +116,7 @@ function App() {
 
 
           let res = await setCurrentUser();
-          console.log(res);
-
+          
           if(res.status === 200){
 
             setUser(res.data.user[0]);
@@ -141,7 +137,6 @@ function App() {
 
           
       } catch (error) {
-        console.log(error);
           setLoggedIn(false);
           setUser(null);
       }

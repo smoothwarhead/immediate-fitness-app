@@ -228,13 +228,12 @@ export default function  useAuth() {
             
             if(res.status === 200){
 
-
+                localStorage.removeItem("currentUser");
+                localStorage.removeItem("isAuth");
+                localStorage.clear();
 
                 setUser(null);
                 setLoggedIn(false);
-
-                localStorage.removeItem("currentUser");
-                localStorage.removeItem("isAuth");
 
                 // setLoggedIn(res.data.logIn);
                 navigate('/');
