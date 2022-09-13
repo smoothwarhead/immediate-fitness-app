@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import '../../files/styles/Homepage.css';
 import SignupDropdown from './SignupDropdown';

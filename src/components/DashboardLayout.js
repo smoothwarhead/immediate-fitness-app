@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import useAuth from "../context/useAuth";
 // import DropdownContext from "../context/DropdownContext";
 import UserContext from "../context/UserContext"
-// import useMediaQuery from "../hooks/useMediaQuery";
+import DataContext from "../context/DataContext";
 import Header from "./Header"
 import LoadingData from "./LoadingData";
 import Navbar from "./navbar/Navbar";
