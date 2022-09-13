@@ -17,10 +17,15 @@ function Homepage() {
     const { user } = useContext(UserContext);
     
     const isMax1180 = useMediaQuery('(max-width: 1180px)');
+    const navigate = useNavigate();
 
 
     const handleClick = () => {
         setDropdown(!dropdown)
+    };
+
+    const handleLogin = () => {
+        navigate("/login", { replace: true });
     };
 
 
@@ -58,7 +63,11 @@ function Homepage() {
  
                         </p>
 
-                        <div className="connect-btn" onClick={handleClick} >Connect now</div>
+                        <div className="homepage-btns">
+                            <div className="hm-btn connect-btn" onClick={handleClick} >Connect now</div>
+                            {isMax1180 && <div className="hm-btn hm-login-btn" onClick={handleLogin} >Login</div>}
+
+                        </div>
 
                     </div>}
                 </div>

@@ -99,6 +99,9 @@ const Login = () => {
 
             { !isPending &&
                 <div className="login_page">
+
+                    {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
+
                     
                     <div className="account-back-btn-container">
                         <div className="back_btn account-back-btn" onClick={() => navigate(-1)}>Back</div>
@@ -107,7 +110,6 @@ const Login = () => {
                     <div className="account-content">
                         
                         
-                        {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
 
                         <div className="form_container login_container">
                             <div className="form_header"><p className="login-p">Login</p> </div>

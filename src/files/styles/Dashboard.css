@@ -1,7 +1,6 @@
 .main_page{
     width: 100%;
-    max-height: 180vh;
-    min-height: 70vh;
+    height: 180vh;
     margin-top: 12vh;
     display: grid;
     grid-template-columns: 10% auto 5%;
@@ -9,11 +8,14 @@
     
 }
 
+.empty-page{    
+    height: 87vh;
+}
+
 
 .class_main_page{
     width: 100%;
-    max-height: 250vh;
-    min-height: 87vh;
+    height: 250vh;
     margin-top: 12vh;
     display: grid;
     grid-template-columns: 10% auto 5%;
@@ -24,8 +26,7 @@
 
 .entity_main_page{
     width: 100%;
-    max-height: 150vh;
-    min-height: 87vh;
+    height: 150vh;
     margin-top: 12vh;
     display: grid;
     grid-template-columns: 10% auto 5%;
@@ -35,14 +36,12 @@
 
 .find_class_main_page{
     width: 100%;
-    max-height: 200vh;
-    min-height: 87vh;
+    height: 200vh;
     margin-top: 12vh;
     display: grid;
     grid-template-columns: 10% auto 5%;
     grid-template-rows: 6% 4% auto;
     
-
 }
 
 

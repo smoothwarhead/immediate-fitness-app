@@ -148,7 +148,7 @@ function CreateClientProfile() {
 
             if(uploadedResponse.status === 200){
 
-                const data = { fileName: uploadedResponse.data.url, fileId: uploadedResponse.data.public_id, height, age: formData.age, gender: formData.gender, weight: formData.weight, fitness_goals: JSON.stringify(formData.items) };
+                const data = { fileName: uploadedResponse.data.secure_url, fileId: uploadedResponse.data.public_id, height, age: formData.age, gender: formData.gender, weight: formData.weight, fitness_goals: JSON.stringify(formData.items) };
 
 
                 let res = await axios.post('/auth/create-client-profile', data,
@@ -288,7 +288,7 @@ function CreateClientProfile() {
                             <div className="create-profile-input_container">
                                 <div className="input_row_container">
                                     <div className="profile_input_row">
-                                        <ItemForm  addItem={addItem} placeholder="Area of specialization"/>
+                                        <ItemForm  addItem={addItem} placeholder="Your fitness goal/goals"/>
                                     </div>
                                 </div>
                             </div>

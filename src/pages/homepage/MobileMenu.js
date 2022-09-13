@@ -76,7 +76,7 @@ const MobileMenu = ({ isProfile}) => {
                         <>
 
                             <div className="profile-mobile">
-                                <Link to={user?.allowedRole === 3030 ? '/auth/dashboard/trainer' : '/auth/dashboard/client'} onClick={handleClick}><div className="profile-mobile-links mobile_home">Home</div></Link> 
+                                <Link to={user?.allowedRole === 3030 ? '/auth/dashboard/trainer' : '/auth/dashboard/client'} onClick={handleClick}><div className="profile-mobile-links mobile_home">Dashboard</div></Link> 
                                 <Link to={user?.allowedRole === 3030 ? '/auth/dashboard/trainer/clients' : '/auth/dashboard/client/trainers'} onClick={handleClick}><div className="profile-mobile-links mobile_role">{user.role === 'Trainer' ? 'Clients' : 'Trainers'}</div></Link> 
                                 <Link to={user?.allowedRole === 3030 ? '/auth/dashboard/trainer/classes' : '/auth/dashboard/client/classes'} onClick={handleClick}><div className="profile-mobile-links mobile_classes">Classes</div></Link>
 

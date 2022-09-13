@@ -39,7 +39,8 @@ export default function  useAuth() {
                  
             if(res.status === 201){                
 
-                setIsPending(false);
+                setMessageOpen(true);              
+                setMessage({...message, body: res.data.message, type: "success" });
 
                 let {data: resData} = await setCurrentUser();
 
@@ -53,14 +54,13 @@ export default function  useAuth() {
 
                     localStorage.setItem("currentUser", JSON.stringify(resData.user[0]) );
                     localStorage.setItem("isAuth", resData.logIn);
-                    setMessageOpen(true);              
-                    setMessage({...message, body: res.data.message, type: "success" });
+
+                    setIsPending(true);
+
+                    
                     navigate('/auth/options');
 
-                    // setTimeout(() => {
-                    //     navigate('/auth/options');
-
-                    // }, 2000)
+                  
 
                 }else{
 
@@ -69,9 +69,6 @@ export default function  useAuth() {
                     setMessage({...message, body: res.data.message, type: "error" });
                     navigate('/');
 
-                    // setTimeout(() => {
-                    //     navigate('/');
-                    // }, 2000);
 
                 }
 
@@ -80,26 +77,11 @@ export default function  useAuth() {
                
             }
 
-            if(res.status === 400){
-                setIsPending(false);
-
-                setMessageOpen(true);              
-                setMessage({...message, body: "This user already exists !!!", type: "error" });
-
-            }
-
-            if(res.status === 503){
-                setIsPending(false);
-
-                setMessageOpen(true);              
-                setMessage({...message, body: "There is a network error", type: "error" });
-
-            }
+         
             
         }
         catch(error){
-            
-            setIsPending(false);
+           
 
             if(error.response.status === 400){
                 setMessageOpen(true);
@@ -120,7 +102,7 @@ export default function  useAuth() {
             }
             if(error.response.status === 500){
                 setMessageOpen(true);
-                setMessage({...message, body: "Incorrect email or password combination !!!", type: "error" });
+                setMessage({...message, body: "Interval server error !!!", type: "error" });
                
             }
             if(error.response.status === 503){
@@ -149,7 +131,8 @@ export default function  useAuth() {
 
                  
             if(res.status === 200){                
-                setIsPending(false);
+                setMessageOpen(true);              
+                setMessage({...message, body: res.data.message, type: "success" });
 
                 let { data: resData } = await setCurrentUser();
 
@@ -161,19 +144,17 @@ export default function  useAuth() {
 
                     localStorage.setItem("currentUser", JSON.stringify(resData.user[0]) );
                     localStorage.setItem("isAuth", resData.logIn);
-                    setMessageOpen(true);              
-                    setMessage({...message, body: res.data.message, type: "success" });
+
+                    setIsPending(true);
+
                     
                     navigate(`/auth/dashboard/${resData.user[0].role.toLowerCase()}`);
-                    // setTimeout(() => {
-                    //     navigate(`/auth/dashboard/${resData.user[0].role.toLowerCase()}`);
-                    // }, 2000)
-
+                  
                 }else{
 
                     localStorage.setItem("isAuth", false);
                     setMessageOpen(true);
-                    setMessage({...message, body: res.data.message, type: "error" });
+                    setMessage({...message, body: "User does not exist. Please provide the correct email and password", type: "error" });
 
                     setTimeout(() => {
                         navigate('/');
@@ -184,8 +165,7 @@ export default function  useAuth() {
                
             }
             else{
-                setIsPending(false);
-
+                
                 setMessageOpen(true);
                 setMessage({...message, body: "User does not exist. Please provide the correct email and password", type: "error" });
                 setLoggedIn(res.data.logIn);
@@ -195,12 +175,10 @@ export default function  useAuth() {
             
         }
         catch(error){
-            setIsPending(false);
-            console.log(error.reponse);
-
+            
             if(error.response.status === 400){
                 setMessageOpen(true);
-                setMessage({...message, body: "User does not exist. Please provide the correct email and password", type: "error" });
+                setMessage({...message, body: "Incorrect email or password combination !!!", type: "error" });
 
             }
             if(error.response.status === 401){

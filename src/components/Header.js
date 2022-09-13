@@ -57,7 +57,7 @@ const Header = ({ isProfile }) => {
                     <div className={"header_elements"}>
                         {isProfile ? 
                             <div className="header_navs">
-                                <Link to={user?.allowedRole === 3030 ? '/auth/dashboard/trainer' : '/auth/dashboard/client'}><div className="header_home">Home</div></Link> 
+                                <Link to={user?.allowedRole === 3030 ? '/auth/dashboard/trainer' : '/auth/dashboard/client'}><div className="header_home">Dashboard</div></Link> 
                                 <Link to={user?.allowedRole === 3030 ? '/auth/dashboard/trainer/clients' : '/auth/dashboard/client/trainers'}><div className="header_role">{user.role === 'Trainer' ? 'Clients' : 'Trainers'}</div></Link> 
                                 <Link to={user?.allowedRole === 3030 ? '/auth/dashboard/trainer/classes' : '/auth/dashboard/client/classes'}><div className="header_classes">Classes</div></Link>
                                 

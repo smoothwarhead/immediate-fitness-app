@@ -132,7 +132,7 @@ function CreateTrainerProfile() {
             });
 
             if(uploadedResponse.status === 200){
-                const data = { fileName: uploadedResponse.data.url, fileId: uploadedResponse.data.public_id, aboutMe: formData.aboutMe,  gender: formData.gender, yearOfExp: formData.yearOfExp, areaOfSpec: JSON.stringify(formData.items) };
+                const data = { fileName: uploadedResponse.data.secure_url, fileId: uploadedResponse.data.public_id, aboutMe: formData.aboutMe,  gender: formData.gender, yearOfExp: formData.yearOfExp, areaOfSpec: JSON.stringify(formData.items) };
 
                 let res = await axios.post('/auth/create-trainer-profile', data,
                     {
@@ -265,7 +265,7 @@ function CreateTrainerProfile() {
                             <div className="create-profile-input_container">
                                 <div className="input_row_container">
                                     <div className="profile_input_row">
-                                        <ItemForm  addItem={addItem} placeholder="Area of specialization"/>
+                                        <ItemForm  addItem={addItem} placeholder="Area of specialization/specializations"/>
                                     </div>
                                 </div>
                             </div>

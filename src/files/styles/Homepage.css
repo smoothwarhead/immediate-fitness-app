@@ -70,8 +70,17 @@
     margin-bottom: 10px;
   }
 
-  
-  .connect-btn{
+
+  .homepage-btns{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+
+  }
+
+  .hm-btn{
     font-family: 'Industry';
     font-size: 1em;
     font-weight: 500;
@@ -79,18 +88,34 @@
     text-transform: uppercase;
     width: fit-content;
     height: fit-content;
-    padding: 10px 25px;
-    margin-top: 50px;
     display: block;
+    cursor: pointer;
+    font-weight: 600;
+
+  }
+
+ 
+  .connect-btn{   
+    padding: 10px 25px;
     color: #F7DD95;
     border: 1px solid #F7DD95;
-    cursor: pointer;
     transition: all 0.7s ease-in-out;
   }
 
   .connect-btn:hover{
     background: #F7DD95;
     color: #1a272a;
+  }
+
+  .hm-login-btn{
+    background: #F7DD95;
+    color: #1a272a;
+    padding: 10px 40px;
+
+  }
+
+  .hm-login-btn:hover{
+    opacity: .7;
   }
 
 

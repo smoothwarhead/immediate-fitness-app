@@ -37,6 +37,11 @@
     
 }
 
+.max-960{
+    margin-top: 12vh;
+    
+}
+
 .page-content{
     grid-column: 1/4;
     grid-row: 3/4;

@@ -3,8 +3,8 @@
 export const NavItems = [
 
     {
-        titleTrainer: 'Home',
-        titleClient: 'Home',
+        titleTrainer: 'Dashboard',
+        titleClient: 'Dashboard',
         trainerPath: '/auth/dashboard/trainer',
         clientPath: '/auth/dashboard/client',
         cName: 'nav_links home'
