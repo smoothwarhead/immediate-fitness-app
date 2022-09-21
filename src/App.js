@@ -43,7 +43,7 @@ function App() {
  
 
 
-  const { setUser, setLoggedIn, user, loggedIn } = useContext(UserContext);
+  const { setUser, setLoggedIn } = useContext(UserContext);
   
 
   useEffect(() => {

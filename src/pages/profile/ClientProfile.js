@@ -5,7 +5,6 @@ import axios from '../../api/axios';
 import UserContext from '../../context/UserContext';
 import DataContext from '../../context/DataContext';
 import PageLayout from '../../components/PageLayout';
-import LoadingData from '../../components/LoadingData';
 import { Link } from 'react-router-dom';
 import FlatButton from '../../components/FlatButton';
 import MessageBox from '../../components/MessageBox';

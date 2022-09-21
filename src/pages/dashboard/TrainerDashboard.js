@@ -5,7 +5,6 @@ import FlatButton from '../../components/FlatButton';
 import '../../files/styles/Dashboard.css';
 import ClassDashboard from "../../components/classDashboard/ClassDashboard";
 import DashboardLayout from "../../components/DashboardLayout";
-import LoadingData from "../../components/LoadingData";
 import MessageBox from "../../components/MessageBox";
 
 
