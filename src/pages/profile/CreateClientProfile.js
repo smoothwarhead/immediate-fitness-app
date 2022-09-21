@@ -13,8 +13,7 @@ import NoUserHeader from '../../components/NoUserHeader';
 import axios, { axiosPrivate } from '../../api/axios';
 import UserContext from '../../context/UserContext';
 import MessageBox from '../../components/MessageBox';
-import useAuth from '../../context/useAuth';
-import LoadingData from '../../components/LoadingData';
+
 
 
 
@@ -47,9 +46,7 @@ function CreateClientProfile() {
     const navigate = useNavigate();
 
     const { user, setLoggedIn } = useContext(UserContext);
-    const { isPending, setIsPending } = useAuth();
-
-
+   
 
 
     //profile picture preview
@@ -137,7 +134,6 @@ function CreateClientProfile() {
 
         try{
 
-            setIsPending(true);
 
             let uploadedResponse = await axiosPrivate.post('https://api.cloudinary.com/v1_1/greenietec/image/upload', fileData, {
                 headers: {'Content-Type': 'multipart/form-data'}
@@ -161,14 +157,13 @@ function CreateClientProfile() {
                 if(res.status === 201){
                     setMessageOpen(true);
                     setMessage({...message, body: res.data.message, type: "success" });
-                    setIsPending(false);
                     
-                    navigate(`/auth/dashboard/${user.role.toLowerCase()}`);
-                    
+                    setTimeout(() => {
+                        navigate(`/auth/dashboard/${user.role.toLowerCase()}`);
+
+                    }, 2000)
                    
                 }else{
-                    setIsPending(false);
-
                     setMessageOpen(true);
                     setMessage({...message, body: "Your profile could not be created at this time", type: "error" });
 
@@ -188,7 +183,6 @@ function CreateClientProfile() {
 
         }catch(error){
             
-            setIsPending(true);
            
             if(error.response.status === 401){
                 
@@ -198,7 +192,6 @@ function CreateClientProfile() {
                 
             }
             if(error.response.status === 404){
-                setIsPending(false);
                 
                 setMessageOpen(true);
                 setMessage({...message, body: "Your profile could not be created at this time", type: "error" });
@@ -206,7 +199,6 @@ function CreateClientProfile() {
                 
             }
             if(error.response.status === 500){
-                setIsPending(false);
                 
                 setMessageOpen(true);
                 setMessage({...message, body: "Your profile could not be created at this time", type: "error" });
@@ -229,16 +221,10 @@ function CreateClientProfile() {
 
         <>
         
-            { isPending && <LoadingData /> }
+           <NoUserHeader cName="account-logo"/>
 
-            { !isPending && <NoUserHeader cName="account-logo"/>}
-
-
-            { !isPending &&
-                <div className="create_profile_page">
-               
-
-
+            <div className="create_profile_page">
+            
                 <div className="create-profile-content">
                     {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
 
@@ -316,15 +302,10 @@ function CreateClientProfile() {
                         
                     </form>
 
-                </div>
-
-                    
-
-                
-                
-                
-                </div>
-            }
+                </div> 
+        
+            </div>
+            
         </>
      );
 }

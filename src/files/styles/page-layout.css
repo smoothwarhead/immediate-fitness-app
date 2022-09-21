@@ -1,7 +1,7 @@
 .page-layout{
     width: 100%;
     height: 150vh;
-    margin-top: 1.8vh;
+    margin-top: 6vh;
     display: grid;
     grid-template-columns: 5% auto 5%;
     grid-template-rows: 6.7% 0% auto;
@@ -27,6 +27,15 @@
     
 }
 
+.empty-page-layout{
+    width: 100%;
+    height: 87vh;
+    margin-top: 6vh;
+    display: grid;
+    grid-template-columns: 5% auto 5%;
+    grid-template-rows: 6.7% 0% auto;
+}
+
 
 
 .page-header{
@@ -42,6 +51,11 @@
     
 }
 
+.header-not-max-960{
+    display: none;
+    
+}
+
 .page-content{
     grid-column: 1/4;
     grid-row: 3/4;
@@ -49,6 +63,7 @@
     height: 100%;
     
 }
+
 
 .page-loading{
     grid-column: 3/4;
@@ -63,28 +78,26 @@
     grid-row: 1/2;
     width: 100%;
     height: 100%;
+    padding: 30px 0 0 0;
     
 }
 
 .no-data-message p{
     font-family: 'Industry';
     font-size: 1.25em;
-    margin: 20px 0;
+    margin: 0 0 40px 0;
     display: block;
     text-align: center;
 }
 
 .create-profile-btn-container{
     margin: 50px auto;
-    width: fit-content;
+    width: 20%;
     height: fit-content;
         
 }
 
-.create-profile-btn-container a{
-    text-decoration: none;
-    
-}
+
 
 .profile-items{
     grid-column: 1/6;
@@ -94,21 +107,28 @@
     
 }
 
-@media (max-width: 1180px) and (min-width: 1120px){
-    .page-layout{
-        /* height: 120vh; */
-        grid-template-rows: 6.7% 0% auto;
+
+@media (max-width: 1225px) and (min-width: 960px){
+
+    .create-profile-btn-container{
+        width: 30%;
+    }
+
+    
+}
+
+@media (max-width: 960px) and (min-width: 0px){
+    .empty-page-layout{
+        grid-template-rows: 10% 0% auto;
 
     }
 
     
 }
 
-@media (max-width: 960px) and (min-width: 520px){
-    .page-layout{
-        /* height: 120vh; */
-        grid-template-rows: 6.7% 0% auto;
-
+@media (max-width: 960px) and (min-width: 768px){
+    .create-profile-btn-container{
+        width: 35%;
     }
 
     

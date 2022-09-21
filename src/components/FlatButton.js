@@ -1,7 +1,7 @@
-const FlatButton = ({ name, cName }) => {
+const FlatButton = ({ name, cName, action }) => {
     return ( 
         <>
-            <div className={`flat_btn ${cName}`}>{name}</div>
+            <div className={`flat_btn ${cName}`} onClick={action}>{name}</div>
         </>
      );
 }

@@ -1,7 +1,6 @@
 import { useContext } from "react"
 import { useLocation } from "react-router-dom";
 import useAuth from "../context/useAuth";
-// import DropdownContext from "../context/DropdownContext";
 import UserContext from "../context/UserContext"
 import DataContext from "../context/DataContext";
 import Header from "./Header"
@@ -22,7 +21,6 @@ function DashboardLayout({ children }) {
 
   const getClassName = () => {
     if(location.pathname === "/auth/dashboard/trainer/classes"){
-      
       if(classes.length === 0){
         return "class_main_page empty-page";
 
@@ -30,7 +28,7 @@ function DashboardLayout({ children }) {
       return "class_main_page";
     }
     if(location.pathname === "/auth/dashboard/client/classes/find-a-class"){
-     
+
       if(classes.length === 0){
         return "find_class_main_page empty-page";
 
@@ -38,7 +36,6 @@ function DashboardLayout({ children }) {
       return "find_class_main_page";
     }
     if(location.pathname === "/auth/dashboard/client/trainers" || location.pathname === "/auth/dashboard/trainer/clients" ){
-    
       if(classes.length === 0){
         return "entity_main_page empty-page";
 
@@ -46,7 +43,6 @@ function DashboardLayout({ children }) {
       return "entity_main_page";
     }
     else{
-
       if(classes.length === 0){
         return "main_page empty-page";
 

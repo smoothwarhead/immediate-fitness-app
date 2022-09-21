@@ -9,6 +9,7 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import UserContext from "../context/UserContext";
 import Navbar from "./navbar/Navbar";
 import {NavItems} from "./navbar/NavItems";
+import DataContext from "../context/DataContext";
 
 
 
@@ -20,6 +21,8 @@ import {NavItems} from "./navbar/NavItems";
 const PageLayout = ({ children, isProfile }) => {
 
     const { user } = useContext(UserContext);
+    const { profile } = useContext(DataContext);
+
 
 
     const isMax960 = useMediaQuery('(max-width: 960px)');
@@ -33,31 +36,45 @@ const PageLayout = ({ children, isProfile }) => {
     const clientProfilePage = '/auth/dashboard/client/profile';
     const trainerProfilePage = '/auth/dashboard/trainer/profile';
   
-    const setClass = () => {
+    const setClassName = () => {
         if(location.pathname === '/auth/dashboard/trainer/create-a-class' || location.pathname === `/auth/dashboard/trainer/classes/edit-class/${id}`){
+            
             
             return "create-class-layout";
             
         }
         if(location.pathname === '/auth/dashboard/trainer/classes/upcoming-events' || location.pathname === '/auth/dashboard/client/classes/upcoming-events'){
-
+          
             return "upcoming-class-layout";
             
         }
         if(location.pathname === `/auth/dashboard/trainer/classes/session/${id}`){
-      
+          
             return "session-layout";
             
         }
         
         else{
 
-            if(isMax960) {
-                return "page-layout max-960";
+            if(profile.length === 0){
+
+                if(isMax960) {
+                    return "empty-page-layout max-960";
+            
+                }
+                return "empty-page-layout";
         
             }
+            else{
+                if(isMax960) {
+                    return "page-layout max-960";
+            
+                }
+                return "page-layout";
+            }
 
-            return "page-layout";
+            
+
         }
     }
 
@@ -70,7 +87,7 @@ const PageLayout = ({ children, isProfile }) => {
             <>   
                 <Header isProfile={isProfile}/>
 
-                <div className={setClass()}>
+                <div className={setClassName()}>
 
                     { (location.pathname === clientProfilePage || trainerProfilePage) && isMax960 &&     
                         <div className="page-header">
@@ -92,4 +109,4 @@ const PageLayout = ({ children, isProfile }) => {
   )
 }
 
-export default PageLayout
+export default PageLayout;

@@ -6,7 +6,6 @@ import { useContext } from 'react';
 import { DataContext } from '../../context/DataContext';
 import useFetch from '../../hooks/useFetch';
 import DashboardLayout from '../../components/DashboardLayout';
-import LoadingData from '../../components/LoadingData';
 import MessageBox from '../../components/MessageBox';
 
 
@@ -21,52 +20,54 @@ const ClientClasses = () => {
     const { classes } = useContext(DataContext);
     
 
-    const { isPending, messageOpen, message, closeMessage } = useFetch('https://immediate-server.herokuapp.com/auth/dashboard/client/classes');
+    const { messageOpen, message, closeMessage } = useFetch('https://immediate-server.herokuapp.com/auth/dashboard/client/classes');
 
+    const navigate = useNavigate();
 
 
     const location = useLocation();
     const checkLocation = '/auth/dashboard/client/classes';
 
     
-    
+    const handleNavigate = () => {
+        navigate('/auth/dashboard/client/classes/find-a-class', { replace: true });
+
+    };
 
     return ( 
         <>
-            { isPending && <LoadingData /> }
+            
 
-            {isPending ? <div></div> :
+            <DashboardLayout>
+                
+                <div className={ location.pathname === checkLocation ?  ( classes.length === 0 ? "class_content_container empty-data" : "class_content_container") : "content_container" }>
 
-                <DashboardLayout>
+                    {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
+
                     
-                    <div className={ location.pathname === checkLocation ?  ( classes.length === 0 ? "class_content_container empty-data" : "class_content_container") : "content_container" }>
 
-                        {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
-
-                       
-
-                        <div className="create-a-new-class-btn-left">
-                            <Link to={'/auth/dashboard/client/classes/find-a-class'}><FlatButton name='Find a class' cName='left_add_class_btn'/></Link>
-                        
-                        </div>
-                        
-
-                        <div className="client_class_all_classes_container">
-                            { classes.length === 0 ? 
-                                <div className="no-class">You have no class enrolled to at this moment. Please find a class to join</div>
-                                :
-                                <ClassDashboard classes={classes}/>
-
-                            
-                            }                   
-                            
-
-                        </div>
-
+                    <div className="create-a-new-class-btn-left">
+                        <FlatButton name='Find a class' cName='left_add_class_btn' action={handleNavigate}/>
+                    
                     </div>
                     
-                </DashboardLayout>
-            }
+
+                    <div className="client_class_all_classes_container">
+                        { classes.length === 0 ? 
+                            <div className="no-class">You have no class enrolled to at this moment. Please find a class to join</div>
+                            :
+                            <ClassDashboard classes={classes}/>
+
+                        
+                        }                   
+                        
+
+                    </div>
+
+                </div>
+                
+            </DashboardLayout>
+            
         </>
      );
 }

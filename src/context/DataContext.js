@@ -6,13 +6,15 @@ export const DataContext = createContext({});
 export const DataProvider = ({ children }) => {
 
     const [classes, setClasses] = useState([]);
-    // const [clientClasses, setClientClasses] = useState([]);
     const [ profile, setProfile ] = useState([]);
+    const [ clients, setClients ] = useState([]);
+    const [ trainers, setTrainers ] = useState([]);
+    
     
 
 
     return (
-        <DataContext.Provider value={{classes, setClasses, profile, setProfile}}>
+        <DataContext.Provider value={{classes, setClasses, profile, setProfile, clients, setClients, trainers, setTrainers}}>
             {children}
         </DataContext.Provider>
     )

@@ -9,6 +9,7 @@ import LoadingData from '../../components/LoadingData';
 import { Link } from 'react-router-dom';
 import FlatButton from '../../components/FlatButton';
 import MessageBox from '../../components/MessageBox';
+import useAuth from '../../context/useAuth';
 
 
 
@@ -19,7 +20,7 @@ const ClientProfile = () => {
     const { setLoggedIn } = useContext(UserContext);
 
     const { profile, setProfile} = useContext(DataContext);
-    const [isPending, setIsPending] = useState(true);
+    const { setIsPending } = useAuth();
     const [messageOpen, setMessageOpen] = useState(false);
     const [message, setMessage] = useState({
         body: "",
@@ -43,21 +44,19 @@ const ClientProfile = () => {
                     withCredentials: true
                 });
 
-                console.log(res);
 
                 if(res.status === 200){
 
-                    setIsPending(false);
                     setProfile(res.data.profile);
                     setLoggedIn(res.data.logIn);
                                         
+                    setIsPending(false);
 
                 }else if(res.status === 204){
-                    setIsPending(false);
                     setProfile(emptyProfile);
                     setLoggedIn(true);
+                    setIsPending(false);
 
-                    // setErrorMessage(null);
 
                 }
                 
@@ -66,13 +65,9 @@ const ClientProfile = () => {
                 }
 
 
-         
-                
-                
-            // })
                 
             } catch (error) {
-                console.log(error.response);
+
                 if(error.response.status === 401){
                     setIsPending(false);
                     setLoggedIn(false);
@@ -100,7 +95,7 @@ const ClientProfile = () => {
 
         getProfile();
 
-    }, [setLoggedIn,setProfile, message]);
+    }, [setLoggedIn,setProfile, message, setIsPending]);
 
    
     const closeMessage = () => {
@@ -112,38 +107,36 @@ const ClientProfile = () => {
 
     return ( 
         <>
-            { isPending && <LoadingData /> }
+            
+            <PageLayout isProfile={isProfile}>
+                <div className={profile.length !== 0 ? "profile-container" : "profile-container empty"}>
+                    {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
 
-            {isPending ? <div></div> :
-                <PageLayout isProfile={isProfile}>
-                    <div className={profile.length !== 0 ? "profile-container" : "profile-container empty"}>
-                        {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
+                    
 
-                     
+                    { profile.length === 0 &&  
+                        <div className="no-data-message">
+                            <p>You do not have a profile created yet. Please create a profile.</p>
 
-                        { profile.length === 0 &&  
-                            <div className="no-data-message">
-                                <p>You do not have a profile created yet. Please create a profile.</p>
-
-                                <div className="create-profile-btn-container">
-                                    <Link to='/auth/create-client-profile'><FlatButton name='Create Profile' cName='create-profile-btn-dashboard'/></Link>
-
-                                </div>
+                            <div className="create-profile-btn-container">
+                                <Link to='/auth/create-client-profile'><FlatButton name='Create Profile' cName='create-profile-btn-dashboard'/></Link>
 
                             </div>
-                        }
 
-        
-                        {profile.length !== 0 && 
-                            <div className="profile-items">
-                                <Profile profile={profile[0]} listItem = {profile[0].goals} classes={profile[0].classes} /> 
-                            </div>
-                        }
+                        </div>
+                    }
+
+    
+                    {profile.length !== 0 && 
+                        <div className="profile-items">
+                            <Profile profile={profile[0]} listItem = {profile[0].goals} classes={profile[0].classes} /> 
+                        </div>
+                    }
 
 
-                    </div>
-                </PageLayout>
-            }
+                </div>
+            </PageLayout>
+            
         </>
      );
 }

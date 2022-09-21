@@ -4,16 +4,17 @@ import { useContext, useState, useEffect } from 'react';
 import UserContext from '../context/UserContext';
 import axios from '../api/axios';
 import DashboardLayout from '../components/DashboardLayout';
-import LoadingData from '../components/LoadingData';
 import MessageBox from '../components/MessageBox';
+import useAuth from '../context/useAuth';
+import DataContext from '../context/DataContext';
 
 
 
 const Clients = () => {
 
     const { setLoggedIn } = useContext(UserContext);
-    const [clients, setClients] = useState([]);
-    const [isPending, setIsPending] = useState(true);
+    const { clients, setClients } = useContext(DataContext);
+    const { setIsPending } = useAuth();
     const [messageOpen, setMessageOpen] = useState(false);
     const [message, setMessage] = useState({
         body: "",
@@ -39,7 +40,7 @@ const Clients = () => {
                     withCredentials: true
                 });
 
-                console.log(res);
+            
 
                 if(res.status === 200){
 
@@ -64,23 +65,23 @@ const Clients = () => {
 
                 
             } catch (error) {
-                console.log(error.response);
+                
                 setIsPending(false);
                 if(error.response.status === 401){
-                    setIsPending(false);
+                    
                     setLoggedIn(false);
                     localStorage.removeItem("currentUser");
                     localStorage.setItem("isAuth", false);
                     
                 }
                 if(error.response.status === 404){
-                    setIsPending(false);
+                    
                     setMessageOpen(true);
                     setMessage({...message, body: "Could not fetch the data for that resource", type: "error" });
                     
                 }
                 if(error.response.status === 500){
-                    setIsPending(false);
+                    
                     setMessageOpen(true);
                     setMessage({...message, body: "Internal server error", type: "error" });
                    
@@ -92,39 +93,35 @@ const Clients = () => {
         getClients();
         
         
-    }, [setLoggedIn, message]);
+    }, [setLoggedIn, message, setClients, setIsPending]);
 
     return (  
         <>
-            { isPending && <LoadingData /> }
-
-            {isPending ? <div></div> :
-    
             
-                <DashboardLayout>
-                    
-                        
-                    <div className={clients.length === 0 ? "entity_content_container empty-data" : "entity_content_container"}>
-
-                        {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
-
-
-                        <div className="clients_container">
-                            {clients.length === 0 ? <div className='no-class'>You have no client</div> :
-                                
-                                clients.map((item, index) => {
-                                    return <Client item={item} key={index}/>
-
-                                })                            
-                                
-                            }
+            <DashboardLayout>
                 
-                        </div>
-                    </div>
                     
-                </DashboardLayout>
+                <div className={clients.length === 0 ? "entity_content_container empty-data" : "entity_content_container"}>
 
-            }
+                    {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
+
+
+                    <div className="clients_container">
+                        {clients.length === 0 ? <div className='no-class'>You have no client</div> :
+                            
+                            clients.map((item, index) => {
+                                return <Client item={item} key={index}/>
+
+                            })                            
+                            
+                        }
+            
+                    </div>
+                </div>
+                
+            </DashboardLayout>
+
+            
         </>
     );
 }

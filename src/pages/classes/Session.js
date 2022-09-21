@@ -18,9 +18,9 @@ import UserContext from '../../context/UserContext';
 const Session = () => {
 
     const navigate = useNavigate();
+    const { user } = useContext(UserContext);
     const isSession = true;
 
-    const { user } = useContext(UserContext);
 
 
     const getUrl = (role) => {

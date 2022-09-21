@@ -197,7 +197,8 @@ const handleSubmit = async (e) => {
         let res = await axios.post('https://immediate-server.herokuapp.com/auth/dashboard/trainer/create-a-class', JSON.stringify(data),  {
             headers: {'Content-Type': 'application/json'},
             withCredentials: true
-        })
+        });
+
     
         if(res.status === 201){
             setMessage({...message, body: res.data.message, type: "success" });
@@ -213,7 +214,7 @@ const handleSubmit = async (e) => {
         }
         
     } catch (error) {
-        console.log(error.message);
+      
         if(error.response.status === 401){
             setLoggedIn(false);
             localStorage.removeItem("currentUser");

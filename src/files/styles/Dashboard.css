@@ -8,9 +8,6 @@
     
 }
 
-.empty-page{    
-    height: 87vh;
-}
 
 
 .class_main_page{
@@ -42,6 +39,10 @@
     grid-template-columns: 10% auto 5%;
     grid-template-rows: 6% 4% auto;
     
+}
+
+.empty-page{    
+    height: 87vh;
 }
 
 
@@ -103,9 +104,31 @@
 
 }
 
+.empty-content-container{
+    width: 100%;
+    height: 100%;
+    padding: 20px ;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 4% 10% 10% 20% 2% auto;
+    
+}
+
+
+.class-empty-content-container{
+    width: 100%;
+    height: 100%;
+    padding: 20px ;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 4% 12% 12% 10% 2% auto;
+    row-gap: 2%;
+}
 
 
 .hello_name{
+    width: 100%;
+    height: 100%;
     font-family: 'Aviano', 'Spectral SC', 'Cormorant SC', 'serif';
     font-size: 1.5em;
     line-height: 2em;
@@ -124,20 +147,16 @@
 .content-items{
     grid-column: 1/6;
     grid-row: 4/7;
+    padding-top: 40px;
+
     
 }
-
-
-.new_class_btn{
-    float: right;
-}
-
 
 .flat_btn{
     font-family: 'Aviano', 'Spectral SC', 'Cormorant SC', 'serif';
     background: #1DAE8C 0% 0% no-repeat;
-    width: fit-content;
-    height: 40px;
+    width: 100%;
+    height: fit-content;
     color: #fff;
     text-align: center;
     padding: 10px 50px;
@@ -150,6 +169,10 @@
     background: #01362a;
 }
 
+.new_class_btn{
+    width: 70%;
+    float: right;
+}
 
 .row{
     display: block;
@@ -210,6 +233,9 @@
 }
 
 .no-class{
+    font-size: 1em;
+    text-align: center;
+    font-family: 'Industry';
     margin-top: 30px;
 }
 
@@ -405,8 +431,14 @@
         padding: 40px 0px 40px 10px;        
     }
 
+    .new_class_btn{
+        width: 80%;
+    }
+
     
   }
+
+
 
   @media (max-width: 1120px) and (min-width: 840px) {
     
@@ -421,7 +453,9 @@
 
   @media (max-width: 1120px) and (min-width: 960px) {
     
-    
+    .new_class_btn{
+        width: 90%;
+    }
 
     .filter_elements_btn{
         font-size: 1.325vw;
@@ -468,6 +502,7 @@
     }
 
 
+
   }
 
   @media (max-width: 960px) and (min-width: 840px) {
@@ -487,11 +522,27 @@
   }
 
 
+  @media (max-width: 960px) and (min-width: 440px) {
+    
+
+    .new_class_btn{
+        width: 90%;
+    }
+
+
+  }
+
+
   @media (max-width: 840px) and (min-width: 0px) {
     .trainers_container, .clients_container{
         padding: 40px 20px;  
         justify-content: space-between;     
 
+    }
+
+    .empty-content-container{
+        row-gap: 2%;
+        
     }
     
 
@@ -594,6 +645,13 @@
         grid-column: 3/6;
         
     }
+
+    .no-class{
+        font-size: 2.75vw;
+        
+    }
+
+
     .row{
         margin-bottom: 50px;
     }
@@ -674,6 +732,11 @@
         
     }
 
+    .no-class{
+        font-size: 4vw;
+        
+    }
+
     .row{
         margin-bottom: 50px;
     }
@@ -730,6 +793,11 @@
 
     }
 
+    .new_class_btn{
+        width: 100%;
+        
+    }
+
   }
 
 
@@ -748,6 +816,12 @@
         grid-column: 2/6;
         
     }
+
+    .no-class{
+        font-size: 4vw;
+        
+    }
+
     .hello_name{
         font-size: 3.5vw;
         line-height: 0;
@@ -817,6 +891,11 @@
 
     .create-a-new-class-btn{
         grid-column: 2/6;
+        
+    }
+
+    .no-class{
+        font-size: 4.5vw;
         
     }
 

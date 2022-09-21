@@ -3,12 +3,11 @@ import UserContext from "../../context/UserContext";
 
 import '../../files/styles/Dashboard.css';
 import ClassDashboard from "../../components/classDashboard/ClassDashboard";
-import LoadingData from "../../components/LoadingData";
 import DashboardLayout from "../../components/DashboardLayout";
 import MessageBox from "../../components/MessageBox";
 
 
-export default function ClientDashboard({classes, isPending, messageOpen, message, closeMessage}) {
+export default function ClientDashboard({classes, messageOpen, message, closeMessage}) {
 
     const { user } = useContext(UserContext);
 
@@ -17,39 +16,35 @@ export default function ClientDashboard({classes, isPending, messageOpen, messag
     return (
         <>
 
-            { isPending && <LoadingData /> }
+            <DashboardLayout>
 
-            {isPending ? <div></div> :
-                <DashboardLayout>
+                
+               
 
+                <div className={classes.length === 0 ? "empty-content-container" : "content_container"}>
+
+                    {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
+
+                    <h2 className="hello_name">{`Hello, ${user?.firstName}!`}</h2>
+
+                    <div className="content-items">
+                        {classes.length === 0 ? <div className="no-class">You are not registered to any class at this time.</div> : 
+                        
+                            <ClassDashboard classes={classes}/>
+                        }
+
+                    </div>
+                    
+                    
                     
 
-                    { classes &&                 
 
-                        <div className="content_container">
+                </div> 
 
-                            {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
+                
 
-                            <h2 className="hello_name">{`Hello, ${user?.firstName}!`}</h2>
-
-                            <div className="content-items">
-                                {classes.length === 0 ? <div className="no-class">You are not registered to any class at this time.</div> : 
-                                
-                                    <ClassDashboard classes={classes}/>
-                                }
-
-                            </div>
-                            
-                            
-                            
-
-
-                        </div> 
-
-                    }
-
-                </DashboardLayout>
-            }
+            </DashboardLayout>
+            
         </>
     )
 }

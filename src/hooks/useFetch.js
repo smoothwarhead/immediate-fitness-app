@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../context/DataContext";
 import axios from "../api/axios";
 import UserContext from "../context/UserContext";
+import useAuth from "../context/useAuth";
 
 
 
@@ -11,7 +12,7 @@ const useFetch = (url, id) => {
     const {setClasses} = useContext(DataContext);
     
     const { setLoggedIn } = useContext(UserContext);
-    const [isPending, setIsPending] = useState(true);
+    const {setIsPending} = useAuth();
     const [messageOpen, setMessageOpen] = useState(false);
     const [message, setMessage] = useState({
         body: "",
@@ -35,7 +36,7 @@ const useFetch = (url, id) => {
                     withCredentials: true
                 });
 
-                console.log(res);
+                
 
                 if(res.status === 200){
 
@@ -55,8 +56,6 @@ const useFetch = (url, id) => {
 
                 
             } catch (error) {
-                console.log(error.response.status);
-                
                 if(error.response.status === 401){
                     setIsPending(false);
                     setLoggedIn(false);
@@ -85,9 +84,9 @@ const useFetch = (url, id) => {
 
         getClasses();
 
-    }, [setClasses, id, url, setLoggedIn, message]);
+    }, [setClasses, id, url, setLoggedIn, message, setIsPending]);
 
-    return { isPending, messageOpen, message, closeMessage }
+    return { messageOpen, message, closeMessage }
     
 }
 

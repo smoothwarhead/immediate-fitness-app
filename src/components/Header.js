@@ -9,7 +9,7 @@ import CloseMenuIcon from "./menu/CloseMenuIcon";
 import MobileMenu from "../pages/homepage/MobileMenu";
 import DropdownContext from "../context/DropdownContext";
 
-// import useMediaQuery from "../hooks/useMediaQuery";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 
 const Header = ({ isProfile }) => {
@@ -18,6 +18,8 @@ const Header = ({ isProfile }) => {
     const { user } = useContext(UserContext);
     const { drop, setDrop, openMenu, setOpenMenu } = useContext(DropdownContext);
 
+    const isMax1180 = useMediaQuery('(max-width: 1180px)');
+    const isMin960 = useMediaQuery('(min-width: 960px)');
    
     const handleClick = () => {
         setOpenMenu(!openMenu);
@@ -31,11 +33,6 @@ const Header = ({ isProfile }) => {
     }
 
 
-    // const is1120 = useMediaQuery('(min-width: 1120px)');
-
-
-
-    
 
     
     return ( 
@@ -55,21 +52,25 @@ const Header = ({ isProfile }) => {
                     </div>
 
                     <div className={"header_elements"}>
-                        {isProfile ? 
+                        {isProfile &&
+
                             <div className="header_navs">
                                 <Link to={user?.allowedRole === 3030 ? '/auth/dashboard/trainer' : '/auth/dashboard/client'}><div className="header_home">Dashboard</div></Link> 
                                 <Link to={user?.allowedRole === 3030 ? '/auth/dashboard/trainer/clients' : '/auth/dashboard/client/trainers'}><div className="header_role">{user.role === 'Trainer' ? 'Clients' : 'Trainers'}</div></Link> 
                                 <Link to={user?.allowedRole === 3030 ? '/auth/dashboard/trainer/classes' : '/auth/dashboard/client/classes'}><div className="header_classes">Classes</div></Link>
                                 
-                            </div> :
-                            <div className="header_empty"></div>
-                        
+                            </div>
+
                         }
 
-                        <div className="header_logout">
-                            <div className="logout" onClick={handleLogout}>Logout</div>  
+                        {
+                            !isMax1180 && isMin960 &&
 
-                        </div>
+                            <div className="header_logout">
+                                <div className="logout" onClick={handleLogout}>Logout</div>  
+
+                            </div>
+                        }
 
                     </div>
 

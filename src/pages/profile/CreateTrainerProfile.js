@@ -12,8 +12,7 @@ import UserContext from '../../context/UserContext';
 import NoUserHeader from '../../components/NoUserHeader';
 import axios, { axiosPrivate } from '../../api/axios';
 import MessageBox from '../../components/MessageBox';
-import useAuth from '../../context/useAuth';
-import LoadingData from '../../components/LoadingData';
+
 
 
 
@@ -43,7 +42,7 @@ function CreateTrainerProfile() {
     });
 
     const navigate = useNavigate();
-    const { isPending, setIsPending } = useAuth();
+   
 
 
 
@@ -125,7 +124,6 @@ function CreateTrainerProfile() {
         try{
 
 
-            setIsPending(true);
 
             let uploadedResponse = await axiosPrivate.post('https://api.cloudinary.com/v1_1/greenietec/image/upload', fileData, {
                 headers: {'Content-Type': 'multipart/form-data'}
@@ -144,14 +142,16 @@ function CreateTrainerProfile() {
                 if(res.status === 201){
                     setMessageOpen(true);
                     setMessage({...message, body: res.data.message, type: "success" });
-                    setIsPending(false);
                     
-                    navigate(`/auth/dashboard/${user.role.toLowerCase()}`);
+                    
+                    setTimeout(() => {
+                        navigate(`/auth/dashboard/${user.role.toLowerCase()}`);
+
+                    }, 2000)
                     
                     
                 }else{
-                    setIsPending(false);
-    
+                       
                     setMessageOpen(true);
                     setMessage({...message, body: "Your profile could not be created at this time", type: "error" });
                 }  
@@ -166,8 +166,7 @@ function CreateTrainerProfile() {
             
 
         }catch(error){
-            setIsPending(true);
-
+            
             if(error.response.status === 401){
                 
                 setLoggedIn(false);
@@ -176,15 +175,13 @@ function CreateTrainerProfile() {
                 
             }
             if(error.response.status === 404){
-                setIsPending(false);
-                
+               
                 setMessageOpen(true);
                 setMessage({...message, body: "Your profile could not be created at this time", type: "error" });
 
                 
             }
             if(error.response.status === 500){
-                setIsPending(false);
                 
                 setMessageOpen(true);
                 setMessage({...message, body: "Your profile could not be created at this time", type: "error" });
@@ -204,12 +201,10 @@ function CreateTrainerProfile() {
     return ( 
 
         <>
-            { isPending && <LoadingData /> }
-
-            { !isPending && <NoUserHeader cName="account-logo"/>}
+           <NoUserHeader cName="account-logo"/>
             
-            { !isPending &&
-                <div className="create_profile_page">
+            
+            <div className="create_profile_page">
                 <div className="create-profile-content">
 
                     {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
@@ -290,7 +285,7 @@ function CreateTrainerProfile() {
 
 
                         </div>
-                       
+                    
 
 
 
@@ -299,8 +294,8 @@ function CreateTrainerProfile() {
 
                     
                 </div>
-                </div>
-            }
+            </div>
+            
         </>
      );
 }

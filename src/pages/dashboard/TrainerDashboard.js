@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import UserContext from "../../context/UserContext";
-import { Link } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import FlatButton from '../../components/FlatButton';
 import '../../files/styles/Dashboard.css';
 import ClassDashboard from "../../components/classDashboard/ClassDashboard";
@@ -15,51 +15,48 @@ export default function TrainerDashboard({classes, isPending, messageOpen, messa
 
     const { user } = useContext(UserContext);
 
+    const navigate = useNavigate();
 
+    const handleNavigate = () => {
+        navigate('/auth/dashboard/trainer/create-a-class', { replace: true });
+
+    };
 
     return (
         <>
 
-            { isPending && <LoadingData /> }
 
-            {isPending ? <div></div> :
+            <DashboardLayout>
 
-                <DashboardLayout>
-
-                    { isPending && <LoadingData /> }
-
-                    { classes &&                 
-
-                        <div className={classes.length === 0 ? "content_container empty-data" : "content_container"}>
-
-                            {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
-
-                            <h2 className="hello_name">{`Hello, ${user?.firstName}!`}</h2>
-
-                            <div className="create-a-new-class-btn">
-                                <Link to={`/auth/dashboard/trainer/create-a-class`}><FlatButton name='Create a new class' cName='new_class_btn'/></Link>
-
-                            </div>
-
-                            <div className="content-items">
-                                {classes.length === 0 ? <div className="no-class">You are yet to create a class.</div> : 
-                                
-                                    <ClassDashboard classes={classes}/>
-                                }
-
-                            </div>
-                            
-                            
-                            
+                <div className={classes.length === 0 ? "empty-content-container" : "content_container"}>
 
 
-                        </div> 
+                    {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
+
+                    <h2 className="hello_name">{`Hello, ${user?.firstName}!`}</h2>
+
+                    <div className="create-a-new-class-btn">
+                        <FlatButton name='Create a new class' cName='new_class_btn' action={handleNavigate}/>
+
+                    </div>
+
+                    <div className="content-items">
+                        {classes.length === 0 ? <div className="no-class">You are yet to create a class.</div> : 
+                        
+                            <ClassDashboard classes={classes}/>
+                        }
+
+                    </div>
                     
-                    }
                     
-                </DashboardLayout>
-            }
+                    
 
+
+                </div> 
+                
+                
+            </DashboardLayout>
+           
         </>
     )
 }

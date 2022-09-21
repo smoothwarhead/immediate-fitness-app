@@ -1,20 +1,20 @@
 
-// import { Types } from '../../files/ClassEntities';
 import { useContext, useState, useEffect } from 'react';
 import axios from '../api/axios';
 import Trainer from '../components/Trainer';
 import UserContext from '../context/UserContext';
 import DashboardLayout from '../components/DashboardLayout';
-import LoadingData from '../components/LoadingData';
 import MessageBox from '../components/MessageBox';
+import useAuth from '../context/useAuth';
+import DataContext from '../context/DataContext';
 
 
 
 const Trainers = () => {
 
     const { setLoggedIn } = useContext(UserContext);
-    const [trainers, setTrainers] = useState([]);
-    const [isPending, setIsPending] = useState(true);
+    const { trainers, setTrainers} = useContext(DataContext);
+    const {setIsPending} = useAuth();
     const [messageOpen, setMessageOpen] = useState(false);
     const [message, setMessage] = useState({
         body: "",
@@ -90,38 +90,35 @@ const Trainers = () => {
         getTrainers();
         
         
-    }, [setLoggedIn, message]);
+    }, [setLoggedIn, message, setTrainers, setIsPending]);
 
     
 
     return (  
         <>
 
-            { isPending && <LoadingData /> }
+            <DashboardLayout>
 
-            {isPending ? <div></div> :
-                <DashboardLayout>
+                <div className="entity_content_container">
 
-                    <div className={trainers.length === 0 ? "entity_content_container empty-data" : "entity_content_container"}>
+                    {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
 
-                        {messageOpen && <MessageBox message={message} closeMessage={closeMessage} /> }
-
-                        <div className="clients_container">
-                                {trainers.length === 0 ? <div className='no-class'>You have no trainers</div> :
-                                    
-                                    trainers.map((item, index) => {
-                                    return <Trainer item={item} key={index}/>
-                                    
-                                    })
-                                    
-                                    
-                                }
-                    
-                        </div>
+                    <div className="clients_container">
+                            {trainers.length === 0 ? <div className='no-class'>You have no trainers</div> :
+                                
+                                trainers.map((item, index) => {
+                                return <Trainer item={item} key={index}/>
+                                
+                                })
+                                
+                                
+                            }
+                
                     </div>
+                </div>
                     
-                </DashboardLayout>
-            }
+            </DashboardLayout>
+            
         </>
     );
 }
