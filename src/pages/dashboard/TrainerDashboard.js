@@ -11,7 +11,7 @@ import MessageBox from "../../components/MessageBox";
 
 
 
-export default function TrainerDashboard({classes, isPending, messageOpen, message, closeMessage}) {
+export default function TrainerDashboard({classes, messageOpen, message, closeMessage}) {
 
     const { user } = useContext(UserContext);
 

@@ -15,7 +15,7 @@ const Dashboard = () => {
     const { classes } = useContext(DataContext);
     const {id} = useParams();
 
-    const { isPending, messageOpen, message, closeMessage } = useFetch(`https://immediate-server.herokuapp.com/auth/dashboard/${id.toLowerCase()}`);
+    const { messageOpen, message, closeMessage } = useFetch(`https://immediate-server.herokuapp.com/auth/dashboard/${id.toLowerCase()}`);
 
     
 
@@ -26,10 +26,10 @@ const Dashboard = () => {
         if (!user){
             return <LoadingData />
         }else if(user.allowedRole === 3030){
-            return <TrainerDashboard classes={classes} isPending={isPending} message={message} closeMessage={closeMessage} messageOpen={messageOpen} />
+            return <TrainerDashboard classes={classes}  message={message} closeMessage={closeMessage} messageOpen={messageOpen} />
 
         }else{
-            return <ClientDashboard classes={classes} isPending={isPending} message={message} closeMessage={closeMessage} messageOpen={messageOpen}/>
+            return <ClientDashboard classes={classes}  message={message} closeMessage={closeMessage} messageOpen={messageOpen}/>
 
         }
     }

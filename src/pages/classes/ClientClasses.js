@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import FlatButton from '../../components/FlatButton';
 import '../../files/styles/Classes.css';
 import ClassDashboard from '../../components/classDashboard/ClassDashboard';
