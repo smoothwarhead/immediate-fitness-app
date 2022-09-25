@@ -37,6 +37,8 @@ export default function  useAuth() {
 
 
         try{
+
+            console.log(res);
                  
             if(res.status === 201){                
 
