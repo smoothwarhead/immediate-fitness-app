@@ -56,7 +56,6 @@ export default function  useAuth() {
                     localStorage.setItem("currentUser", JSON.stringify(resData.user[0]) );
                     localStorage.setItem("isAuth", resData.logIn);
 
-
                     
                     setTimeout(() => {
                         setIsPending(true);
@@ -86,7 +85,7 @@ export default function  useAuth() {
         }
         catch(error){
            
-
+            setIsPending(false);
             if(error.response.status === 400){
                 setMessageOpen(true);
                 setMessage({...message, body: "This user already exists !!!", type: "error" });

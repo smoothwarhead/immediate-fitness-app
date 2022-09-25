@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import '../../files/styles/Profile.css';
 import UserContext from "../../context/UserContext";
 import NoUserHeader from '../../components/NoUserHeader';
+import useAuth from '../../context/useAuth';
 
 
 
@@ -10,6 +11,11 @@ const OptionPage = () => {
 
     const { user } = useContext(UserContext);
 
+    const {setIsPending} = useAuth();
+
+    useEffect(() => {
+        setIsPending(false);
+    }, [setIsPending])
 
     return ( 
 

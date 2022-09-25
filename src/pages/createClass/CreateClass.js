@@ -14,6 +14,7 @@ import PageLayout from '../../components/PageLayout';
 import axios from '../../api/axios';
 import MessageBox from '../../components/MessageBox';
 import UserContext from '../../context/UserContext';
+import useAuth from '../../context/useAuth';
 
 
 
@@ -36,6 +37,7 @@ const initialValues = {
 const CreateClass = () => {
 
     const { setLoggedIn } = useContext(UserContext);
+    const { setIsPending } = useAuth();
 
     const [formData, setFormData] = useState(initialValues);
 
@@ -201,14 +203,16 @@ const handleSubmit = async (e) => {
 
     
         if(res.status === 201){
+            setMessageOpen(true);
             setMessage({...message, body: res.data.message, type: "success" });
             
             setTimeout(() => {
-                
+                setIsPending(true);
                 navigate('/auth/dashboard/trainer/classes');
-            }, 2000)
+            }, 1000)
     
         }else{
+            setMessageOpen(true);
             setMessage({...message, body: "No class created", type: "error" });
 
         }

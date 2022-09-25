@@ -29,7 +29,7 @@ function Signup({role}) {
     const navigate = useNavigate();
 
 
-    const { register, message, messageOpen, closeMessage, isPending, setIsPending } = useAuth();
+    const { register, message, messageOpen, closeMessage, isPending,  } = useAuth();
 
 
     const handleSubmit = (e) => {
@@ -45,8 +45,7 @@ function Signup({role}) {
         
         if(isSubmitted){
             const allValues = {...data, role: role};
-            setIsPending(true);
-
+            
             register(allValues);
            
         }
