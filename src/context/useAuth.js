@@ -86,39 +86,46 @@ export default function  useAuth() {
             
         }
         catch(error){
-            console.log(error);
-            console.log(error.message);
-            console.log(error.response);
-            console.log(error.response.message);
+            
            
             setIsPending(false);
-            if(error.response.status === 400){
-                setMessageOpen(true);
-                setMessage({...message, body: "This user already exists !!!", type: "error" });
 
+            if(error.response){
+
+                if(error.response.status === 400){
+                    setMessageOpen(true);
+                    setMessage({...message, body: "This user already exists !!!", type: "error" });
+    
+                }
+                if(error.response.status === 401){
+                   
+                    setLoggedIn(false);
+                    localStorage.removeItem("currentUser");
+                    localStorage.setItem("isAuth", false);
+                    
+                }
+                if(error.response.status === 404){
+                    setMessageOpen(true);
+                    setMessage({...message, body: "User does not exist. Please provide the correct email and password", type: "error" });
+                    
+                }
+                if(error.response.status === 500){
+                    setMessageOpen(true);
+                    setMessage({...message, body: "Interval server error !!!", type: "error" });
+                   
+                }
+                if(error.response.status === 503){
+                    setMessageOpen(true);
+                    setMessage({...message, body: "Inconsistent network !!!", type: "error" });
+                   
+                }
+
+            }else if(error.request){
+                console.log(error.request);
+            }else{
+                console.log('Error', error.message);
             }
-            if(error.response.status === 401){
-               
-                setLoggedIn(false);
-                localStorage.removeItem("currentUser");
-                localStorage.setItem("isAuth", false);
-                
-            }
-            if(error.response.status === 404){
-                setMessageOpen(true);
-                setMessage({...message, body: "User does not exist. Please provide the correct email and password", type: "error" });
-                
-            }
-            if(error.response.status === 500){
-                setMessageOpen(true);
-                setMessage({...message, body: "Interval server error !!!", type: "error" });
-               
-            }
-            if(error.response.status === 503){
-                setMessageOpen(true);
-                setMessage({...message, body: "Inconsistent network !!!", type: "error" });
-               
-            }
+           
         }
 
 
