@@ -92,6 +92,10 @@ export default function  useAuth() {
 
             if(error.response){
 
+                console.log(err.response.data);
+                console.log(err.response.status);
+                console.log(err.response.headers);
+
                 if(error.response.status === 400){
                     setMessageOpen(true);
                     setMessage({...message, body: "This user already exists !!!", type: "error" });
