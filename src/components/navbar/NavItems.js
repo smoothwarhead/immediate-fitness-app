@@ -31,6 +31,13 @@ export const NavItems = [
         clientPath: '/auth/dashboard/client/classes',
         cName: 'nav_links classes'
     },
+    {
+        titleTrainer: 'Messages',
+        titleClient: 'Messages',
+        trainerPath: '/auth/dashboard/trainer/messages',
+        clientPath: '/auth/dashboard/client/messages',
+        cName: 'nav_links messages'
+    },
    
 ]
 
